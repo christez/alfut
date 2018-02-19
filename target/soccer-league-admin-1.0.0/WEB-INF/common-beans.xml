@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+       <property name="locations" value="classpath:configuration.properties"/>
+	</bean>
+	
+	<bean id="emailConfiguration" class="mx.christez.sla.configuration.EmailConfiguration">
+		<property name="activateUrl" value="${notification.activateUrl}" />
+		<property name="notificationFrom" value="${notification.from}" />
+		<property name="notificationHost" value="${notification.host}" />
+		<property name="notificationPassword" value="${notification.password}" />
+		<property name="notificationPort" value="${notification.port}" />
+		<property name="notificationUsername" value="${notification.username}" />
+		<property name="restoreUrl" value="${notification.restoreUrl}" />
+	</bean>
+	
+	<bean id="encrypter" class="mx.christez.sla.security.Encrypter">
+		<property name="iv" value="${security.iv}" />
+		<property name="secretKeySpec" value="${security.secretKeySpec}" />
+	</bean>
+</beans>

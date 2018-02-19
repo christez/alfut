@@ -1,0 +1,1003 @@
+body {
+	font-family: 'Montserrat';
+}
+
+.mainHeader {
+	color: #417d95;
+}
+
+.modalRemove {
+	color: #417d95;
+}
+
+.popover-title {
+	background-color: #dde7dc;
+	color: #417d95;
+	font-size: 15px;
+	font-weight: bolder;
+}
+
+.popover-content {
+	color: #417d95;
+	font-size: 12px;
+}
+
+.generalFormButton{
+	margin-top: 40px;
+	margin-bottom: 0px;
+}
+
+/****************************************************************************************************************************************************
+Index classes ***************************************************************************************************************************************
+*****************************************************************************************************************************************************/
+
+.indexCarousel{
+	margin-top: 20px;
+}
+
+.indexCarousel .item {
+  height: 400px;
+}
+
+.indexCarousel .item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 400px;
+}
+
+.indexCarouselImage{
+	width: 100%;
+}
+
+.indexCarouselText{
+	color: #dde7dc;
+}
+
+.banner{
+	background-color: #dde7dc;
+	color: #417d95;
+	margin-top: 50px;
+}
+
+.indexHeader{
+	color: #417d95;
+	font-weight: bolder;
+}
+
+.indexHeader small{
+	color: #417d95;
+	font-weight: bolder;
+}
+
+.indexContainer{
+	padding: 10px;
+}
+
+.indexContainer p{
+	color: #5bc0de;
+	font-weight: bold;
+}
+
+.myJumbotron {
+    background-color: #dde7dc;
+    color: #417d95;
+    margin-bottom: 0px;
+    padding-bottom: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+}
+
+/****************************************************************************************************************************************************
+Open league classes *********************************************************************************************************************************
+*****************************************************************************************************************************************************/
+
+.openLeagueSorryBanner{
+	margin-top: 30px;
+}
+
+.openLeagueLogo{
+	margin-top: 50px;
+}
+
+.modalLeague {
+	color: #417d95;
+}
+
+.resultLeagueHeader{
+	font-size: 30px;
+	font-weight: bolder;
+	color: #417d95;
+	margin-bottom: 4px;
+}
+
+.resultLeagueInformation{
+	font-size: 14px;
+	color: #5bc0de;
+}
+
+.resultLeagueDate{
+	color: #417d95;
+	font-weight: bolder;
+}
+
+.resultLeagueSmallHeader{
+	font-size: 30px;
+	font-weight: bolder;
+	color: #417d95;
+}
+
+.openLeagueContainer{
+	margin-bottom: 50px;
+}
+
+.openLeagueHeader{
+	font-size: 22px;
+	font-weight: bolder;
+	color: #417d95;
+}
+
+.openLeagueInfo{
+	font-size: 14px;
+	color: 	#5bc0de;
+	font-weight: bolder;
+}
+
+.openLeagueDetail{
+	border-left: 2px solid #dde7dc;
+	padding-left: 40px;
+	color: #5bc0de;
+	font-size: 12px;
+}
+
+.openLeagueMenu{
+	margin-bottom: 0px;
+}
+
+.openLeagueIndicator{
+	color: #417d95;
+	font-size: 80px;
+	font-weight: bolder;
+	margin-bottom: 0px;
+}
+
+/****************************************************************************************************************************************************
+Result tournament classes ***************************************************************************************************************************
+*****************************************************************************************************************************************************/
+
+.scheduleCarousel{
+	margin-top: 20px;
+}
+
+.scheduleCarousel .item {
+  height: 230px;
+}
+
+.scheduleCarousel .item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 230px;
+}
+
+.scheduleCarouselImage{
+	width: 100%;
+}
+
+.scheduleCarouselText{
+	color: #dde7dc;
+}
+
+.openLeagueScheduleHeader{
+	font-size: 30px;
+	font-weight: bolder;
+	color: #417d95;
+	margin-top: 10px;
+	padding-left: 10px;
+}
+
+.resultTournamentHeader{
+	margin-top: 0px;
+	color: #417d95;
+	font-size: 60px;
+	font-weight: bolder;
+	margin-bottom: 40px;
+}
+
+.resultTournamnetClusterContainer{
+	margin: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.resultTournamnetClusterInnerContainer{
+	padding-left: 30px;
+	padding-top: 10px;
+	padding-right: 30px;
+	margin-bottom: 20px;
+}
+
+.resultTournamnetClusterToggler{
+	font-size: 30px;
+}
+
+.resultTournamentTable{
+	margin-top: 40px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.resultTournamentPlayoffs{
+	margin-left:50px;
+	margin-top: 20px;
+	margin-right: 50px;
+	margin-bottom: 40px;
+}
+
+.resultTournamantChampionContainer{
+	margin-top: 30px;
+	color: #417d95;
+}
+
+.resultTournamantChampion{
+	color: #5bc0de;
+}
+
+.resultTournamantChampionInfo{
+	margin-top: 0px;
+}
+
+.resultTournamentClusterPanel{
+	margin-left: 40px;
+	margin-top: 30px;
+	margin-right: 40px;
+	margin-bottom: 10px;
+}
+
+/****************************************************************************************************************************************************
+Navbar classes **************************************************************************************************************************************
+*****************************************************************************************************************************************************/
+.navbar-default {
+	background-color: #dde7dc;
+	border-color: #c1dee2;
+}
+
+.navbar-default .navbar-brand {
+	color: #417d95;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus
+	{
+	color: #89b9c5;
+}
+
+.navbar-default .navbar-nav>li>a {
+	color: #417d95;
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus
+	{
+	color: #89b9c5;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover,
+	.navbar-default .navbar-nav>.active>a:focus {
+	color: #417d95;
+	background-color: #c1dee2;
+}
+
+/****************************************************************************************************************************************************
+Login form classes **********************************************************************************************************************************
+*****************************************************************************************************************************************************/
+.form-signin {
+	max-width: 350px;
+	padding: 15px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.form-signin .form-signin-heading {
+	margin-bottom: 20px;
+	color: #417d95;
+}
+
+.form-signin .form-control {
+	position: relative;
+	box-sizing: border-box;
+	height: auto;
+	padding: 10px;
+	font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+	z-index: 2;
+}
+
+.form-signin input[type="text"] {
+	margin-bottom: -1px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+	margin-bottom: 10px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	margin-bottom: 20px;
+}
+
+.restoreForm {
+	color: #417d95;
+}
+
+.activateReminder{
+	color: #417d95;
+}
+
+/****************************************************************************************************************************************************
+Register form classes *******************************************************************************************************************************
+*****************************************************************************************************************************************************/
+.registrationForm {
+	max-width: 600px;
+	padding: 15px;
+	margin: 0 auto;
+}
+
+.form-register-heading {
+	text-align: center;
+	margin-bottom: 20px;
+	color: #417d95;
+}
+
+.registerLabel {
+	color: #417d95;
+}
+
+/****************************************************************************************************************************************************
+Recover form classes ********************************************************************************************************************************
+*****************************************************************************************************************************************************/
+
+.recoverForm {
+	max-width: 600px;
+	padding: 15px;
+	margin: 0 auto;
+}
+
+/****************************************************************************************************************************************************
+League administration classes ***********************************************************************************************************************
+*****************************************************************************************************************************************************/
+.page-container {
+	margin: 20px;
+}
+
+.menuLink{
+	width: 85%;
+}
+
+.menuImage {
+	width: 20px;
+	height: 20px;
+	margin-left: 5px;
+}
+
+/****************************************************************************************************************************************************
+League classes **************************************************************************************************************************************
+*****************************************************************************************************************************************************/
+.leagueForm {
+	color: #417d95;
+}
+
+.nav-tabs > li > a{
+	color: rgba(65, 125, 149, .75);
+}
+
+.nav-tabs > li.active > a:focus, .nav-tabs > li.active > a{
+	font-size: 16px;
+	color: #417d95;
+}
+
+.nav-tabs > li > a:hover{
+	color: #417d95;
+  	background-color: #dde7dc;
+}
+
+.leagueTabHeader{
+	color: #417d95;
+}
+
+.leagueAdditionalInfo{
+	font-size: 12px;
+	color: rgba(65, 125, 149, .75);
+	font-weight: bolder;
+}
+
+.leagueCreationDate {
+	font-size: 10px;
+	color: rgba(65, 125, 149, .75);
+	font-weight: bolder;
+}
+
+.leagueLocation {
+  	width: 100%;
+  	height: 400px;
+  	border: 4px solid rgba(65, 125, 149, .50);
+  	box-shadow: 5px 5px 5px 5px #E4E2E3;
+  	border-radius: 10px;
+}
+
+/****************************************************************************************************************************************************
+Tournament classes **********************************************************************************************************************************
+*****************************************************************************************************************************************************/
+.tournamentForm {
+	color: #417d95;
+}
+
+.tournamentContainer {
+	border-radius: 5px;
+	border: 4px solid rgba(91, 192, 222, 0.25);
+	margin: 10px;
+	text-align: center;
+	padding: 0px;
+	box-shadow: 3px 3px 3px 3px #E4E2E3;
+}
+
+.tournamentContainerHeader {
+	background-color: #E4E2E3;
+	height: 30%;
+	color: rgba(91, 192, 222, 1.0);
+	font-weight: bold;
+	padding: 5px;
+}
+
+.tournamentContainerBody {
+	height: 70%;
+}
+
+.tournamentImage {
+	width: 140px;
+	height: 140px;
+	margin: 10px;
+}
+
+.textbox {
+	border-radius: 4px;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	background-color: rgba(0, 0, 0, 0.75);
+	-webkit-box-shadow: 0px 0px 15px 2px rgba(255, 255, 255, .75);
+	box-shadow: 0px 0px 15px 2px rgba(255, 255, 255, .75);
+	-webkit-transition: all 0.7s ease;
+	transition: all 0.7s ease;
+}
+
+.textbox:hover {
+	opacity: 1;
+}
+
+.headerDetail {
+	margin-top: 20px;
+}
+
+.tournamentInnerButton {
+	margin-bottom: 10px;
+}
+
+.tournamentDescriptionHeader{
+	font-size: 12px;
+	font-weight: bolder;
+}
+
+.tournamentDetailForm {
+	color: #417d95;
+	max-width: 600px;
+	padding: 15px;
+	margin: 0 auto;
+}
+
+/****************************************************************************************************************************************************
+Team classes ****************************************************************************************************************************************
+*****************************************************************************************************************************************************/
+
+.teamForm, .teamFormUpdate {
+	color: #417d95;
+}
+
+.teamTable{
+	color: #417d95;
+	text-align: center;
+}
+
+.teamTableHeader{
+	background-color: #dde7dc;
+}
+
+.teamTableHeader tr th{
+	text-align: center;
+}
+
+.teamTableHover:hover{
+	background-color: #dde7dc;
+}
+
+.tournamentLeader{
+	background-color: rgba(92, 184, 92, .60);
+}
+
+.teamTableBolder{
+	font-weight: bolder;
+}
+
+/****************************************************************************************************************************************************
+Team detail classes *********************************************************************************************************************************
+*****************************************************************************************************************************************************/
+
+.form-team-update-heading {
+	text-align: center;
+	margin-bottom: 20px;
+	color: #417d95;
+}
+
+/****************************************************************************************************************************************************
+Schedule classes ************************************************************************************************************************************
+*****************************************************************************************************************************************************/
+.scheduleWarningNote{
+	font-size: 12px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.scheduleDetail{
+	font-size: 12px;
+}
+
+.scheduleTable{
+	color: #417d95;
+	text-align: center;
+}
+
+.scheduleTableHeader{
+	background-color: #dde7dc;
+}
+
+.scheduleTableHeader tr th{
+	text-align: center;
+}
+
+.scheduleTableHover:hover{
+	background-color: #dde7dc;
+}
+
+.scheduleTableBolder{
+	font-weight: bolder;
+}
+
+.modalConclude {
+	color: #417d95;
+}
+
+.scheduleHighlightProgrammed{
+	font-size: 12px;
+	color: rgba(65, 125, 149, .75);
+	font-weight: bolder;
+}
+
+.scheduleHighlightPlayed{
+	font-size: 12px;
+	color: rgba(65, 125, 149, .75);
+	font-weight: bolder;
+}
+
+/****************************************************************************************************************************************************
+Match classes ***************************************************************************************************************************************
+*****************************************************************************************************************************************************/
+
+.matchForm {
+	color: #417d95;
+}
+
+.playofssTree, .playofssTree ul {
+	display: flex;
+	color: #417d95;
+	font-size: 12px;
+}
+
+.playofssTree ul {
+  	flex-direction: column;
+  	width: 100%;
+  	list-style: none;
+  	padding: 0;
+}
+
+.game + li {
+  	flex-grow: 1;
+}
+
+li:first-child,li:last-child {
+  	flex-grow: .5;
+}
+
+.game {
+  	padding-left: 20px;
+}
+
+.winner {
+  	font-weight: bolder;
+  	color: #5cb85c;
+  	font-size: 18px;
+}
+
+.game span {
+  	float: right;
+  	margin-right: 5px;
+}
+
+.game-top {
+  	border-bottom: 2px solid #dde7dc;
+}
+
+.game-top + li {
+  	border-right: 2px solid #dde7dc;
+  	min-height: 40px;
+}
+
+.game-bottom {
+  	border-top: 2px solid #dde7dc;
+}
+
+/****************************************************************************************************************************************************
+Cluster classes ***************************************************************************************************************************************
+*****************************************************************************************************************************************************/
+
+.clusterForm {
+	color: #417d95;
+}
+
+.clusterFooter{
+	background-color: #dde7dc;
+}
+
+.clusterTeamTable{
+	font-size: 8px;
+}
+
+.clusterWarningText{
+	font-size: 8px;
+}
+
+.clusterWarningIcon{
+	width: 50px;
+	height: 50px;
+}
+
+.clusterScheduleHeader{
+	margin-top: 0px; 
+	color: #417d95;
+}
+
+.clusterScheduleDivider{
+	border-top: 4px double #417d95;
+	text-align: center;
+}
+
+.clusterScheduleDivider:after{
+	content: url(../images/soccerBall.png);
+	display: inline-block;
+	position: relative;
+	top: -15px;
+	padding: 0 10px;
+	background: #f0f0f0;
+	color: #417d95;
+	font-size: 18px;
+}
+
+/****************************************************************************************************************************************************
+New classes *****************************************************************************************************************************************
+*****************************************************************************************************************************************************/
+
+.newForm {
+	color: #417d95;
+}
+
+.newTable{
+	color: #417d95;
+}
+
+.newTableHeader{
+	background-color: #dde7dc;
+}
+
+.newTableHeader tr th{
+	text-align: center;
+}
+
+.newTableHover:hover{
+	background-color: #dde7dc;
+}
+
+.newTableCenterColumn{
+	text-align: center;
+}
+
+.newCreationDate{
+	font-size: 12px;
+	margin: 0px;
+}
+
+.newsContainer{
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.newsHeader{
+	font-size: 16px;
+	font-weight: bolder;
+	color: #417d95;
+}
+
+.newsInfo{
+	font-size: 12px;
+	color: 	#5bc0de;
+}
+
+.newsDate{
+	border-left: 2px solid #dde7dc;
+	padding-left: 40px;
+	color: #417d95;
+	font-weight: bolder;
+	font-size: 12px;
+}
+
+.newsImage{
+	padding-left: 18px;
+	margin-bottom: 2px;
+}
+
+/****************************************************************************************************************************************************
+Account form classes ********************************************************************************************************************************
+*****************************************************************************************************************************************************/
+.accountForm {
+	max-width: 600px;
+	padding: 15px;
+	margin: 0 auto;
+}
+
+/****************************************************************************************************************************************************
+User classes ****************************************************************************************************************************************
+*****************************************************************************************************************************************************/
+
+.userHeader{
+	color: #417d95;
+}
+
+/****************************************************************************************************************************************************
+Wiki classes *************************************************************************************************************************************
+*****************************************************************************************************************************************************/
+
+.contentHeader{
+	color: #5bc0de;
+}
+
+.contentMenu{
+	color: #5bc0de;
+}
+
+.wikiLink{
+	color: #5bc0de;
+	padding: 0px;
+}
+
+.wikiLink:hover{
+	color: #417d95;
+	padding: 0px;
+	text-decoration: none;
+	font-weight: bolder;
+}
+
+.wikiContainer{
+	margin-top: 40px;
+}
+
+.wikiHeader{
+	color: #417d95;
+	font-weight: bolder;
+}
+
+.wikiDescription{
+	color: #417d95;
+	text-align: justify;
+	margin-top: 20px;
+}
+
+.wikiImage{
+	width: 35%;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	border: 4px solid #5bc0de;
+	box-shadow: 3px 3px 3px 3px #E4E2E3;
+}
+
+/****************************************************************************************************************************************************
+Support classes *************************************************************************************************************************************
+*****************************************************************************************************************************************************/
+
+.supportForm {
+	color: #417d95;
+}
+
+.supportButton{
+	margin-bottom: 20px;
+}
+
+.supportMessageText{
+	margin-top: 10px;
+}
+
+.supportTable{
+	width: 100%;
+	height: 100%;
+}
+
+.supportInnerTable{
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+}
+
+.supportInnerTable td{
+	width: 50%;
+	text-align: center;
+	vertical-align: top;
+}
+
+.supportTableHeader{
+	color: #417d95;
+	margin: 0px;
+}
+
+.supportMessagesContainer{
+	width: 75%;
+	height: 100%;
+	vertical-align: top;
+}
+
+.supportMessagesSender{
+	width: 25%;
+	height: 100%;
+	text-align: center;
+	vertical-align: top;
+}
+
+.supportMessage {
+	margin-top: 10px;
+	text-align: left;
+	width: 95%;
+    border-radius: 5px;
+	border: 4px solid rgba(91, 192, 222, 0.25);
+	padding: 5px;
+	box-shadow: 3px 3px 3px 3px #E4E2E3;
+}
+
+.supportMessage p{
+	font-size: 12px;
+	font-weight: bolder;
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-right: 10px;
+}
+
+/****************************************************************************************************************************************************
+World classes ********************************************************************************************************************************
+*****************************************************************************************************************************************************/
+
+.worldLeagueButton{
+	margin-bottom: 20px;
+	padding: 20px;
+	width: 100%;
+}
+
+.worldLeagueButtonRemove{
+	margin-bottom: 20px;
+}
+
+.worldLeagueTournamentButtonAdmin{
+	width: 200px;
+	margin-top: 18px;
+	margin-left: 13px;
+}
+
+.worldLeagueTournamentButtonRemove{
+	margin-top: 18px;
+	margin-left: 13px;
+}
+
+.scheduleForm {
+	color: #417d95;
+}
+
+.worldScheduleHeader{
+	color: #5bc0de;
+}
+
+.worldMatchButtonRemove{
+	margin-bottom: 15px;
+}
+
+.openWorldLeagueMenu{
+	padding: 20px;
+}
+
+.openWorldLeagueDisplay{
+	padding: 20px;
+}
+
+.openWorldLeagueFlag{
+	width: 16px;
+	height: 16px;
+}
+
+.openWorldLeagueHEader {
+	color: #417d95;
+}
+
+.openWorldLeagueImages{
+	margin-bottom: 25px;
+}
+
+.rankingForm {
+	color: #417d95;
+}
+
+.miniTable{
+	font-size: 12px;
+}
+
+.tableScore{
+	font-size: 14px;
+	font-weight: bolder;
+}
+
+.openWorldNewContainer{
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.openWorldNewIconContainer{
+	text-align: center;
+}
+
+.openWorldNewIcon{
+	width: 100px;
+	height: 100px;
+}
+
+/****************************************************************************************************************************************************
+Gallery classes *************************************************************************************************************************************
+*****************************************************************************************************************************************************/
+.galleryForm {
+	color: #417d95;
+}
+
+.galleryCarousel{
+	margin-top: 20px;
+}
+
+.galleryCarousel .item {
+  height: 400px;
+}
+
+.galleryCarousel .item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 400px;
+}
+
+.galleryCarouselImage{
+	width: 100%;
+	max-width: 100%;
+    max-height: 100%;
+}

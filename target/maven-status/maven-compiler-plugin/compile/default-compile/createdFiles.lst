@@ -1,0 +1,6 @@
+mx\christez\sla\controller\LoginController.class
+mx\christez\sla\entity\Role.class
+mx\christez\sla\filter\NoCacheFilter.class
+mx\christez\sla\controller\IndexController.class
+mx\christez\sla\controller\RegisterController.class
+mx\christez\sla\entity\AppUser.class

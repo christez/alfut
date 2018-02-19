@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="template" template="/WEB-INF/layout/template.jsp">
+		<put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
+	</definition>
+	
+	<definition name="index" extends="template">
+		<put-attribute name="title" value="Administrador de Ligas de Fútbol" />
+		<put-attribute name="body" value="/WEB-INF/jsp/index.jsp" />
+		<put-attribute name="current" value="index" />
+	</definition>
+	
+	<definition name="open-league" extends="template">
+		<put-attribute name="title" value="Nuestras ligas" />
+		<put-attribute name="body" value="/WEB-INF/jsp/open-league.jsp" />
+		<put-attribute name="current" value="open-league" />
+	</definition>
+	
+	<definition name="open-news" extends="template">
+		<put-attribute name="title" value="Noticiass" />
+		<put-attribute name="body" value="/WEB-INF/jsp/open-news.jsp" />
+		<put-attribute name="current" value="open-news" />
+	</definition>
+	
+	<definition name="open-world-league" extends="template">
+		<put-attribute name="title" value="Ligas del mundo" />
+		<put-attribute name="body" value="/WEB-INF/jsp/open-world-league.jsp" />
+		<put-attribute name="current" value="open-world-league" />
+	</definition>
+	
+	<definition name="open-world-new" extends="template">
+		<put-attribute name="title" value="Noticias del mundo" />
+		<put-attribute name="body" value="/WEB-INF/jsp/open-world-new.jsp" />
+		<put-attribute name="current" value="open-world-new" />
+	</definition>
+	
+	<definition name="result-league" extends="template">
+		<put-attribute name="title" value="Liga" />
+		<put-attribute name="body" value="/WEB-INF/jsp/result-league.jsp" />
+		<put-attribute name="current" value="result-league" />
+	</definition>
+	
+	<definition name="result-tournament" extends="template">
+		<put-attribute name="title" value="Torneo" />
+		<put-attribute name="body" value="/WEB-INF/jsp/result-tournament.jsp" />
+		<put-attribute name="current" value="result-tournament" />
+	</definition>
+	
+	<definition name="unauthorized" extends="template">
+		<put-attribute name="title" value="Acceso denegado" />
+		<put-attribute name="body" value="/WEB-INF/jsp/unauthorized.jsp" />
+		<put-attribute name="current" value="unauthorized" />
+	</definition>
+	
+	<definition name="register" extends="template">
+		<put-attribute name="title" value="Registro" />
+		<put-attribute name="body" value="/WEB-INF/jsp/register.jsp" />
+		<put-attribute name="current" value="register" />
+	</definition>
+	
+	<definition name="login" extends="template">
+		<put-attribute name="title" value="Ingresar" />
+		<put-attribute name="body" value="/WEB-INF/jsp/login.jsp" />
+		<put-attribute name="current" value="login" />
+	</definition>
+	
+	<definition name="activate" extends="template">
+		<put-attribute name="title" value="Activar cuenta" />
+		<put-attribute name="body" value="/WEB-INF/jsp/activate.jsp" />
+		<put-attribute name="current" value="activate" />
+	</definition>
+	
+	<definition name="restore" extends="template">
+		<put-attribute name="title" value="Recuperar contraseña" />
+		<put-attribute name="body" value="/WEB-INF/jsp/restore.jsp" />
+		<put-attribute name="current" value="restore" />
+	</definition>
+	
+	<definition name="recover" extends="template">
+		<put-attribute name="title" value="Recuperar contraseña" />
+		<put-attribute name="body" value="/WEB-INF/jsp/recover.jsp" />
+		<put-attribute name="current" value="recover" />
+	</definition>
+	
+	<definition name="league-admin" extends="template">
+		<put-attribute name="title" value="Administración de ligas" />
+		<put-attribute name="body" value="/WEB-INF/jsp/league-admin.jsp" />
+		<put-attribute name="current" value="league-admin" />
+	</definition>
+	
+	<definition name="league-detail" extends="template">
+		<put-attribute name="title" value="Detalle de la liga" />
+		<put-attribute name="body" value="/WEB-INF/jsp/league-detail.jsp" />
+		<put-attribute name="current" value="league-detail" />
+	</definition>
+	
+	<definition name="tournament-admin" extends="template">
+		<put-attribute name="title" value="Administración de torneos" />
+		<put-attribute name="body" value="/WEB-INF/jsp/tournament-admin.jsp" />
+		<put-attribute name="current" value="tournament-admin" />
+	</definition>
+	
+	<definition name="tournament-detail" extends="template">
+		<put-attribute name="title" value="Detalle del torneo" />
+		<put-attribute name="body" value="/WEB-INF/jsp/tournament-detail.jsp" />
+		<put-attribute name="current" value="tournament-detail" />
+	</definition>
+	
+	<definition name="schedule-admin" extends="template">
+		<put-attribute name="title" value="Administración de jornadas" />
+		<put-attribute name="body" value="/WEB-INF/jsp/schedule-admin.jsp" />
+		<put-attribute name="current" value="schedule-admin" />
+	</definition>
+	
+	<definition name="schedule-detail" extends="template">
+		<put-attribute name="title" value="Detalle de jornada" />
+		<put-attribute name="body" value="/WEB-INF/jsp/schedule-detail.jsp" />
+		<put-attribute name="current" value="schedule-detail" />
+	</definition>
+	
+	<definition name="team-admin" extends="template">
+		<put-attribute name="title" value="Administración de equipos" />
+		<put-attribute name="body" value="/WEB-INF/jsp/team-admin.jsp" />
+		<put-attribute name="current" value="team-admin" />
+	</definition>
+	
+	<definition name="team-detail" extends="template">
+		<put-attribute name="title" value="Detalle del equipo" />
+		<put-attribute name="body" value="/WEB-INF/jsp/team-detail.jsp" />
+		<put-attribute name="current" value="team-detail" />
+	</definition>
+	
+	<definition name="cluster-admin" extends="template">
+		<put-attribute name="title" value="Administración de grupos" />
+		<put-attribute name="body" value="/WEB-INF/jsp/cluster-admin.jsp" />
+		<put-attribute name="current" value="cluster-admin" />
+	</definition>
+	
+	<definition name="cluster-detail" extends="template">
+		<put-attribute name="title" value="Detalle del grupo" />
+		<put-attribute name="body" value="/WEB-INF/jsp/cluster-detail.jsp" />
+		<put-attribute name="current" value="cluster-detail" />
+	</definition>
+	
+	<definition name="cluster-team-detail" extends="template">
+		<put-attribute name="title" value="Detalle del equipo en grupo" />
+		<put-attribute name="body" value="/WEB-INF/jsp/cluster-team-detail.jsp" />
+		<put-attribute name="current" value="cluster-team-detail" />
+	</definition>
+	
+	<definition name="news-admin" extends="template">
+		<put-attribute name="title" value="Administración de noticias" />
+		<put-attribute name="body" value="/WEB-INF/jsp/news-admin.jsp" />
+		<put-attribute name="current" value="news-admin" />
+	</definition>
+	
+	<definition name="news-detail" extends="template">
+		<put-attribute name="title" value="Detalle de noticia" />
+		<put-attribute name="body" value="/WEB-INF/jsp/news-detail.jsp" />
+		<put-attribute name="current" value="news-detail" />
+	</definition>
+	
+	<definition name="account" extends="template">
+		<put-attribute name="title" value="Mi cuenta" />
+		<put-attribute name="body" value="/WEB-INF/jsp/account.jsp" />
+		<put-attribute name="current" value="account" />
+	</definition>
+	
+	<definition name="wiki" extends="template">
+		<put-attribute name="title" value="Wiki" />
+		<put-attribute name="body" value="/WEB-INF/jsp/wiki.jsp" />
+		<put-attribute name="current" value="wiki" />
+	</definition>
+	
+	<definition name="support" extends="template">
+		<put-attribute name="title" value="Soporte" />
+		<put-attribute name="body" value="/WEB-INF/jsp/support.jsp" />
+		<put-attribute name="current" value="support" />
+	</definition>
+	
+	<definition name="support-admin" extends="template">
+		<put-attribute name="title" value="Casos de soporte" />
+		<put-attribute name="body" value="/WEB-INF/jsp/support-admin.jsp" />
+		<put-attribute name="current" value="support-admin" />
+	</definition>
+	
+	<definition name="support-detail" extends="template">
+		<put-attribute name="title" value="Detalle del caso" />
+		<put-attribute name="body" value="/WEB-INF/jsp/support-detail.jsp" />
+		<put-attribute name="current" value="support-detail" />
+	</definition>
+	
+	<definition name="users" extends="template">
+		<put-attribute name="title" value="Usuarios" />
+		<put-attribute name="body" value="/WEB-INF/jsp/users.jsp" />
+		<put-attribute name="current" value="users" />
+	</definition>
+	
+	<definition name="exceptions" extends="template">
+		<put-attribute name="title" value="Excepciones" />
+		<put-attribute name="body" value="/WEB-INF/jsp/exceptions.jsp" />
+		<put-attribute name="current" value="exceptions" />
+	</definition>
+	
+	<definition name="world-league" extends="template">
+		<put-attribute name="title" value="Ligas del mundo" />
+		<put-attribute name="body" value="/WEB-INF/jsp/world-league.jsp" />
+		<put-attribute name="current" value="world-league" />
+	</definition>
+	
+	<definition name="world-league-detail" extends="template">
+		<put-attribute name="title" value="Detalle de la Liga del mundo" />
+		<put-attribute name="body" value="/WEB-INF/jsp/world-league-detail.jsp" />
+		<put-attribute name="current" value="world-league-detail" />
+	</definition>
+	
+	<definition name="world-league-tournament" extends="template">
+		<put-attribute name="title" value="Detalle del torneo" />
+		<put-attribute name="body" value="/WEB-INF/jsp/world-league-tournament.jsp" />
+		<put-attribute name="current" value="world-league-tournament" />
+	</definition>
+	
+	<definition name="world-league-tournament-detail" extends="template">
+		<put-attribute name="title" value="Detalle del enfrentamiento" />
+		<put-attribute name="body" value="/WEB-INF/jsp/world-league-tournament-detail.jsp" />
+		<put-attribute name="current" value="world-league-tournament-detail" />
+	</definition>
+	
+	<definition name="world-league-table" extends="template">
+		<put-attribute name="title" value="Tablas del torneo" />
+		<put-attribute name="body" value="/WEB-INF/jsp/world-league-table.jsp" />
+		<put-attribute name="current" value="world-league-table" />
+	</definition>
+	
+	<definition name="world-league-table-detail" extends="template">
+		<put-attribute name="title" value="Detalle del equipo" />
+		<put-attribute name="body" value="/WEB-INF/jsp/world-league-table-detail.jsp" />
+		<put-attribute name="current" value="world-league-table-detail" />
+	</definition>
+	
+	<definition name="world-news" extends="template">
+		<put-attribute name="title" value="Noticias del mundo" />
+		<put-attribute name="body" value="/WEB-INF/jsp/world-news.jsp" />
+		<put-attribute name="current" value="world-news" />
+	</definition>
+</tiles-definitions>
