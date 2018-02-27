@@ -140,13 +140,13 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t</div>\r\n");
       out.write("\r\n");
       out.write("\t<a class=\"left carousel-control\" href=\"#indexCarousel\" data-slide=\"prev\">\r\n");
-      out.write("\t\t<img alt=\"Left\" src='");
+      out.write("\t\t<img class=\"carouselControlImage\" alt=\"Left\" src='");
       if (_jspx_meth_c_url_4(_jspx_page_context))
         return;
       out.write("' >\r\n");
       out.write("\t</a>\r\n");
       out.write("\t<a class=\"right carousel-control\" href=\"#indexCarousel\" data-slide=\"next\">\r\n");
-      out.write("\t\t<img alt=\"Right\" src='");
+      out.write("\t\t<img class=\"carouselControlImage\" alt=\"Right\" src='");
       if (_jspx_meth_c_url_5(_jspx_page_context))
         return;
       out.write("' >\r\n");
@@ -159,33 +159,41 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t<h4>Agradecemos tu preferencia</h4>\r\n");
       out.write("</div>\r\n");
       out.write("\r\n");
-      out.write("<div class=\"indexHeader page-header\">\r\n");
+      out.write("<div class=\"indexHeader\">\r\n");
       out.write("\t<h1>Nuestras ligas <small>(las más recientes)</small></h1>\r\n");
       out.write("</div>\r\n");
+      out.write("\r\n");
+      out.write("<hr class=\"clusterScheduleDivider\">\r\n");
       out.write("\r\n");
       if (_jspx_meth_c_choose_0(_jspx_page_context))
         return;
       out.write("\r\n");
       out.write("\r\n");
-      out.write("<div class=\"indexHeader page-header\">\r\n");
+      out.write("<div class=\"indexHeader\">\r\n");
       out.write("\t<h1>Nuestros torneos <small>(los más recientes)</small></h1>\r\n");
       out.write("</div>\r\n");
+      out.write("\r\n");
+      out.write("<hr class=\"clusterScheduleDivider\">\r\n");
       out.write("\r\n");
       if (_jspx_meth_c_choose_1(_jspx_page_context))
         return;
       out.write("\r\n");
       out.write("\r\n");
-      out.write("<div class=\"indexHeader page-header\">\r\n");
+      out.write("<div class=\"indexHeader\">\r\n");
       out.write("\t<h1>Noticias del mundo <small>(las más recientes)</small></h1>\r\n");
       out.write("</div>\r\n");
+      out.write("\r\n");
+      out.write("<hr class=\"clusterScheduleDivider\">\r\n");
       out.write("\r\n");
       if (_jspx_meth_c_choose_2(_jspx_page_context))
         return;
       out.write("\r\n");
       out.write("\r\n");
-      out.write("<div class=\"indexHeader page-header\">\r\n");
+      out.write("<div class=\"indexHeader\">\r\n");
       out.write("\t<h1>Galería de la semana <small></small></h1>\r\n");
       out.write("</div>\r\n");
+      out.write("\r\n");
+      out.write("<hr class=\"clusterScheduleDivider\">\r\n");
       out.write("\r\n");
       if (_jspx_meth_c_choose_3(_jspx_page_context))
         return;
@@ -436,13 +444,13 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         do {
           out.write("\r\n");
           out.write("\t\t\t\t<div class=\"col-md-4 indexContainer\">\r\n");
-          out.write("\t\t\t\t\t<h2 class=\"text-info\">");
+          out.write("\t\t\t\t\t<h3 class=\"text-info indexSubHeader\">");
           if (_jspx_meth_c_out_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
             return true;
           out.write(" <img src='");
           if (_jspx_meth_c_url_6((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
             return true;
-          out.write("' alt=\"ball\"></h2>\r\n");
+          out.write("' alt=\"ball\"></h3>\r\n");
           out.write("\t\t\t \t\t<p>");
           if (_jspx_meth_c_out_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
             return true;
@@ -665,17 +673,17 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         do {
           out.write("\r\n");
           out.write("\t\t\t\t<div class=\"col-md-4 indexContainer\">\r\n");
-          out.write("\t\t\t\t\t<h2 class=\"text-info\">");
+          out.write("\t\t\t\t\t<h3 class=\"text-info indexSubHeader\">");
           if (_jspx_meth_c_out_2((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_1, _jspx_page_context, _jspx_push_body_count_c_forEach_1))
             return true;
           out.write(" <img src='");
           if (_jspx_meth_c_url_7((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_1, _jspx_page_context, _jspx_push_body_count_c_forEach_1))
             return true;
-          out.write("' alt=\"cup\"></h2>\r\n");
-          out.write("\t\t\t \t\t<h3 class=\"text-info\">Liga: <strong>");
+          out.write("' alt=\"cup\"></h3>\r\n");
+          out.write("\t\t\t \t\t<h4 class=\"text-info\">Liga: <strong>");
           if (_jspx_meth_c_out_3((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_1, _jspx_page_context, _jspx_push_body_count_c_forEach_1))
             return true;
-          out.write("</strong></h3>\r\n");
+          out.write("</strong></h4>\r\n");
           out.write("\t\t\t \t\t<p>");
           if (_jspx_meth_c_out_4((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_1, _jspx_page_context, _jspx_push_body_count_c_forEach_1))
             return true;
@@ -916,10 +924,10 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         do {
           out.write("\r\n");
           out.write("\t\t\t\t<div class=\"col-md-4 indexContainer\">\r\n");
-          out.write("\t\t\t\t\t<h2 class=\"text-info\">");
+          out.write("\t\t\t\t\t<h3 class=\"text-info indexSubHeader\">");
           if (_jspx_meth_c_out_5((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_2, _jspx_page_context, _jspx_push_body_count_c_forEach_2))
             return true;
-          out.write("</h2>\r\n");
+          out.write("</h3>\r\n");
           out.write("\t\t\t\t\t<p>");
           if (_jspx_meth_c_out_6((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_2, _jspx_page_context, _jspx_push_body_count_c_forEach_2))
             return true;
@@ -1105,13 +1113,13 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("\t\t\t</div>\r\n");
         out.write("\t\t\t\r\n");
         out.write("\t\t\t<a class=\"left carousel-control\" href=\"#galleryCarousel\" data-slide=\"prev\">\r\n");
-        out.write("\t\t\t\t<img alt=\"Left\" src='");
+        out.write("\t\t\t\t<img class=\"carouselControlImage\" alt=\"Left\" src='");
         if (_jspx_meth_c_url_11((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_otherwise_3, _jspx_page_context))
           return true;
         out.write("' >\r\n");
         out.write("\t\t\t</a>\r\n");
         out.write("\t\t\t<a class=\"right carousel-control\" href=\"#galleryCarousel\" data-slide=\"next\">\r\n");
-        out.write("\t\t\t\t<img alt=\"Right\" src='");
+        out.write("\t\t\t\t<img class=\"carouselControlImage\" alt=\"Right\" src='");
         if (_jspx_meth_c_url_12((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_otherwise_3, _jspx_page_context))
           return true;
         out.write("' >\r\n");

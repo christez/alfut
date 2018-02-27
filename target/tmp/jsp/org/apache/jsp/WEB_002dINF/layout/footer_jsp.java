@@ -71,15 +71,15 @@ public final class footer_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("<div class=\"myJumbotron jumbotron text-right\">\r\n");
       out.write("\t<h2>Síguenos en nuestras redes sociales</h2>\r\n");
-      out.write("  \t<a href=\"#\"><img alt=\"facebook\" src='");
+      out.write("  \t<a href=\"https://www.facebook.com/Alfut-154186695230940/\" target=\"_blank\"><img alt=\"facebook\" src='");
       if (_jspx_meth_c_url_0(_jspx_page_context))
         return;
       out.write("' data-toggle=\"tooltip\" title=\"Facebook\"></a>\r\n");
-      out.write("  \t<a href=\"#\"><img alt=\"Twitter\" src='");
+      out.write("  \t<a href=\"https://twitter.com/soccerleagueadm\" target=\"_blank\"><img alt=\"Twitter\" src='");
       if (_jspx_meth_c_url_1(_jspx_page_context))
         return;
       out.write("' data-toggle=\"tooltip\" title=\"Twitter\"></a>\r\n");
-      out.write("  \t<a href=\"#\"><img alt=\"YouTube\" src='");
+      out.write("  \t<a href=\"https://www.youtube.com/channel/UCArcKt3jUDcB9hQ88mCItHA\" target=\"_blank\"><img alt=\"YouTube\" src='");
       if (_jspx_meth_c_url_2(_jspx_page_context))
         return;
       out.write("' data-toggle=\"tooltip\" title=\"YouTube\"></a>\r\n");

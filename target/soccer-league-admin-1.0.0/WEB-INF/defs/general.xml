@@ -246,4 +246,10 @@
 		<put-attribute name="body" value="/WEB-INF/jsp/world-news.jsp" />
 		<put-attribute name="current" value="world-news" />
 	</definition>
+	
+	<definition name="gallery-admin" extends="template">
+		<put-attribute name="title" value="Administrar galería" />
+		<put-attribute name="body" value="/WEB-INF/jsp/gallery-admin.jsp" />
+		<put-attribute name="current" value="gallery-admin" />
+	</definition>
 </tiles-definitions>

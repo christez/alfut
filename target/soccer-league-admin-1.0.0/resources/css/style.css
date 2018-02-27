@@ -74,12 +74,6 @@ Index classes ******************************************************************
 	padding: 10px;
 }
 
-.indexContainer a{
-	padding-left: 0px;
-	padding-top: 0px;
-	padding-bottom: 15px;
-}
-
 .indexContainer p{
 	color: #5bc0de;
 	font-weight: bold;
@@ -128,7 +122,7 @@ Open league classes ************************************************************
 }
 
 .resultLeagueSmallHeader{
-	font-size: 20px;
+	font-size: 30px;
 	font-weight: bolder;
 	color: #417d95;
 }
@@ -138,14 +132,15 @@ Open league classes ************************************************************
 }
 
 .openLeagueHeader{
-	font-size: 16px;
+	font-size: 22px;
 	font-weight: bolder;
 	color: #417d95;
 }
 
 .openLeagueInfo{
-	font-size: 12px;
+	font-size: 14px;
 	color: 	#5bc0de;
+	font-weight: bolder;
 }
 
 .openLeagueDetail{
@@ -153,10 +148,6 @@ Open league classes ************************************************************
 	padding-left: 40px;
 	color: #5bc0de;
 	font-size: 12px;
-}
-
-.openLeagueLink{
-	padding-left: 0px;
 }
 
 .openLeagueMenu{
@@ -981,4 +972,32 @@ World classes ******************************************************************
 .openWorldNewIcon{
 	width: 100px;
 	height: 100px;
+}
+
+/****************************************************************************************************************************************************
+Gallery classes *************************************************************************************************************************************
+*****************************************************************************************************************************************************/
+.galleryForm {
+	color: #417d95;
+}
+
+.galleryCarousel{
+	margin-top: 20px;
+}
+
+.galleryCarousel .item {
+  height: 400px;
+}
+
+.galleryCarousel .item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 400px;
+}
+
+.galleryCarouselImage{
+	width: 100%;
+	max-width: 100%;
+    max-height: 100%;
 }

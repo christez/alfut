@@ -47,7 +47,7 @@
 				<div class="col-md-4">
 					<p class="openLeagueHeader"><c:out value="${tournament.name}"/></p>
 					<p class="openLeagueInfo"><c:out value="${tournament.description}"/></p>
-					<a href='<spring:url value="/result-tournament.html?rpTournamentId=${tournament.id}" />' class="btn btn-link openLeagueLink">Ir la torneo</a>
+					<a href='<spring:url value="/result-tournament.html?rpTournamentId=${tournament.id}" />' class="btn btn-success btn-sm">Ir la torneo</a>
 			 	</div>
 			 	<div class="col-md-3 openLeagueDetail">
 			 		<p>Estatus: <strong><c:out value="${tournament.status}"/></strong></p>

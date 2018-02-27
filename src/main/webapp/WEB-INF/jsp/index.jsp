@@ -39,10 +39,10 @@
 	</div>
 
 	<a class="left carousel-control" href="#indexCarousel" data-slide="prev">
-		<img alt="Left" src='<c:url value="/resources/images/leftArrow.png"/>' >
+		<img class="carouselControlImage" alt="Left" src='<c:url value="/resources/images/leftArrow.png"/>' >
 	</a>
 	<a class="right carousel-control" href="#indexCarousel" data-slide="next">
-		<img alt="Right" src='<c:url value="/resources/images/rightArrow.png"/>' >
+		<img class="carouselControlImage" alt="Right" src='<c:url value="/resources/images/rightArrow.png"/>' >
 	</a>
 </div>
 
@@ -52,9 +52,11 @@
 	<h4>Agradecemos tu preferencia</h4>
 </div>
 
-<div class="indexHeader page-header">
+<div class="indexHeader">
 	<h1>Nuestras ligas <small>(las más recientes)</small></h1>
 </div>
+
+<hr class="clusterScheduleDivider">
 
 <c:choose>
 	<c:when test="${empty(leagues)}">
@@ -66,7 +68,7 @@
 		<div class="row">
 			<c:forEach items="${leagues}" var="league">
 				<div class="col-md-4 indexContainer">
-					<h2 class="text-info"><c:out value="${league.name}"/> <img src='<c:url value="/resources/images/ball.png"/>' alt="ball"></h2>
+					<h3 class="text-info indexSubHeader"><c:out value="${league.name}"/> <img src='<c:url value="/resources/images/ball.png"/>' alt="ball"></h3>
 			 		<p><c:out value="${league.additionalInfo}"/></p>
 			 		<a href='<spring:url value="/result-league.html?rpLeagueId=${league.id}" />' class="btn btn-success btn-sm">Ir a la liga</a>
 			 	</div>
@@ -75,9 +77,11 @@
 	</c:otherwise>
 </c:choose>
 
-<div class="indexHeader page-header">
+<div class="indexHeader">
 	<h1>Nuestros torneos <small>(los más recientes)</small></h1>
 </div>
+
+<hr class="clusterScheduleDivider">
 
 <c:choose>
 	<c:when test="${empty(tournaments)}">
@@ -89,8 +93,8 @@
 		<div class="row">
 			<c:forEach items="${tournaments}" var="tournament">
 				<div class="col-md-4 indexContainer">
-					<h2 class="text-info"><c:out value="${tournament.name}"/> <img src='<c:url value="/resources/images/cup.png"/>' alt="cup"></h2>
-			 		<h3 class="text-info">Liga: <strong><c:out value="${tournament.league.name}"/></strong></h3>
+					<h3 class="text-info indexSubHeader"><c:out value="${tournament.name}"/> <img src='<c:url value="/resources/images/cup.png"/>' alt="cup"></h3>
+			 		<h4 class="text-info">Liga: <strong><c:out value="${tournament.league.name}"/></strong></h4>
 			 		<p><c:out value="${tournament.description}"/></p>
 			 		<a href='<spring:url value="/result-tournament.html?rpTournamentId=${tournament.id}" />' class="btn btn-warning btn-sm">Ir al torneo</a>
 			 	</div>
@@ -99,9 +103,11 @@
 	</c:otherwise>
 </c:choose>
 
-<div class="indexHeader page-header">
+<div class="indexHeader">
 	<h1>Noticias del mundo <small>(las más recientes)</small></h1>
 </div>
+
+<hr class="clusterScheduleDivider">
 
 <c:choose>
 	<c:when test="${empty(news)}">
@@ -113,7 +119,7 @@
 		<div class="row">
 			<c:forEach items="${news}" var="currentNew">
 				<div class="col-md-4 indexContainer">
-					<h2 class="text-info"><c:out value="${currentNew.header}"/></h2>
+					<h3 class="text-info indexSubHeader"><c:out value="${currentNew.header}"/></h3>
 					<p><c:out value="${currentNew.information}"/></p>
 					<img alt="icon" src='<c:url value="${currentNew.url}"/>' class="openWorldNewIcon">
 			 	</div>
@@ -122,9 +128,11 @@
 	</c:otherwise>
 </c:choose>
 
-<div class="indexHeader page-header">
+<div class="indexHeader">
 	<h1>Galería de la semana <small></small></h1>
 </div>
+
+<hr class="clusterScheduleDivider">
 
 <c:choose>
 	<c:when test="${empty(galleries)}">
@@ -173,10 +181,10 @@
 			</div>
 			
 			<a class="left carousel-control" href="#galleryCarousel" data-slide="prev">
-				<img alt="Left" src='<c:url value="/resources/images/leftArrow.png"/>' >
+				<img class="carouselControlImage" alt="Left" src='<c:url value="/resources/images/leftArrow.png"/>' >
 			</a>
 			<a class="right carousel-control" href="#galleryCarousel" data-slide="next">
-				<img alt="Right" src='<c:url value="/resources/images/rightArrow.png"/>' >
+				<img class="carouselControlImage" alt="Right" src='<c:url value="/resources/images/rightArrow.png"/>' >
 			</a>
 		</div>
 	</c:otherwise>

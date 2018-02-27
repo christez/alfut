@@ -88,6 +88,10 @@ Index classes ******************************************************************
     padding-top: 50px;
 }
 
+.indexSubHeader{
+	margin-top: 0px;
+}
+
 /****************************************************************************************************************************************************
 Open league classes *********************************************************************************************************************************
 *****************************************************************************************************************************************************/
@@ -105,24 +109,26 @@ Open league classes ************************************************************
 }
 
 .resultLeagueHeader{
-	font-size: 30px;
+	font-size: 35px;
 	font-weight: bolder;
 	color: #417d95;
 	margin-bottom: 4px;
 }
 
 .resultLeagueInformation{
-	font-size: 14px;
+	font-size: 15px;
+	font-weight: bolder;
 	color: #5bc0de;
 }
 
 .resultLeagueDate{
-	color: #417d95;
+	color: #5bc0de;
+	font-size: 15px;
 	font-weight: bolder;
 }
 
 .resultLeagueSmallHeader{
-	font-size: 30px;
+	font-size: 32px;
 	font-weight: bolder;
 	color: #417d95;
 }
@@ -132,7 +138,7 @@ Open league classes ************************************************************
 }
 
 .openLeagueHeader{
-	font-size: 22px;
+	font-size: 25px;
 	font-weight: bolder;
 	color: #417d95;
 }
@@ -1000,4 +1006,9 @@ Gallery classes ****************************************************************
 	width: 100%;
 	max-width: 100%;
     max-height: 100%;
+}
+
+.carouselControlImage{
+	width: 64px;
+	height: 64px;
 }

@@ -18,6 +18,8 @@
 		<intercept-url pattern="/cluster-team-detail/**" access="hasRole('ROLE_USER')" />
 		<intercept-url pattern="/exceptions**" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/exceptions/**" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/gallery-admin**" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/gallery-admin/**" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/league-admin**" access="hasRole('ROLE_USER')" />
 		<intercept-url pattern="/league-admin/**" access="hasRole('ROLE_USER')" />
 		<intercept-url pattern="/league-detail**" access="hasRole('ROLE_USER')" />

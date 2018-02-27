@@ -6,9 +6,9 @@
 </div>
 
 <p class="resultLeagueHeader"><c:out value="${league.name}" /> | <c:out value="${league.user.username}" /></p>
-<p class="resultLeagueInformation"><c:out value="${league.additionalInfo}" /></p>
-<p class="resultLeagueDate"><fmt:formatDate value="${league.creationDate}" pattern="yyyy/MM/dd"/></p>
-<a href="#modalLocation" class="btn btn-sm btn-info" data-toggle="modal">Ubicación</a>
+<p class="resultLeagueInformation">Información adicional: <c:out value="${league.additionalInfo}" /></p>
+<p class="resultLeagueDate">Fecha de creación: <fmt:formatDate value="${league.creationDate}" pattern="yyyy/MM/dd"/></p>
+<a href="#modalLocation" class="btn btn-sm btn-warning" data-toggle="modal">Ubicación</a>
 
 <div id="modalLocation" class="modal fade modalLeague">
 	<div class="modal-dialog">

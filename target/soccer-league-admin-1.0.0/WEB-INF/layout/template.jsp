@@ -78,6 +78,9 @@
 				    	<security:authorize access="hasRole('ROLE_ADMIN')">
 							<li class="${current == 'world-news' ? 'active' : ''}"><a class="nav-link" href='<spring:url value="/world-news.html"></spring:url>'>Noticias del mundo</a></li>
 				    	</security:authorize>
+				    	<security:authorize access="hasRole('ROLE_ADMIN')">
+							<li class="${current == 'gallery-admin' ? 'active' : ''}"><a class="nav-link" href='<spring:url value="/gallery-admin.html"></spring:url>'>Galería</a></li>
+				    	</security:authorize>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<security:authorize access="!isAuthenticated()">

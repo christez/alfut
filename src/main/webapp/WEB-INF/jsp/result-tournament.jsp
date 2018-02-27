@@ -104,10 +104,10 @@
 							</div>
 						
 							<a class="left carousel-control" href="#scheduleCarousel_<c:out value="${schedule.id}"/>" data-slide="prev">
-								<img alt="Left" src='<c:url value="/resources/images/leftArrow.png"/>' >
+								<img class="carouselControlImage" alt="Left" src='<c:url value="/resources/images/leftArrow.png"/>' >
 							</a>
 							<a class="right carousel-control" href="#scheduleCarousel_<c:out value="${schedule.id}"/>" data-slide="next">
-								<img alt="Right" src='<c:url value="/resources/images/rightArrow.png"/>' >
+								<img class="carouselControlImage" alt="Right" src='<c:url value="/resources/images/rightArrow.png"/>' >
 							</a>
 						</div>
 						
@@ -198,10 +198,10 @@
 											</div>
 										
 											<a class="left carousel-control" href="#scheduleCarousel_<c:out value="${schedule.id}"/>" data-slide="prev">
-												<img alt="Left" src='<c:url value="/resources/images/leftArrow.png"/>' >
+												<img class="carouselControlImage" alt="Left" src='<c:url value="/resources/images/leftArrow.png"/>' >
 											</a>
 											<a class="right carousel-control" href="#scheduleCarousel_<c:out value="${schedule.id}"/>" data-slide="next">
-												<img alt="Right" src='<c:url value="/resources/images/rightArrow.png"/>' >
+												<img class="carouselControlImage" alt="Right" src='<c:url value="/resources/images/rightArrow.png"/>' >
 											</a>
 										</div>
 										
