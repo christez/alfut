@@ -198,6 +198,36 @@ public class ScheduleAdminController {
 		}
 	}
 	
+	@RequestMapping(value = "/schedule-admin", method = RequestMethod.POST, params = "playoffsOnly")
+	public String addSchedulePlayoffs(Model model, @Valid @ModelAttribute("tournament") Tournament tournament, BindingResult result, Principal principal, HttpSession session, RedirectAttributes redirectAttributes) {
+		int tournamentId = getTournamentId(session);
+		
+		if(result.hasErrors())
+			return schedule(model, principal, String.valueOf(tournamentId), session, redirectAttributes);
+		
+		if(tournamentId == 0) {
+			redirectAttributes.addFlashAttribute("redirectedError", true);
+			redirectAttributes.addFlashAttribute("message", "No hay torneos asignados a la liga");
+			return "redirect:/league-admin.html";
+		}else {
+			try {
+				scheduleService.generateSchedulePlayoffs(tournamentId, tournament);
+				
+				redirectAttributes.addFlashAttribute("success", true);
+				redirectAttributes.addFlashAttribute("message", "Rol de enfrentamientos creado exitósamente");
+				return "redirect:/schedule-admin.html";
+			}catch(NoTeamsFoundException ntfe) {
+				redirectAttributes.addFlashAttribute("redirectedError", true);
+				redirectAttributes.addFlashAttribute("message", ntfe.getMessage());
+				return "redirect:/schedule-admin.html";
+			}catch(NotEnoughTeamsFoundException netfe) {
+				redirectAttributes.addFlashAttribute("redirectedError", true);
+				redirectAttributes.addFlashAttribute("message", netfe.getMessage());
+				return "redirect:/schedule-admin.html";
+			}
+		}
+	}
+	
 	private int getTournamentId(HttpSession session) {
 		try {
 			return Integer.parseInt(session.getAttribute("tournamentId").toString());

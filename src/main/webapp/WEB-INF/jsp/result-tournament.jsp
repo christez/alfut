@@ -20,10 +20,11 @@
 	</c:when>
 	<c:otherwise>
 		<ul class="nav nav-tabs" role="tablist">
-			<li role="presentation"><a href="#schedules" aria-controls="schedules" role="tab" data-toggle="tab">Jornadas</a></li>
-			<li role="presentation"><a href="#positions" aria-controls="positions" role="tab" data-toggle="tab">Posiciones</a></li>
-			
-			<c:if test="${tournamentSchedules.type eq 'Por puntos más liguilla' or tournamentSchedules.type eq 'Por grupos más liguilla'}">
+			<c:if test="${tournamentSchedules.type ne 'Por liguilla'}">
+				<li role="presentation"><a href="#schedules" aria-controls="schedules" role="tab" data-toggle="tab">Jornadas</a></li>
+				<li role="presentation"><a href="#positions" aria-controls="positions" role="tab" data-toggle="tab">Posiciones</a></li>
+			</c:if>
+			<c:if test="${tournamentSchedules.type eq 'Por puntos más liguilla' or tournamentSchedules.type eq 'Por grupos más liguilla' or tournamentSchedules.type eq 'Por liguilla'}">
 				<li role="presentation"><a href="#playoffs" aria-controls="playoffs" role="tab" data-toggle="tab">Liguilla</a></li>
 			</c:if>
 			
@@ -385,7 +386,7 @@
 					</div>
 				</c:if>
 			</div>
-			<c:if test="${tournamentSchedules.type eq 'Por puntos más liguilla' or tournamentSchedules.type eq 'Por grupos más liguilla'}">
+			<c:if test="${tournamentSchedules.type eq 'Por puntos más liguilla' or tournamentSchedules.type eq 'Por grupos más liguilla' or tournamentSchedules.type eq 'Por liguilla'}">
 				<div role="tabpanel" class="tab-pane resultTournamentPlayoffs" id="playoffs">
 					<div class="row">
 						<div class="col-md-12">

@@ -565,4 +565,106 @@ public class ScheduleServiceImpl implements ScheduleService {
 		tournament.setGamesPlayed(0);
 		tournament.setSelection(tournamentAux.getSelection());
 	}
+
+	@Override
+	@Transactional
+	public void generateSchedulePlayoffs(int tournamentId, Tournament tournamentAux) throws NoTeamsFoundException, NotEnoughTeamsFoundException {
+		Tournament tournament = tournamentRepository.findOne(tournamentId);
+		List<Team> teams = teamRepository.findByTournamentOrderByPointsDescGoalsDifferenceDescGoalsFavorDesc(tournament);
+		
+		if(teams == null)
+			throw new NoTeamsFoundException();
+		
+		System.out.println("Number of teams: " + teams.size());
+		
+		if(teams.size() == 2 || teams.size() == 4 || teams.size() == 8 || teams.size() == 16 || teams.size() == 32) {
+			int pointsCounter = teams.size();
+			
+			for(Team team: teams)
+				team.setPoints(pointsCounter--);
+			
+			int numberofSchedules = 0;
+			int numberOfClassified = teams.size();
+			
+			switch(numberOfClassified) {
+				case 2:
+					numberofSchedules = 1;
+					break;
+				case 4:
+					numberofSchedules = 2;
+					break;
+				case 8:
+					numberofSchedules = 3;
+					break;
+				case 16:
+					numberofSchedules = 4;
+					break;
+				case 32:
+					numberofSchedules = 5;
+					break;
+				default:
+					throw new NotEnoughTeamsFoundException("Equipos no suficientes para generar la liguilla");
+			}
+			
+			for(int counter = 0; counter < numberofSchedules; counter++) {
+				Playoff playoff = new Playoff();
+				playoff.setTournament(tournament);
+				
+				int numberOfMatches = numberOfClassified / 2;
+				int numberOfGames = 0;
+				
+				if(counter == 0) {
+					playoff.setStatus("Programado");
+					
+					for(int counterMatches = 0; counterMatches < numberOfMatches; counterMatches++) {
+						Match match = new Match();
+						match.setPlayoff(playoff);
+						match.setTeamLocalId(teams.get(counterMatches).getId());
+						match.setTeamLocalName(teams.get(counterMatches).getName());
+						match.setTeamVisitorId(teams.get(numberOfClassified - counterMatches -1).getId());
+						match.setTeamVisitorName(teams.get(numberOfClassified - counterMatches -1).getName());
+						match.setStatus("No jugado");
+						
+						LocalDateTime now = LocalDateTime.now();
+						match.setDate(now.getYear() + "/" + now.getMonthValue() + "/" + now.getDayOfMonth());
+						match.setTime(now.getHour() + ":" + now.getMinute());
+						
+						matchRepository.save(match);
+						numberOfGames++;
+					}
+				}else {
+					playoff.setStatus("Pendiente");
+					
+					for(int counterMatches = 0; counterMatches < numberOfMatches; counterMatches++) {
+						Match match = new Match();
+						match.setPlayoff(playoff);
+						match.setTeamLocalId(0);
+						match.setTeamLocalName("Indefinido");
+						match.setTeamVisitorId(0);
+						match.setTeamVisitorName("Indefinido");
+						match.setStatus("No jugado");
+						
+						LocalDateTime now = LocalDateTime.now();
+						match.setDate(now.getYear() + "/" + now.getMonthValue() + "/" + now.getDayOfMonth());
+						match.setTime(now.getHour() + ":" + now.getMinute());
+						
+						matchRepository.save(match);
+						numberOfGames++;
+					}
+				}	
+				
+				numberOfClassified /= 2;
+				playoff.setGamesProgrammed(numberOfGames);
+				playoffRepository.save(playoff);
+			}
+			
+			tournament.setNumberClassified(numberOfClassified);
+			tournament.setSchema("Una vuelta");
+			tournament.setScheduleGenerated(true);
+			tournament.setStatus("Liguilla");
+			tournament.setGamesProgrammed(0);
+			tournament.setGamesPlayed(0);
+		}else
+			throw new NotEnoughTeamsFoundException("Equipos no suficientes para generar la liguilla. Debes tener 2, 4, 8, 16 o 32 equipos creados");
+	}
 }

@@ -10,4 +10,6 @@ public interface ScheduleService {
 	void generateSchedulePoints(int tournamentId, Tournament tournament, String params) throws NoTeamsFoundException, NotEnoughTeamsFoundException;
 
 	void generateScheduleGroups(int tournamentId, Tournament tournament) throws NotEnoughClustersFoundException, IncorrectNumberOfClustersException, NoTeamsFoundException, NotEnoughTeamsFoundException;
+	
+	void generateSchedulePlayoffs(int tournamentId, Tournament tournament) throws NoTeamsFoundException, NotEnoughTeamsFoundException;
 }

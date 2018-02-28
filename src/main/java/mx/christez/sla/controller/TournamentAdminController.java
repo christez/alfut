@@ -39,6 +39,7 @@ public class TournamentAdminController {
 		types.add("Por puntos");
 		types.add("Por puntos más liguilla");
 		types.add("Por grupos más liguilla");
+		types.add("Por liguilla");
 		
 		return types;
 	}

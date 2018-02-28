@@ -7,7 +7,7 @@
 
 <a href='<spring:url value="/tournament-admin.html" />' class="btn btn-lg btn-info" data-toggle="modal">Volver a "Torneos"</a>
 
-<c:if test="${tournament.type eq 'Por puntos' or tournament.type eq 'Por puntos más liguilla'}">
+<c:if test="${tournament.type eq 'Por puntos' or tournament.type eq 'Por puntos más liguilla' or tournament.type eq 'Por liguilla'}">
 	<c:if test="${tournament.status eq 'Configuración'}">
 		<a href="#pointsModal" class="btn btn-lg btn-primary" data-toggle="modal">Crear equipo</a>
 	</c:if>
@@ -48,7 +48,7 @@
 	</div>
 </c:if>
 
-<c:if test="${tournament.type eq 'Por puntos' or tournament.type eq 'Por puntos más liguilla'}">
+<c:if test="${tournament.type eq 'Por puntos' or tournament.type eq 'Por puntos más liguilla' or tournament.type eq 'Por liguilla'}">
 	<c:choose>
 		<c:when test="${empty(tournament.teams)}">
 			<div class="alert alert-warning">

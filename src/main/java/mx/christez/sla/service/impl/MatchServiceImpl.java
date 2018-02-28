@@ -268,6 +268,62 @@ public class MatchServiceImpl implements MatchService {
 						}
 					}
 				}
+				
+				if(tournament.getType().equals("Por liguilla")) {
+					List<Playoff> playoffs = playoffRepository.findByTournamentOrderByIdAsc(tournament);
+					List<Team> teams = teamRepository.findByTournamentOrderByPointsDescGoalsDifferenceDescGoalsFavorDesc(tournament);
+					
+					for(int counter = 0; counter < playoffs.size(); counter++){
+						if(playoffs.get(counter).getStatus().equals("Programado")){
+							List<Match> matches = playoffs.get(counter).getMatches();
+							int numberOfMatches = matches.size();
+							int numberOfPlayedMatches = 0;
+							List<String> winningTeams = new ArrayList<String>();
+							
+							for(int innerCounter = 0; innerCounter < numberOfMatches; innerCounter++) {
+								if(matches.get(innerCounter).getStatus().equals("Jugado"))
+									numberOfPlayedMatches++;
+								
+								if(matches.get(innerCounter).getGoalsLocal() == matches.get(innerCounter).getGoalsVisitor()) {
+									String winningTeam = findWinningTeamByTablePosition(teams, matches.get(innerCounter).getTeamLocalId(), matches.get(innerCounter).getTeamLocalName(), matches.get(innerCounter).getTeamVisitorId(), matches.get(innerCounter).getTeamVisitorName());
+									matches.get(innerCounter).setWinner(winningTeam);
+									winningTeams.add(winningTeam);
+								}else {
+									if(matches.get(innerCounter).getGoalsLocal() > matches.get(innerCounter).getGoalsVisitor()) {
+										matches.get(innerCounter).setWinner(matches.get(innerCounter).getTeamLocalName());
+										winningTeams.add(matches.get(innerCounter).getTeamLocalId() + "|" + matches.get(innerCounter).getTeamLocalName());
+									}else {
+										matches.get(innerCounter).setWinner(matches.get(innerCounter).getTeamVisitorName());
+										winningTeams.add(matches.get(innerCounter).getTeamVisitorId() + "|" + matches.get(innerCounter).getTeamVisitorName());
+									}
+								}
+							}
+							
+							if(numberOfPlayedMatches == numberOfMatches) {
+								playoffs.get(counter).setStatus("Concluido");
+								
+								if(playoffs.size() > 1 && counter < playoffs.size() - 1) {
+									playoffs.get(counter + 1).setStatus("Programado");
+								
+									List<String> sortedWinningTeams = sortWinningTeams(teams, winningTeams);
+									List<Match> nextMatches = playoffs.get(counter + 1).getMatches();
+									
+									for(int counterMatches = 0; counterMatches < nextMatches.size(); counterMatches++){
+										nextMatches.get(counterMatches).setTeamLocalId(Integer.parseInt(sortedWinningTeams.get(counterMatches).split("\\|")[0]));
+										nextMatches.get(counterMatches).setTeamLocalName(sortedWinningTeams.get(counterMatches).split("\\|")[1]);
+										nextMatches.get(counterMatches).setTeamVisitorId(Integer.parseInt(sortedWinningTeams.get(sortedWinningTeams.size() - counterMatches - 1).split("\\|")[0]));
+										nextMatches.get(counterMatches).setTeamVisitorName(sortedWinningTeams.get(sortedWinningTeams.size() - counterMatches - 1).split("\\|")[1]);
+									}
+								}else{
+									tournament.setWinner(playoffs.get(playoffs.size() - 1).getMatches().get(0).getWinner());
+									tournament.setStatus("Finalizado");
+								}
+							}
+							
+							break;
+						}
+					}
+				}
 			}
 		}
 	}
