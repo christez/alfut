@@ -122,8 +122,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         return;
       out.write("' alt=\"imageTwo\" class=\"indexCarouselImage\">\r\n");
       out.write("\t\t\t<div class=\"carousel-caption indexCarouselText\">\r\n");
-      out.write("\t\t        <h2>Escoge entre tres tipos de torneos</h2>\r\n");
-      out.write("\t\t        <h4>Puntos | Liguilla | Grupos</h4>\r\n");
+      out.write("\t\t        <h2>Escoge entre cuatro tipos de torneos</h2>\r\n");
+      out.write("\t\t        <h4>Puntos | Liguilla | Grupos | Copa</h4>\r\n");
       out.write("\t\t\t</div>\r\n");
       out.write("\t\t</div>\r\n");
       out.write("\r\n");

@@ -24,8 +24,8 @@
 		<div class="item">
 			<img src='<c:url value="/resources/images/indexCarouselBackground.png"/>' alt="imageTwo" class="indexCarouselImage">
 			<div class="carousel-caption indexCarouselText">
-		        <h2>Escoge entre tres tipos de torneos</h2>
-		        <h4>Puntos | Liguilla | Grupos</h4>
+		        <h2>Escoge entre cuatro tipos de torneos</h2>
+		        <h4>Puntos | Liguilla | Grupos | Copa</h4>
 			</div>
 		</div>
 
