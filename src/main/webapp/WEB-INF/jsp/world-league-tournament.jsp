@@ -29,7 +29,7 @@
 					<div class="form-group">
 						<label for="textForMatches" class="col-sm-2 control-label">Partidos:</label>
 						<div class="col-sm-10">
-							<form:textarea path="textForMatches" cssClass="form-control" maxlength="1024" placeholder="Fecha#GolesLocal#NombreLocal#Hora#GolesVisitante#NombreVisitante"/>
+							<form:textarea path="textForMatches" cssClass="form-control" maxlength="1024"/>
 							<form:errors path="textForMatches"/>
 						</div>
 					</div>
@@ -75,12 +75,11 @@
 				<table class="table table-bordered table-xs table-condensed teamTable">
 					<thead class="teamTableHeader">
 						<tr>
-							<th>Marcador local</th>
-							<th>Local</th>
-							<th>Visitante</th>
-							<th>Marcador visitante</th>
 							<th>Fecha</th>
 							<th>Hora</th>
+							<th>Local</th>
+							<th>Visitante</th>
+							<th>Resultado</th>
 							<th>Modificar</th>
 							<th>Eliminar</th>
 						</tr>
@@ -89,7 +88,10 @@
 						<c:forEach items="${schedule.matches}" var="match">
 							<tr class="teamTableHover">
 								<td>
-									<c:out value="${match.localGoals}" />
+									<c:out value="${match.date}" />
+								</td>
+								<td>
+									<c:out value="${match.time}" />
 								</td>
 								<td>
 									<c:out value="${match.localName}" />
@@ -98,13 +100,7 @@
 									<c:out value="${match.visitorName}" />
 								</td>
 								<td>
-									<c:out value="${match.visitorGoals}" />
-								</td>
-								<td>
-									<c:out value="${match.date}" />
-								</td>
-								<td>
-									<c:out value="${match.time}" />
+									<c:out value="${match.result}" />
 								</td>
 								<td>
 									<a href='<spring:url value="/world-league-tournament-detail.html?rpMatchId=${match.id}" />' class="btn btn-info btn-xs">Modificar</a>

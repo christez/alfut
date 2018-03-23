@@ -10,25 +10,18 @@ import javax.persistence.ManyToOne;
 @Entity
 public class WorldTeam {
 	@Column(name = "games_drawed")
-	private int gamesDrawed;
+	private String gamesDrawed;
 	
 	@Column(name = "games_lost")
-	private int gamesLost;
+	private String gamesLost;
 	
 	@Column(name = "games_played")
-	private int gamesPlayed;
+	private String gamesPlayed;
 	
 	@Column(name = "games_won")
-	private int gamesWon;
+	private String gamesWon;
 	
-	@Column(name = "goals_against")
-	private int goalsAgainst;
-	
-	@Column(name = "goals_difference")
-	private int goalsDifference;
-	
-	@Column(name = "goals_favor")
-	private int goalsFavor;
+	private String goals;
 	
 	@Id
 	@GeneratedValue
@@ -36,66 +29,52 @@ public class WorldTeam {
 	
 	private String name;
 	
-	private int points;
+	private String points;
+	
+	private String position;
 	
 	@ManyToOne
 	@JoinColumn(name = "ranking_id")
 	private WorldRanking ranking;
 
-	public int getGamesDrawed() {
+	public String getGamesDrawed() {
 		return gamesDrawed;
 	}
 
-	public void setGamesDrawed(int gamesDrawed) {
+	public void setGamesDrawed(String gamesDrawed) {
 		this.gamesDrawed = gamesDrawed;
 	}
 
-	public int getGamesLost() {
+	public String getGamesLost() {
 		return gamesLost;
 	}
 
-	public void setGamesLost(int gamesLost) {
+	public void setGamesLost(String gamesLost) {
 		this.gamesLost = gamesLost;
 	}
 
-	public int getGamesPlayed() {
+	public String getGamesPlayed() {
 		return gamesPlayed;
 	}
 
-	public void setGamesPlayed(int gamesPlayed) {
+	public void setGamesPlayed(String gamesPlayed) {
 		this.gamesPlayed = gamesPlayed;
 	}
 
-	public int getGamesWon() {
+	public String getGamesWon() {
 		return gamesWon;
 	}
 
-	public void setGamesWon(int gamesWon) {
+	public void setGamesWon(String gamesWon) {
 		this.gamesWon = gamesWon;
 	}
 
-	public int getGoalsAgainst() {
-		return goalsAgainst;
+	public String getGoals() {
+		return goals;
 	}
 
-	public void setGoalsAgainst(int goalsAgainst) {
-		this.goalsAgainst = goalsAgainst;
-	}
-
-	public int getGoalsDifference() {
-		return goalsDifference;
-	}
-
-	public void setGoalsDifference(int goalsDifference) {
-		this.goalsDifference = goalsDifference;
-	}
-
-	public int getGoalsFavor() {
-		return goalsFavor;
-	}
-
-	public void setGoalsFavor(int goalsFavor) {
-		this.goalsFavor = goalsFavor;
+	public void setGoals(String goals) {
+		this.goals = goals;
 	}
 
 	public Integer getId() {
@@ -114,11 +93,11 @@ public class WorldTeam {
 		this.name = name;
 	}
 
-	public int getPoints() {
+	public String getPoints() {
 		return points;
 	}
 
-	public void setPoints(int points) {
+	public void setPoints(String points) {
 		this.points = points;
 	}
 
@@ -128,5 +107,13 @@ public class WorldTeam {
 
 	public void setRanking(WorldRanking ranking) {
 		this.ranking = ranking;
+	}
+
+	public String getPosition() {
+		return position;
+	}
+
+	public void setPosition(String position) {
+		this.position = position;
 	}
 }

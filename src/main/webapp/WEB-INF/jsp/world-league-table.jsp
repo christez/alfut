@@ -29,7 +29,7 @@
 					<div class="form-group">
 						<label for="textForTeams" class="col-sm-2 control-label">Equipos:</label>
 						<div class="col-sm-10">
-							<form:textarea path="textForTeams" cssClass="form-control" maxlength="1024" placeholder="Club|Club|Club"/>
+							<form:textarea path="textForTeams" cssClass="form-control" maxlength="1024" />
 							<form:errors path="textForTeams"/>
 						</div>
 					</div>
@@ -75,27 +75,23 @@
 				<table class="table table-bordered table-xs table-condensed teamTable">
 					<thead class="teamTableHeader">
 						<tr>
-							<th>#</th>
-							<th>Club</th>
-							<th>PJ</th>
-							<th>G</th>
-							<th>E</th>
-							<th>P</th>
-							<th>GF</th>
-							<th>GC</th>
-							<th>DG</th>
-							<th>Pts</th>
+							<th>Posición</th>
+							<th>Equipo</th>
+							<th>Juegos jugados</th>
+							<th>Ganados</th>
+							<th>Empatados</th>
+							<th>Perdidos</th>
+							<th>GF:GC</th>
+							<th>Puntos</th>
 							<th>Modificar</th>
 							<th>Eliminar</th>
 						</tr>
 					</thead>
 					<tbody>
-						<c:set var="positionCounter" scope="session" value="${1}"/>
-						
 						<c:forEach items="${ranking.teams}" var="team">
 							<tr class="teamTableHover">
-								<td class="teamTableBolder">
-									<c:out value="${positionCounter}" />
+								<td>
+									<c:out value="${team.position}" />
 								</td>
 								<td>
 									<c:out value="${team.name}" />
@@ -113,13 +109,7 @@
 									<c:out value="${team.gamesLost}" />
 								</td>
 								<td>
-									<c:out value="${team.goalsFavor}" />
-								</td>
-								<td>
-									<c:out value="${team.goalsAgainst}" />
-								</td>
-								<td>
-									<c:out value="${team.goalsDifference}" />
+									<c:out value="${team.goals}" />
 								</td>
 								<td>
 									<c:out value="${team.points}" />
@@ -131,8 +121,6 @@
 									<a href='<spring:url value="/world-league-table/remove/team/${team.id}.html" />' class="btn btn-danger btn-xs triggerRemove">Eliminar</a>
 								</td>
 							</tr>
-							
-							<c:set var="positionCounter" scope="session" value="${positionCounter + 1}"/>
 						</c:forEach>
 					</tbody>
 				</table>

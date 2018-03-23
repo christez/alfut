@@ -32,11 +32,10 @@ public class WorldMatchServiceImpl implements WorldMatchService {
 		WorldMatch worldMatch = worldMatchRepository.findOne(matchId);
 		
 		worldMatch.setDate(match.getDate());
-		worldMatch.setLocalGoals(match.getLocalGoals());
 		worldMatch.setLocalName(match.getLocalName());
-		worldMatch.setTime(match.getTime());
-		worldMatch.setVisitorGoals(match.getVisitorGoals());
+		worldMatch.setResult(match.getResult());
 		worldMatch.setVisitorName(match.getVisitorName());
+		worldMatch.setTime(match.getVisitorName());
 	}
 	
 }

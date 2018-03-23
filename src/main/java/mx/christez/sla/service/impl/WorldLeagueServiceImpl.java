@@ -86,7 +86,7 @@ public class WorldLeagueServiceImpl implements WorldLeagueService {
 			List<WorldRanking> rankings = worldRankingRepository.findByTournamentOrderByNameAsc(tournament);
 			
 			for(WorldRanking ranking: rankings) {
-				List<WorldTeam> teams = worldTeamRepository.findByRankingOrderByPointsDescGoalsDifferenceDescGoalsFavorDesc(ranking);
+				List<WorldTeam> teams = worldTeamRepository.findByRanking(ranking);
 				ranking.setTeams(teams);
 			}
 				

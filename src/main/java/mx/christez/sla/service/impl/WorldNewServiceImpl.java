@@ -59,7 +59,7 @@ public class WorldNewServiceImpl implements WorldNewService {
 			long differenceInMillies = Math.abs(currentDate.getTime() - currentNew.getCreationDate().getTime());
 		    long differrenceInDays = TimeUnit.DAYS.convert(differenceInMillies, TimeUnit.MILLISECONDS);
 		    
-		    if(differrenceInDays > 30)
+		    if(differrenceInDays > 7)
 		    	worldNewRepository.delete(currentNew);
 		}
 	}

@@ -26,10 +26,17 @@
 <form:form commandName="match" cssClass="form-horizontal matchForm">
 	<h2 class="form-team-update-heading">Información del enfrentamiento</h2>
 	<div class="form-group">
-		<label for="localGoals" class="col-sm-3 control-label">Goles del equipo local:</label>
+		<label for="date" class="col-sm-3 control-label">Fecha del juego:</label>
 		<div class="col-sm-9">
-			<form:input path="localGoals" cssClass="form-control" maxlength="5" />
-			<form:errors path="localGoals" />
+			<form:input path="date" cssClass="form-control" maxlength="20" />
+			<form:errors path="date" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="time" class="col-sm-3 control-label">Hora del juego:</label>
+		<div class="col-sm-9">
+			<form:input path="time" cssClass="form-control" maxlength="20" />
+			<form:errors path="time" />
 		</div>
 	</div>
 	<div class="form-group">
@@ -47,24 +54,10 @@
 		</div>
 	</div>
 	<div class="form-group">
-		<label for="visitorGoals" class="col-sm-3 control-label">Goles del equipo local:</label>
+		<label for="result" class="col-sm-3 control-label">Resultado:</label>
 		<div class="col-sm-9">
-			<form:input path="visitorGoals" cssClass="form-control" maxlength="5" />
-			<form:errors path="visitorGoals" />
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="date" class="col-sm-3 control-label">Fecha del juego:</label>
-		<div class="col-sm-9">
-			<form:input path="date" cssClass="form-control" maxlength="20" />
-			<form:errors path="date" />
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="time" class="col-sm-3 control-label">Hora del juego:</label>
-		<div class="col-sm-9">
-			<form:input path="time" cssClass="form-control" maxlength="20" />
-			<form:errors path="time" />
+			<form:input path="result" cssClass="form-control" maxlength="5" />
+			<form:errors path="result" />
 		</div>
 	</div>
 	<div class="form-group" align="center">
@@ -89,25 +82,22 @@
 		
 		$(".matchForm").validate({
 				rules: {
-					localGoals: {
+					date: {
 						required: true
+					},
+					time: {
+						validSelect: true
 					},
 					localName: {
-						required: true
-					},
-					visitorGoals: {
 						required: true
 					},
 					visitorName: {
 						required: true
 					},
-					date: {
-						required: true,
-						date: true
-					},
-					time: {
-						validSelect: true
+					result: {
+						required: true
 					}
+					
 				},
 				highlight: function(element){
 					$(element).closest(".form-group").removeClass("has-success").addClass("has-error");
@@ -116,23 +106,19 @@
 					$(element).closest(".form-group").removeClass("has-error").addClass("has-success");
 				},
 				messages: {
-					localGoals: {
+					date: {
+						required: "Campo faltante"
+					},
+					time: {
 						required: "Campo faltante"
 					},
 					localName: {
 						required: "El nombre debe tener al menos 1 caracterer"
 					},
-					visitorGoals: {
-						required: "Campo faltante"
-					},
 					visitorName: {
 						required: "El nombre debe tener al menos 1 caracterer"
 					},						
-					date: {
-						required: "Campo faltante",
-						date: "Ingresa una fecha válida: yyyy/mm/dd"
-					},
-					time: {
+					result: {
 						required: "Campo faltante"
 					}
 				}

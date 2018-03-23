@@ -15,18 +15,14 @@ public class WorldMatch {
 	@GeneratedValue
 	private Integer id;
 	
-	@Column(name = "local_goals")
-	private String localGoals;
-	
 	@Column(name = "local_name")
 	private String localName;
+	
+	private String result;
 	
 	@ManyToOne
 	@JoinColumn(name = "schedule_id")
 	private WorldSchedule schedule;
-	
-	@Column(name = "visitor_goals")
-	private String visitorGoals;
 	
 	@Column(name = "visitor_name")
 	private String visitorName;
@@ -49,14 +45,6 @@ public class WorldMatch {
 		this.id = id;
 	}
 
-	public String getLocalGoals() {
-		return localGoals;
-	}
-
-	public void setLocalGoals(String localGoals) {
-		this.localGoals = localGoals;
-	}
-
 	public String getLocalName() {
 		return localName;
 	}
@@ -65,20 +53,20 @@ public class WorldMatch {
 		this.localName = localName;
 	}
 
+	public String getResult() {
+		return result;
+	}
+
+	public void setResult(String result) {
+		this.result = result;
+	}
+
 	public WorldSchedule getSchedule() {
 		return schedule;
 	}
 
 	public void setSchedule(WorldSchedule schedule) {
 		this.schedule = schedule;
-	}
-
-	public String getVisitorGoals() {
-		return visitorGoals;
-	}
-
-	public void setVisitorGoals(String visitorGoals) {
-		this.visitorGoals = visitorGoals;
 	}
 
 	public String getVisitorName() {

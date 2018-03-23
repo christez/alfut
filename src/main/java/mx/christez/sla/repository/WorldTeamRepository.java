@@ -8,5 +8,5 @@ import mx.christez.sla.entity.WorldRanking;
 import mx.christez.sla.entity.WorldTeam;
 
 public interface WorldTeamRepository extends JpaRepository<WorldTeam, Integer>{
-	List<WorldTeam> findByRankingOrderByPointsDescGoalsDifferenceDescGoalsFavorDesc(WorldRanking ranking);
+	List<WorldTeam> findByRanking(WorldRanking ranking);
 }

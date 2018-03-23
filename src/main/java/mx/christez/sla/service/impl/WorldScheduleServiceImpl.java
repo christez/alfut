@@ -40,13 +40,13 @@ public class WorldScheduleServiceImpl implements WorldScheduleService {
 			try {
 				String [] data = match.split("#");
 				WorldMatch worldMatch = new WorldMatch();
+				
 				worldMatch.setDate(data[0]);
-				worldMatch.setLocalGoals(data[1]);
 				worldMatch.setLocalName(data[2]);
-				worldMatch.setTime(data[3]);
-				worldMatch.setVisitorGoals(data[4]);
-				worldMatch.setVisitorName(data[5]);
+				worldMatch.setResult(data[4]);
 				worldMatch.setSchedule(schedule);
+				worldMatch.setVisitorName(data[3]);
+				worldMatch.setTime(data[1]);
 				
 				worldMatchRepository.save(worldMatch);
 			}catch(Exception e) {

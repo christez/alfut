@@ -36,7 +36,7 @@ public class WorldRankingServiceImpl implements WorldRankingService {
 		List<WorldRanking> rankings = worldRankingRepository.findByTournamentOrderByNameAsc(tournament);
 		
 		for(WorldRanking ranking: rankings) {
-			List<WorldTeam> teams = worldTeamRepository.findByRankingOrderByPointsDescGoalsDifferenceDescGoalsFavorDesc(ranking);
+			List<WorldTeam> teams = worldTeamRepository.findByRanking(ranking);
 			ranking.setTeams(teams);
 		}
 		
@@ -50,20 +50,22 @@ public class WorldRankingServiceImpl implements WorldRankingService {
 		ranking.setTournament(tournament);
 		worldRankingRepository.save(ranking);
 		
-		String [] teams = ranking.getTextForTeams().split("\\|");
+		String [] positions = ranking.getTextForTeams().split("\\|");
 		
-		for(String team: teams) {
+		for(String position :  positions){
+			String [] data = position.split("#");
+			
 			try {
 				WorldTeam worldTeam = new WorldTeam();
-				worldTeam.setGamesDrawed(0);
-				worldTeam.setGamesLost(0);
-				worldTeam.setGamesPlayed(0);
-				worldTeam.setGamesWon(0);
-				worldTeam.setGoalsAgainst(0);
-				worldTeam.setGoalsDifference(0);
-				worldTeam.setGoalsFavor(0);
-				worldTeam.setName(team);
-				worldTeam.setPoints(0);
+				
+				worldTeam.setGamesDrawed(data[4]);
+				worldTeam.setGamesLost(data[5]);
+				worldTeam.setGamesPlayed(data[2]);
+				worldTeam.setGamesWon(data[3]);
+				worldTeam.setGoals(data[6]);
+				worldTeam.setName(data[1]);
+				worldTeam.setPoints(data[7]);
+				worldTeam.setPosition(data[0]);
 				worldTeam.setRanking(ranking);
 				
 				worldTeamRepository.save(worldTeam);

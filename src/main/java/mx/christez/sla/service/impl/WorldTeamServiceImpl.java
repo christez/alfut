@@ -33,10 +33,9 @@ public class WorldTeamServiceImpl implements WorldTeamService {
 		originalTeam.setGamesLost(team.getGamesLost());
 		originalTeam.setGamesPlayed(team.getGamesPlayed());
 		originalTeam.setGamesWon(team.getGamesWon());
-		originalTeam.setGoalsAgainst(team.getGoalsAgainst());
-		originalTeam.setGoalsDifference(team.getGoalsDifference());
-		originalTeam.setGoalsFavor(team.getGoalsFavor());
+		originalTeam.setGoals(team.getGoals());
 		originalTeam.setName(team.getName());
 		originalTeam.setPoints(team.getPoints());
+		originalTeam.setPosition(team.getPosition());
 	}	
 }

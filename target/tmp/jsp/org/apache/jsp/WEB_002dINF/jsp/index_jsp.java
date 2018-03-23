@@ -202,11 +202,11 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<script type=\"text/javascript\">\r\n");
       out.write("\t$(document).ready(function() {\r\n");
       out.write("\t\t$(\"#indexCarousel\").carousel({\r\n");
-      out.write("\t\t\tinterval : 3000\r\n");
+      out.write("\t\t\tinterval : 5000\r\n");
       out.write("\t\t});\r\n");
       out.write("\t\t\r\n");
       out.write("\t\t$(\"#galleryCarousel\").carousel({\r\n");
-      out.write("\t\t\tinterval : 3000\r\n");
+      out.write("\t\t\tinterval : 5000\r\n");
       out.write("\t\t});\r\n");
       out.write("\t});\r\n");
       out.write("</script>");

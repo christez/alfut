@@ -95,7 +95,7 @@ public final class template_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_meth_c_url_3(_jspx_page_context))
         return;
       out.write("'>\r\n");
-      out.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"https://fonts.googleapis.com/css?family=Montserrat\">\r\n");
+      out.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"https://fonts.googleapis.com/css?family=Comfortaa\">\r\n");
       out.write("<script type=\"text/javascript\" src='");
       if (_jspx_meth_c_url_4(_jspx_page_context))
         return;

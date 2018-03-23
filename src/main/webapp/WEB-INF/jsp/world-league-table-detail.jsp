@@ -54,24 +54,10 @@
 		</div>
 	</div>
 	<div class="form-group">
-		<label for="goalsFavor" class="col-sm-3 control-label">Goles a favor:</label>
+		<label for="goals" class="col-sm-3 control-label">Goles:</label>
 		<div class="col-sm-9">
-			<form:input path="goalsFavor" cssClass="form-control control-goals-favor" maxlength="5" />
-			<form:errors path="goalsFavor" />
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="goalsAgainst" class="col-sm-3 control-label">Goles en contra:</label>
-		<div class="col-sm-9">
-			<form:input path="goalsAgainst" cssClass="form-control control-goals-against" maxlength="5" />
-			<form:errors path="goalsAgainst" />
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="goalsDifference" class="col-sm-3 control-label">Goles de diferencia:</label>
-		<div class="col-sm-9">
-			<form:input path="goalsDifference" cssClass="form-control control-goals-against" maxlength="5" />
-			<form:errors path="goalsDifference" />
+			<form:input path="goals" cssClass="form-control control-goals-favor" maxlength="5" />
+			<form:errors path="goals" />
 		</div>
 	</div>
 	<div class="form-group">
@@ -79,6 +65,13 @@
 		<div class="col-sm-9">
 			<form:input path="points" cssClass="form-control control-points" maxlength="5" />
 			<form:errors path="points" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="position" class="col-sm-3 control-label">Posición:</label>
+		<div class="col-sm-9">
+			<form:input path="position" cssClass="form-control control-points" maxlength="5" />
+			<form:errors path="position" />
 		</div>
 	</div>
 	<div class="form-group" align="center">
@@ -111,19 +104,14 @@
 							required: true,
 							number: true
 						},
-						goalsFavor: {
-							required: true,
-							number: true
-						},
-						goalsAgainst: {
-							required: true,
-							number: true
-						},
-						goalsDifference: {
-							required: true,
-							number: true
+						goals: {
+							required: true
 						},
 						points: {
+							required: true,
+							number: true
+						},
+						position: {
 							required: true,
 							number: true
 						}
@@ -152,19 +140,14 @@
 							required: "Campo faltante",
 							number: "Ingresa solo números"
 						},
-						goalsFavor: {
-							required: "Campo faltante",
-							number: "Ingresa solo números"
-						},
-						goalsAgainst: {
-							required: "Campo faltante",
-							number: "Ingresa solo números"
-						},
-						goalsDifference: {
-							required: "Campo faltante",
-							number: "Ingresa solo números"
+						goals: {
+							required: "Campo faltante"
 						},
 						points: {
+							required: "Campo faltante",
+							number: "Ingresa solo números"
+						},
+						position: {
 							required: "Campo faltante",
 							number: "Ingresa solo números"
 						}

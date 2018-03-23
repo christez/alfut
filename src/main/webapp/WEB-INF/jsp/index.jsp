@@ -193,11 +193,11 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("#indexCarousel").carousel({
-			interval : 3000
+			interval : 5000
 		});
 		
 		$("#galleryCarousel").carousel({
-			interval : 3000
+			interval : 5000
 		});
 	});
 </script>
