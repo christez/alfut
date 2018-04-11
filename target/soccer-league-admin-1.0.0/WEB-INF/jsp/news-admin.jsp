@@ -5,7 +5,7 @@
 
 <hr />
 
-<a href="#myModal" class="btn btn-lg btn-primary" data-toggle="modal">Crear noticia</a>
+<a href="#myModal" class="btn btn-lg btnAdministrationPrimary" data-toggle="modal">Crear noticia</a>
 
 <hr />
 
@@ -45,7 +45,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-					<input type="submit" class="btn btn-primary" value="Crear">
+					<input type="submit" class="btn btnAdministrationPrimary" value="Crear">
 				</div>
 			</div>
 		</div>
@@ -68,11 +68,8 @@
 
 <c:choose>
 	<c:when test="${empty(user.news)}">
-		<div class="alert alert-warning">
-			<strong>No cuentas con ninguna noticia creada. Da click en el botón "Crear noticia" para iniciar</strong>
-		</div>
-		<div align="center">
-			<img alt="warningIcon" src='<c:url value="/resources/images/warningIcon.png"/>'>
+		<div class="emptyDiv" align="center">
+			<strong>No cuentas con ninguna noticia creada.</strong><br />Da click en el botón "Crear noticia" para iniciar
 		</div>
 	</c:when>
 	<c:otherwise>

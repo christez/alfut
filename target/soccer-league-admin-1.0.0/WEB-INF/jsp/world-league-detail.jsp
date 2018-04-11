@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../layout/taglib.jsp"%>
 
-<h1 class="mainHeader"><c:out value="${league.name}" /></h1>
+<h1 class="mainHeader">Liga <span class="orangeColor"><c:out value="${league.name}" /></span></h1>
 
 <hr />
 
 <a href='<spring:url value="/world-league.html" />' class="btn btn-lg btn-info" data-toggle="modal">Volver a "Ligas"</a>
-<a href="#myModal" class="btn btn-lg btn-primary" data-toggle="modal">Crear torneo</a>
+<a href="#myModal" class="btn btn-lg btnAdministrationPrimary" data-toggle="modal">Crear torneo</a>
 
 <hr />
 
@@ -29,7 +29,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-					<input type="submit" class="btn btn-primary" value="Crear">
+					<input type="submit" class="btn btnAdministrationPrimary" value="Crear">
 				</div>
 			</div>
 		</div>
@@ -52,11 +52,8 @@
 
 <c:choose>
 	<c:when test="${empty(league.tournaments)}">
-		<div class="alert alert-warning">
-			<strong>No existe ningún torneo creado. Da click en el botón "Crear torneo" para iniciar</strong>
-		</div>
-		<div align="center">
-			<img alt="warningIcon" src='<c:url value="/resources/images/warningIcon.png"/>'>
+		<div class="emptyDiv" align="center">
+			<strong>No existe ningún torneo creado.</strong><br />Da click en el botón "Crear torneo" para iniciar
 		</div>
 	</c:when>
 	<c:otherwise>

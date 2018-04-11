@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../layout/taglib.jsp"%>
 
-<h1 class="mainHeader">${cluster.name}</h1>
+<h1 class="mainHeader">Grupo <span class="orangeColor">${cluster.name}</span> del torneo <span class="orangeColor"><c:out value="${cluster.tournament.name}" /></span></h1>
 
 <hr />
 
 <a href='<spring:url value="/cluster-admin.html" />' class="btn btn-lg btn-info" data-toggle="modal">Volver a "Grupos"</a>
 
 <c:if test="${cluster.tournament.status eq 'Configuración'}">
-	<a href="#pointsModal" class="btn btn-lg btn-primary" data-toggle="modal">Crear equipo</a>
+	<a href="#pointsModal" class="btn btn-lg btnAdministrationPrimary" data-toggle="modal">Crear equipo</a>
 </c:if>
 
 <form:form commandName="team" cssClass="form-horizontal teamForm">
@@ -30,7 +30,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-					<input type="submit" class="btn btn-primary" value="Crear">
+					<input type="submit" class="btn btnAdministrationPrimary" value="Crear">
 				</div>
 			</div>
 		</div>
@@ -48,11 +48,8 @@
 
 <c:choose>
 	<c:when test="${empty(cluster.teams)}">
-		<div class="alert alert-warning">
-			<strong>No cuentas con ningún equipo creado. Da click en el botón "Crear equipo" para iniciar</strong>
-		</div>
-		<div align="center">
-			<img alt="warningIcon" src='<c:url value="/resources/images/warningIcon.png"/>'>
+		<div class="emptyDiv" align="center">
+			<strong>No cuentas con ningún equipo creado.</strong><br />Da click en el botón "Crear equipo" para iniciar
 		</div>
 	</c:when>
 	<c:otherwise>

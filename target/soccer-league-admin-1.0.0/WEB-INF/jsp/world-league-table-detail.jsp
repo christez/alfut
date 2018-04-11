@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../layout/taglib.jsp"%>
 
-<h1 class="mainHeader">Equipo "${team.name}"</h1>
+<h1 class="mainHeader">Equipo <span class="orangeColor"><c:out value="${team.name}" /></span></h1>
 
 <hr />
 
-<a href='<spring:url value="/world-league-table.html" />' class="btn btn-lg btn-info" data-toggle="modal">Volver a "Tablas"</a>
+<a href='<spring:url value="/world-league-table.html" />' class="btn btn-lg btnAdministrationPrimary" data-toggle="modal">Volver a "Tablas"</a>
 
 <hr />
 
@@ -54,24 +54,10 @@
 		</div>
 	</div>
 	<div class="form-group">
-		<label for="goalsFavor" class="col-sm-3 control-label">Goles a favor:</label>
+		<label for="goals" class="col-sm-3 control-label">Goles:</label>
 		<div class="col-sm-9">
-			<form:input path="goalsFavor" cssClass="form-control control-goals-favor" maxlength="5" />
-			<form:errors path="goalsFavor" />
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="goalsAgainst" class="col-sm-3 control-label">Goles en contra:</label>
-		<div class="col-sm-9">
-			<form:input path="goalsAgainst" cssClass="form-control control-goals-against" maxlength="5" />
-			<form:errors path="goalsAgainst" />
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="goalsDifference" class="col-sm-3 control-label">Goles de diferencia:</label>
-		<div class="col-sm-9">
-			<form:input path="goalsDifference" cssClass="form-control control-goals-against" maxlength="5" />
-			<form:errors path="goalsDifference" />
+			<form:input path="goals" cssClass="form-control control-goals-favor" maxlength="5" />
+			<form:errors path="goals" />
 		</div>
 	</div>
 	<div class="form-group">
@@ -81,8 +67,18 @@
 			<form:errors path="points" />
 		</div>
 	</div>
+	<div class="form-group">
+		<label for="position" class="col-sm-3 control-label">Posición:</label>
+		<div class="col-sm-9">
+			<form:input path="position" cssClass="form-control control-points" maxlength="5" />
+			<form:errors path="position" />
+		</div>
+	</div>
 	<div class="form-group" align="center">
-		<input type="submit" value="Actualizar" class="btn btn-lg btn-primary">
+		<br />
+		<input type="submit" value="Actualizar" class="btn btn-success btnRedirect">
+		<br />
+		<br />
 	</div>
 </form:form>
 
@@ -111,19 +107,14 @@
 							required: true,
 							number: true
 						},
-						goalsFavor: {
-							required: true,
-							number: true
-						},
-						goalsAgainst: {
-							required: true,
-							number: true
-						},
-						goalsDifference: {
-							required: true,
-							number: true
+						goals: {
+							required: true
 						},
 						points: {
+							required: true,
+							number: true
+						},
+						position: {
 							required: true,
 							number: true
 						}
@@ -152,19 +143,14 @@
 							required: "Campo faltante",
 							number: "Ingresa solo números"
 						},
-						goalsFavor: {
-							required: "Campo faltante",
-							number: "Ingresa solo números"
-						},
-						goalsAgainst: {
-							required: "Campo faltante",
-							number: "Ingresa solo números"
-						},
-						goalsDifference: {
-							required: "Campo faltante",
-							number: "Ingresa solo números"
+						goals: {
+							required: "Campo faltante"
 						},
 						points: {
+							required: "Campo faltante",
+							number: "Ingresa solo números"
+						},
+						position: {
 							required: "Campo faltante",
 							number: "Ingresa solo números"
 						}

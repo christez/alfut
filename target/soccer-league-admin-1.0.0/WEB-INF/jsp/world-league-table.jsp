@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../layout/taglib.jsp"%>
 
-<h1 class="mainHeader">Torneo "<c:out value="${tournament.name}" />"</h1>
+<h1 class="mainHeader">Torneo <span class="orangeColor"><c:out value="${tournament.name}" /></span></h1>
 
 <hr />
 
 <a href='<spring:url value="/world-league-detail.html" />' class="btn btn-lg btn-info" data-toggle="modal">Volver a "Torneo"</a>
-<a href="#myModal" class="btn btn-lg btn-primary" data-toggle="modal">Crear tabla</a>
+<a href="#myModal" class="btn btn-lg btnAdministrationPrimary" data-toggle="modal">Crear tabla</a>
 
 <hr />
 
@@ -29,14 +29,14 @@
 					<div class="form-group">
 						<label for="textForTeams" class="col-sm-2 control-label">Equipos:</label>
 						<div class="col-sm-10">
-							<form:textarea path="textForTeams" cssClass="form-control" maxlength="1024" placeholder="Club|Club|Club"/>
+							<form:textarea path="textForTeams" cssClass="form-control" maxlength="1024" />
 							<form:errors path="textForTeams"/>
 						</div>
 					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-					<input type="submit" class="btn btn-primary" value="Crear">
+					<input type="submit" class="btn btnAdministrationPrimary" value="Crear">
 				</div>
 			</div>
 		</div>
@@ -59,11 +59,8 @@
 
 <c:choose>
 	<c:when test="${empty(tournament.rankings)}">
-		<div class="alert alert-warning">
-			<strong>No existe ninguna tabla creada. Da click en el botón "Crear jornada" para iniciar</strong>
-		</div>
-		<div align="center">
-			<img alt="warningIcon" src='<c:url value="/resources/images/warningIcon.png"/>'>
+		<div class="emptyDiv" align="center">
+			<strong>No existe ninguna tabla creada.</strong><br />Da click en el botón "Crear jornada" para iniciar
 		</div>
 	</c:when>
 	<c:otherwise>
@@ -75,27 +72,23 @@
 				<table class="table table-bordered table-xs table-condensed teamTable">
 					<thead class="teamTableHeader">
 						<tr>
-							<th>#</th>
-							<th>Club</th>
-							<th>PJ</th>
-							<th>G</th>
-							<th>E</th>
-							<th>P</th>
-							<th>GF</th>
-							<th>GC</th>
-							<th>DG</th>
-							<th>Pts</th>
+							<th>Posición</th>
+							<th>Equipo</th>
+							<th>Juegos jugados</th>
+							<th>Ganados</th>
+							<th>Empatados</th>
+							<th>Perdidos</th>
+							<th>GF:GC</th>
+							<th>Puntos</th>
 							<th>Modificar</th>
 							<th>Eliminar</th>
 						</tr>
 					</thead>
 					<tbody>
-						<c:set var="positionCounter" scope="session" value="${1}"/>
-						
 						<c:forEach items="${ranking.teams}" var="team">
 							<tr class="teamTableHover">
-								<td class="teamTableBolder">
-									<c:out value="${positionCounter}" />
+								<td>
+									<c:out value="${team.position}" />
 								</td>
 								<td>
 									<c:out value="${team.name}" />
@@ -113,13 +106,7 @@
 									<c:out value="${team.gamesLost}" />
 								</td>
 								<td>
-									<c:out value="${team.goalsFavor}" />
-								</td>
-								<td>
-									<c:out value="${team.goalsAgainst}" />
-								</td>
-								<td>
-									<c:out value="${team.goalsDifference}" />
+									<c:out value="${team.goals}" />
 								</td>
 								<td>
 									<c:out value="${team.points}" />
@@ -131,8 +118,6 @@
 									<a href='<spring:url value="/world-league-table/remove/team/${team.id}.html" />' class="btn btn-danger btn-xs triggerRemove">Eliminar</a>
 								</td>
 							</tr>
-							
-							<c:set var="positionCounter" scope="session" value="${positionCounter + 1}"/>
 						</c:forEach>
 					</tbody>
 				</table>

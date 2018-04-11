@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../layout/taglib.jsp"%>
 
-<h1 class="mainHeader">Jornadas de "${tournament.name}"</h1>
+<h1 class="mainHeader">Jornadas del torneo <span class="orangeColor">${tournament.name}</span></h1>
 
 <hr />
 
@@ -9,7 +9,7 @@
 
 <c:if test="${tournament.type eq 'Por puntos'}">
 	<c:if test="${tournament.scheduleGenerated eq false}">
-		<a href="#pointsModal" class="btn btn-lg btn-primary" data-toggle="modal">Generar enfrentamientos</a>
+		<a href="#pointsModal" class="btn btn-lg btnAdministrationPrimary" data-toggle="modal">Generar enfrentamientos</a>
 		
 		<form:form commandName="tournament" cssClass="form-horizontal tournamentForm tournamentFormPoints">
 			<div id="pointsModal" class="modal fade">
@@ -36,7 +36,7 @@
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-							<input type="submit" class="btn btn-primary" value="Generar" name="points">
+							<input type="submit" class="btn btnAdministrationPrimary" value="Generar" name="points">
 						</div>
 					</div>
 				</div>
@@ -47,7 +47,7 @@
 
 <c:if test="${tournament.type eq 'Por puntos más liguilla'}">
 	<c:if test="${tournament.scheduleGenerated eq false}">
-		<a href="#pointsPlayoffsModal" class="btn btn-lg btn-primary" data-toggle="modal">Generar enfrentamientos</a>
+		<a href="#pointsPlayoffsModal" class="btn btn-lg btnAdministrationPrimary" data-toggle="modal">Generar enfrentamientos</a>
 		
 		<form:form commandName="tournament" cssClass="form-horizontal tournamentForm tournamentFormPointsPlayoffs">
 			<div id="pointsPlayoffsModal" class="modal fade">
@@ -84,7 +84,7 @@
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-							<input type="submit" class="btn btn-primary" value="Generar" name="pointsPlayoffs">
+							<input type="submit" class="btn btnAdministrationPrimary" value="Generar" name="pointsPlayoffs">
 						</div>
 					</div>
 				</div>
@@ -95,7 +95,7 @@
 
 <c:if test="${tournament.type eq 'Por grupos más liguilla'}">
 	<c:if test="${tournament.scheduleGenerated eq false}">
-		<a href="#groupsPlayoffsModal" class="btn btn-lg btn-primary" data-toggle="modal">Generar enfrentamientos</a>
+		<a href="#groupsPlayoffsModal" class="btn btn-lg btnAdministrationPrimary" data-toggle="modal">Generar enfrentamientos</a>
 		
 		<form:form commandName="tournament" cssClass="form-horizontal tournamentForm tournamentFormGroupsPlayoffs">
 			<div id="groupsPlayoffsModal" class="modal fade">
@@ -132,7 +132,35 @@
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-							<input type="submit" class="btn btn-primary" value="Generar" name="groupsPlayoffs">
+							<input type="submit" class="btn btnAdministrationPrimary" value="Generar" name="groupsPlayoffs">
+						</div>
+					</div>
+				</div>
+			</div>
+		</form:form>
+	</c:if>
+</c:if>
+
+<c:if test="${tournament.type eq 'Por liguilla'}">
+	<c:if test="${tournament.scheduleGenerated eq false}">
+		<a href="#playoffsModal" class="btn btn-lg btnAdministrationPrimary" data-toggle="modal">Generar enfrentamientos</a>
+		
+		<form:form commandName="tournament" cssClass="form-horizontal tournamentForm tournamentFormPlayoffs">
+			<div id="playoffsModal" class="modal fade">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title">Generar enfrentamientos por liguilla</h4>
+						</div>
+						<div class="modal-body">
+							<div class="alert alert-warning scheduleWarningNote" align="center">
+								<strong>Una vez generados los enfrentamientos, no podrán realizarse modificaciones</strong>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+							<input type="submit" class="btn btnAdministrationPrimary" value="Generar" name="playoffsOnly">
 						</div>
 					</div>
 				</div>
@@ -161,11 +189,8 @@
 	<c:if test="${tournament.type eq 'Por puntos' or tournament.type eq 'Por puntos más liguilla'}">
 		<c:choose>
 			<c:when test="${empty(tournament.schedules)}">
-				<div class="alert alert-warning">
-					<strong>No se ha generado el rol de juegos. Da click en el botón "Generar enfrentamientos" para iniciar</strong>
-				</div>
-				<div align="center">
-					<img alt="warningIcon" src='<c:url value="/resources/images/warningIcon.png"/>'>
+				<div class="emptyDiv" align="center">
+					<strong>No se ha generado el rol de juegos.</strong><br /> Da click en el botón "Generar enfrentamientos" para iniciar
 				</div>
 			</c:when>
 			<c:otherwise>
@@ -174,18 +199,18 @@
 						<c:set var="scheduleCounter" scope="session" value="${1}"/>
 						
 						<c:forEach items="${tournament.schedules}" var="schedule">
-						    <div class="panel panel-default" style="border: 4px solid rgba(193, 222, 226, 0.25); box-shadow: 3px 3px 3px 3px #417d95; margin-bottom: 15px;">
-						        <div class="panel-heading" style="background-color: #dde7dc;">
+						    <div class="panel panel-default" style="border: 4px solid #F15A24; box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, .25); margin-bottom: 15px;">
+						        <div class="panel-heading" style="background-color: #ffffff;">
 						            <h4 class="panel-title">
-						                <a data-toggle="collapse" data-parent="#accordion" href="#collapse_<c:out value="${schedule.id}"/>" class="btn btn-sm btn-info leagueNameLink">Jornada <c:out value="${scheduleCounter}"/></a>
-						                <span class="scheduleHighlightProgrammed">Número de juegos programados: <c:out value="${schedule.gamesProgrammed}"/></span>
-						                <span class="scheduleHighlightPlayed">Número de juegos jugados: <c:out value="${schedule.gamesPlayed}"/></span>
+						                <a data-toggle="collapse" data-parent="#accordion" href="#collapse_<c:out value="${schedule.id}"/>" class="btn btn-sm btnAdministrationPrimary">Jornada <c:out value="${scheduleCounter}"/></a>
+						                <span class="scheduleHighlightProgrammed">Número de juegos programados:</span> <span class="orangeColor"><c:out value="${schedule.gamesProgrammed}"/></span>
+						                <span class="scheduleHighlightPlayed">Número de juegos jugados:</span> <span class="orangeColor"><c:out value="${schedule.gamesPlayed}"/></span>
 						            </h4>
 						        </div>
 						        <div id="collapse_<c:out value="${schedule.id}"/>" class="panel-collapse collapse">
 						            <div class="panel-body">
 						            	<div class="col-md-4">
-						            		<div class="alert alert-success scheduleDetail">
+						            		<div class="alert alert-warning scheduleDetail">
 												Equipo descanzado: <strong><c:out value="${schedule.restingTeam}"/></strong>
 											</div>
 						            	</div>
@@ -261,12 +286,12 @@
 							<c:set var="playoffCounter" scope="session" value="${1}"/>
 									
 							<c:forEach items="${tournament.playoffs}" var="playoff">
-							    <div class="panel panel-default" style="border: 4px solid rgba(193, 222, 226, 0.25); box-shadow: 3px 3px 3px 3px #417d95; margin-bottom: 15px;">
-							        <div class="panel-heading" style="background-color: #dde7dc;">
+							    <div class="panel panel-default" style="border: 4px solid #F15A24; box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, .25); margin-bottom: 15px;">
+							        <div class="panel-heading" style="background-color: #ffffff;">
 							            <h4 class="panel-title">
-							                <a data-toggle="collapse" data-parent="#accordion" href="#playoff_<c:out value="${playoff.id}"/>" class="btn btn-sm btn-info leagueNameLink">Jornada de eliminación <c:out value="${playoffCounter}"/></a>
-							                <span class="scheduleHighlightProgrammed">Número de juegos programados: <c:out value="${playoff.gamesProgrammed}"/></span>
-							                <span class="scheduleHighlightPlayed">Número de juegos jugados: <c:out value="${playoff.gamesPlayed}"/></span>
+							                <a data-toggle="collapse" data-parent="#accordion" href="#playoff_<c:out value="${playoff.id}"/>" class="btn btn-sm btnAdministrationPrimary">Jornada de eliminación <c:out value="${playoffCounter}"/></a>
+							                <span class="scheduleHighlightProgrammed">Número de juegos programados:</span> <span class="orangeColor"><c:out value="${playoff.gamesProgrammed}"/></span>
+							                <span class="scheduleHighlightPlayed">Número de juegos jugados:</span> <span class="orangeColor"><c:out value="${playoff.gamesPlayed}"/></span>
 							            </h4>
 							        </div>
 							        <div id="playoff_<c:out value="${playoff.id}"/>" class="panel-collapse collapse">
@@ -348,21 +373,18 @@
 	<c:if test="${tournament.type eq 'Por grupos más liguilla'}">
 		<c:choose>
 			<c:when test="${empty(tournament.playoffs)}">
-				<div class="alert alert-warning">
-					<strong>No se ha generado el rol de juegos. Da click en el botón "Generar enfrentamientos" para iniciar</strong>
-				</div>
-				<div align="center">
-					<img alt="warningIcon" src='<c:url value="/resources/images/warningIcon.png"/>'>
+				<div class="emptyDiv" align="center">
+					<strong>No se ha generado el rol de juegos.</strong><br /> Da click en el botón "Generar enfrentamientos" para iniciar
 				</div>
 			</c:when>
 			<c:otherwise>
 				<div class="col-md-12">
 					<div class="panel-group" id="accordion">
 						<c:forEach items="${tournament.clusters}" var="cluster">
-						    <div class="panel panel-default" style="border: 4px solid rgba(193, 222, 226, 0.25); box-shadow: 3px 3px 3px 3px #417d95; margin-bottom: 15px;">
-						        <div class="panel-heading" style="background-color: #dde7dc;">
+						    <div class="panel panel-default" style="border: 4px solid #F15A24; box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, .25); margin-bottom: 15px;">
+						        <div class="panel-heading" style="background-color: #ffffff;">
 						            <h4 class="panel-title">
-						                <a data-toggle="collapse" data-parent="#accordion" href="#collapse_<c:out value="${cluster.id}"/>" class="btn btn-sm btn-info leagueNameLink"><c:out value="${cluster.name}"/></a>
+						                <a data-toggle="collapse" data-parent="#accordion" href="#collapse_<c:out value="${cluster.id}"/>" class="btn btn-sm btnAdministrationPrimary"><c:out value="${cluster.name}"/></a>
 						            </h4>
 						        </div>
 						        <div id="collapse_<c:out value="${cluster.id}"/>" class="panel-collapse collapse">
@@ -372,11 +394,11 @@
 						            	<c:forEach items="${cluster.schedules}" var="schedule">
 						            		<div class="col-md-12">
 						            			<h1 class="clusterScheduleHeader">Jornada <c:out value="${scheduleCounter}"/></h1>
-						            			<p class="scheduleHighlightProgrammed">Número de juegos programados: <c:out value="${schedule.gamesProgrammed}"/></p>
-							                	<p class="scheduleHighlightPlayed">Número de juegos jugados: <c:out value="${schedule.gamesPlayed}"/></p>
+						            			<p class="scheduleHighlightProgrammed">Número de juegos programados: <span class="orangeColor"><c:out value="${schedule.gamesProgrammed}"/></span></p>
+							                	<p class="scheduleHighlightPlayed">Número de juegos jugados: <span class="orangeColor"><c:out value="${schedule.gamesPlayed}"/></span></p>
 						            		</div>
 						            		<div class="col-md-4">
-							            		<div class="alert alert-success scheduleDetail">
+							            		<div class="alert alert-warning scheduleDetail">
 													Equipo descanzado: <strong><c:out value="${schedule.restingTeam}"/></strong>
 												</div>
 							            	</div>
@@ -458,10 +480,106 @@
 					    <c:set var="playoffCounter" scope="session" value="${1}"/>
 									
 						<c:forEach items="${tournament.playoffs}" var="playoff">
-						    <div class="panel panel-default" style="border: 4px solid rgba(193, 222, 226, 0.25); box-shadow: 3px 3px 3px 3px #417d95; margin-bottom: 15px;">
-						        <div class="panel-heading" style="background-color: #dde7dc;">
+						    <div class="panel panel-default" style="border: 4px solid #F15A24; box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, .25); margin-bottom: 15px;">
+						        <div class="panel-heading" style="background-color: #ffffff;">
 						            <h4 class="panel-title">
-						                <a data-toggle="collapse" data-parent="#accordion" href="#playoff_<c:out value="${playoff.id}"/>" class="btn btn-sm btn-info leagueNameLink">Jornada de eliminación <c:out value="${playoffCounter}"/></a>
+						                <a data-toggle="collapse" data-parent="#accordion" href="#playoff_<c:out value="${playoff.id}"/>" class="btn btn-sm btnAdministrationPrimary">Jornada de eliminación <c:out value="${playoffCounter}"/></a>
+						                <span class="scheduleHighlightProgrammed">Número de juegos programados:</span> <span class="orangeColor"><c:out value="${playoff.gamesProgrammed}"/></span>
+						                <span class="scheduleHighlightPlayed">Número de juegos jugados:</span> <span class="orangeColor"><c:out value="${playoff.gamesPlayed}"/></span>
+						            </h4>
+						        </div>
+						        <div id="playoff_<c:out value="${playoff.id}"/>" class="panel-collapse collapse">
+						            <div class="panel-body">
+						            	<div class="col-md-12">
+							            	<div class="table-responsive">
+												<table class="table table-bordered table-xs table-condensed scheduleTable">
+													<thead class="scheduleTableHeader">
+														<tr>
+															<th>Goles</th>
+															<th>Local</th>
+															<th>VS</th>
+															<th>Visitante</th>
+															<th>Goles</th>
+															<th>Fecha</th>
+															<th>Hora</th>
+															<th>Estatus</th>
+															<th>Modificar</th>
+														</tr>
+													</thead>
+													<tbody>
+														<c:forEach items="${playoff.matches}" var="match">
+															<tr class="scheduleTableHover">
+																<td>
+																	<c:out value="${match.goalsLocal}" />
+																</td>
+																<td>
+																	<c:out value="${match.teamLocalName}" />
+																</td>
+																<td>
+																	-
+																</td>
+																<td>
+																	<c:out value="${match.teamVisitorName}" />
+																</td>
+																<td>
+																	<c:out value="${match.goalsVisitor}" />
+																</td>
+																<td>
+																	<c:out value="${match.date}" />
+																</td>
+																<td>
+																	<c:out value="${match.time}" />
+																</td>
+																<td>
+																	<c:out value="${match.status}" />
+																</td>
+																<td>
+																	<c:choose>
+																		<c:when test="${tournament.gamesProgrammed eq tournament.gamesPlayed and playoff.status eq 'Programado' and match.status eq 'No jugado'}">
+																			<a href='<spring:url value="/schedule-detail.html?rpMatchId=${match.id}&rpScheduleNumber=${playoffCounter}" />' class="btn btn-info btn-xs">Modificar</a>
+																		</c:when>
+																		<c:otherwise>
+																			<a class="btn btn-info btn-xs disabled">Modificar</a>
+																		</c:otherwise>
+																	</c:choose>
+																</td>
+															</tr>
+														</c:forEach>
+													</tbody>
+												</table>
+											</div>
+										</div>
+						            </div>
+						        </div>
+						    </div>
+						    
+						    <c:set var="playoffCounter" scope="session" value="${playoffCounter + 1}"/>
+					    </c:forEach>
+					</div>
+				</div>
+			</c:otherwise>
+		</c:choose>
+	</c:if>
+</div>
+
+<div class="row">
+	<c:if test="${tournament.type eq 'Por liguilla'}">
+		<c:choose>
+			<c:when test="${empty(tournament.playoffs)}">
+				<div class="emptyDiv" align="center">
+					<strong>No se ha generado el rol de juegos.</strong><br /> Da click en el botón "Generar enfrentamientos" para iniciar
+				</div>
+			</c:when>
+			<c:otherwise>
+				<div class="col-md-12">
+					<div class="panel-group" id="accordion">
+						<c:set var="playoffCounter" scope="session" value="${1}"/>
+									
+						<c:forEach items="${tournament.playoffs}" var="playoff">
+						    <div class="panel panel-default" style="border: 4px solid #F15A24; box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, .25); margin-bottom: 15px;">
+						        <div class="panel-heading" style="background-color: #ffffff;">
+						            <h4 class="panel-title">
+						                <a data-toggle="collapse" data-parent="#accordion" href="#playoff_<c:out value="${playoff.id}"/>" class="btn btn-sm btnAdministrationPrimary">Jornada de eliminación <c:out value="${playoffCounter}"/></a>
 						                <span class="scheduleHighlightProgrammed">Número de juegos programados: <c:out value="${playoff.gamesProgrammed}"/></span>
 						                <span class="scheduleHighlightPlayed">Número de juegos jugados: <c:out value="${playoff.gamesPlayed}"/></span>
 						            </h4>

@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../layout/taglib.jsp"%>
 
-<h1 class="mainHeader">Ligas del mundo</h1>
+<h1 class="mainHeader">Galería</h1>
 
 <hr />
 
-<a href="#myModal" class="btn btn-lg btn-primary" data-toggle="modal">Crear galería</a>
+<a href="#myModal" class="btn btn-lg btnAdministrationPrimary" data-toggle="modal">Crear galería</a>
 
 <hr />
 
@@ -28,7 +28,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-					<input type="submit" class="btn btn-primary" value="Crear">
+					<input type="submit" class="btn btnAdministrationPrimary" value="Crear">
 				</div>
 			</div>
 		</div>
@@ -51,11 +51,8 @@
 
 <c:choose>
 	<c:when test="${empty(galleries)}">
-		<div class="alert alert-warning">
-			<strong>No existe ninguna galería creada. Da click en el botón "Crear galería" para iniciar</strong>
-		</div>
-		<div align="center">
-			<img alt="warningIcon" src='<c:url value="/resources/images/warningIcon.png"/>'>
+		<div class="emptyDiv" align="center">
+			<strong>No existe ninguna galería creada.</strong><br />Da click en el botón "Crear galería" para iniciar
 		</div>
 	</c:when>
 	<c:otherwise>
@@ -75,7 +72,7 @@
 									<c:out value="${gallery.url}" />
 								</td>
 								<td>
-									<a href='<spring:url value="/gallery-admin/remove/${gallery.id}.html" />' class="btn btn-danger btn-xs triggerRemoveTeam">Eliminar</a>
+									<a href='<spring:url value="/gallery-admin/remove/${gallery.id}.html" />' class="btn btn-danger btn-xs triggerRemove">Eliminar</a>
 								</td>
 							</tr>
 						</c:forEach>

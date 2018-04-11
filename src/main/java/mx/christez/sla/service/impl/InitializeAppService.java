@@ -44,9 +44,8 @@ public class InitializeAppService {
 			userAdmin.setSecretQuestion("Nombre de tu primera mascota");
 			
 			BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();		
-			//userAdmin.setPassword(encoder.encode("ALFut4dm1n4cc3ss"));
 			userAdmin.setPassword(encoder.encode("admin"));
-			userAdmin.setSecretAnswer(encoder.encode("suker".toLowerCase()));
+			userAdmin.setSecretAnswer(encoder.encode("something".toLowerCase()));
 			
 			List<Role> roles = new ArrayList<Role>();
 			roles.add(roleAdmin);

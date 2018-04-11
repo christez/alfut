@@ -10,6 +10,8 @@
 
 	<http use-expressions="true">
 		<intercept-url pattern="/account**" access="hasRole('ROLE_USER')" />
+		<intercept-url pattern="/commercial-admin**" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/commercial-admin/**" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/cluster-admin**" access="hasRole('ROLE_USER')" />
 		<intercept-url pattern="/cluster-admin/**" access="hasRole('ROLE_USER')" />
 		<intercept-url pattern="/cluster-detail**" access="hasRole('ROLE_USER')" />

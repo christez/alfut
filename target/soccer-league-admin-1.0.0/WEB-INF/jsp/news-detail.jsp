@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../layout/taglib.jsp"%>
 
-<h1 class="mainHeader">Noticia "${newHeader}"</h1>
+<h1 class="mainHeader">Noticia <span class="orangeColor">${newHeader}</span></h1>
 
 <hr />
 
-<a href='<spring:url value="/news-admin.html" />' class="btn btn-lg btn-info" data-toggle="modal">Volver a "Noticias"</a>
+<a href='<spring:url value="/news-admin.html" />' class="btn btn-lg btnAdministrationPrimary" data-toggle="modal">Volver a "Noticias"</a>
 
 <hr />
 
@@ -24,7 +24,7 @@
 </c:if>
 
 <form:form commandName="new" cssClass="form-horizontal newDetailForm">
-	<h2 class="form-register-heading">Datos del torneo</h2>
+	<h2 class="form-register-heading">Datos de la noticia</h2>
 	<div class="form-group">
 		<label for="header" class="col-sm-2 control-label">Encabezado:</label>
 		<div class="col-sm-10">
@@ -50,7 +50,10 @@
 		</div>
 	</div>
 	<div class="form-group" align="center">
-		<input type="submit" value="Actualizar" class="btn btn-lg btn-primary generalFormButton">
+		<br />
+		<input type="submit" value="Actualizar" class="btn btn-success btnRedirect">
+		<br />
+		<br />
 	</div>
 </form:form>
 

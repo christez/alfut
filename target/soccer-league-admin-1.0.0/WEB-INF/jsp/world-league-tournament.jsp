@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../layout/taglib.jsp"%>
 
-<h1 class="mainHeader">Torneo "<c:out value="${tournament.name}" />"</h1>
+<h1 class="mainHeader">Torneo <span class="orangeColor"><c:out value="${tournament.name}" /></span></h1>
 
 <hr />
 
 <a href='<spring:url value="/world-league-detail.html" />' class="btn btn-lg btn-info" data-toggle="modal">Volver a "Torneo"</a>
-<a href="#myModal" class="btn btn-lg btn-primary" data-toggle="modal">Crear jornada</a>
+<a href="#myModal" class="btn btn-lg btnAdministrationPrimary" data-toggle="modal">Crear jornada</a>
 
 <hr />
 
@@ -29,14 +29,14 @@
 					<div class="form-group">
 						<label for="textForMatches" class="col-sm-2 control-label">Partidos:</label>
 						<div class="col-sm-10">
-							<form:textarea path="textForMatches" cssClass="form-control" maxlength="1024" placeholder="Fecha#GolesLocal#NombreLocal#Hora#GolesVisitante#NombreVisitante"/>
+							<form:textarea path="textForMatches" cssClass="form-control" maxlength="1024"/>
 							<form:errors path="textForMatches"/>
 						</div>
 					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-					<input type="submit" class="btn btn-primary" value="Crear">
+					<input type="submit" class="btn btnAdministrationPrimary" value="Crear">
 				</div>
 			</div>
 		</div>
@@ -59,11 +59,8 @@
 
 <c:choose>
 	<c:when test="${empty(tournament.schedules)}">
-		<div class="alert alert-warning">
-			<strong>No existe ninguna jornada creada. Da click en el botón "Crear jornada" para iniciar</strong>
-		</div>
-		<div align="center">
-			<img alt="warningIcon" src='<c:url value="/resources/images/warningIcon.png"/>'>
+		<div class="emptyDiv" align="center">
+			<strong>No existe ninguna jornada creada.</strong><br />Da click en el botón "Crear jornada" para iniciar
 		</div>
 	</c:when>
 	<c:otherwise>
@@ -75,12 +72,11 @@
 				<table class="table table-bordered table-xs table-condensed teamTable">
 					<thead class="teamTableHeader">
 						<tr>
-							<th>Marcador local</th>
-							<th>Local</th>
-							<th>Visitante</th>
-							<th>Marcador visitante</th>
 							<th>Fecha</th>
 							<th>Hora</th>
+							<th>Local</th>
+							<th>Visitante</th>
+							<th>Resultado</th>
 							<th>Modificar</th>
 							<th>Eliminar</th>
 						</tr>
@@ -89,7 +85,10 @@
 						<c:forEach items="${schedule.matches}" var="match">
 							<tr class="teamTableHover">
 								<td>
-									<c:out value="${match.localGoals}" />
+									<c:out value="${match.date}" />
+								</td>
+								<td>
+									<c:out value="${match.time}" />
 								</td>
 								<td>
 									<c:out value="${match.localName}" />
@@ -98,13 +97,7 @@
 									<c:out value="${match.visitorName}" />
 								</td>
 								<td>
-									<c:out value="${match.visitorGoals}" />
-								</td>
-								<td>
-									<c:out value="${match.date}" />
-								</td>
-								<td>
-									<c:out value="${match.time}" />
+									<c:out value="${match.result}" />
 								</td>
 								<td>
 									<a href='<spring:url value="/world-league-tournament-detail.html?rpMatchId=${match.id}" />' class="btn btn-info btn-xs">Modificar</a>

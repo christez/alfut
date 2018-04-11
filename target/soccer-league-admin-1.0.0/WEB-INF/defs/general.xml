@@ -20,7 +20,7 @@
 	</definition>
 	
 	<definition name="open-news" extends="template">
-		<put-attribute name="title" value="Noticiass" />
+		<put-attribute name="title" value="Noticias" />
 		<put-attribute name="body" value="/WEB-INF/jsp/open-news.jsp" />
 		<put-attribute name="current" value="open-news" />
 	</definition>
@@ -65,6 +65,12 @@
 		<put-attribute name="title" value="Ingresar" />
 		<put-attribute name="body" value="/WEB-INF/jsp/login.jsp" />
 		<put-attribute name="current" value="login" />
+	</definition>
+	
+	<definition name="commercial" extends="template">
+		<put-attribute name="title" value="Anúnciate" />
+		<put-attribute name="body" value="/WEB-INF/jsp/commercial.jsp" />
+		<put-attribute name="current" value="commercial" />
 	</definition>
 	
 	<definition name="activate" extends="template">
@@ -251,5 +257,11 @@
 		<put-attribute name="title" value="Administrar galería" />
 		<put-attribute name="body" value="/WEB-INF/jsp/gallery-admin.jsp" />
 		<put-attribute name="current" value="gallery-admin" />
+	</definition>
+	
+	<definition name="commercial-admin" extends="template">
+		<put-attribute name="title" value="Administrar anuncios" />
+		<put-attribute name="body" value="/WEB-INF/jsp/commercial-admin.jsp" />
+		<put-attribute name="current" value="commercial-admin" />
 	</definition>
 </tiles-definitions>

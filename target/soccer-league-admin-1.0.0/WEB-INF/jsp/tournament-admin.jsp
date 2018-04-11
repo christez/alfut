@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../layout/taglib.jsp"%>
 
-<h1 class="mainHeader">Torneos</h1>
+<h1 class="mainHeader">Torneos de la liga <span class="orangeColor"><c:out value="${league.name}"/></span></h1>
 
 <hr />
 
 <a href='<spring:url value="/league-admin.html" />' class="btn btn-lg btn-info" data-toggle="modal">Volver a "Ligas"</a>
-<a href="#myModal" class="btn btn-lg btn-primary" data-toggle="modal">Crear torneo</a>
+<a href="#myModal" class="btn btn-lg btnAdministrationPrimary" data-toggle="modal">Crear torneo</a>
 
 <hr />
 
@@ -46,7 +46,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-					<input type="submit" class="btn btn-primary" value="Crear">
+					<input type="submit" class="btn btn-success btnAdministrationPrimary" value="Crear">
 				</div>
 			</div>
 		</div>
@@ -69,11 +69,8 @@
 
 <c:choose>
 	<c:when test="${empty(league.tournaments)}">
-		<div class="alert alert-warning">
-			<strong>No cuentas con ninguna torneo creado. Da click en el botón "Crear torneo" para iniciar</strong>
-		</div>
-		<div align="center">
-			<img alt="warningIcon" src='<c:url value="/resources/images/warningIcon.png"/>'>
+		<div class="emptyDiv" align="center">
+			<strong>No cuentas con ningún torneo creado.</strong><br />Da click en el botón "Crear torneo" para iniciar
 		</div>
 	</c:when>
 	<c:otherwise>
@@ -85,14 +82,11 @@
 						<img src='<spring:url value="/resources/images/tournamentBackground.png" />' alt="TournamentImage" class="tournamentImage">
 						<div class="textbox">
 							<a class="btn btn-xs btn-info headerDetail tournamentInnerButton" data-toggle="popover" data-placement="bottom" data-html="true" title="Detalles del torneo" data-content='
-								<div align="center" class="tournamentDescriptionHeader"><c:out value="${tournament.description}"/></div>
-								<br />
-								Tipo: <strong><c:out value="${tournament.type}"/></strong>
-								<br />
-								Creado: <strong><fmt:formatDate value="${tournament.creationDate}" pattern="yyyy/MM/dd"/></strong>
-								<br />
-								Estatus: <strong><c:out value="${tournament.status}"/></strong>
-								<c:if test="${tournament.status eq 'Finalizado'}"><br />Campeón: <strong><c:out value="${tournament.winner}"/></strong></c:if>'>
+								<p class="tournamentDescriptionHeaderDetail">Descripción: <strong><span class="orangeColor"><c:out value="${tournament.description}"/></span></strong></p>
+								<p class="tournamentDescriptionHeaderDetail">Tipo: <strong><span class="orangeColor"><c:out value="${tournament.type}"/></span></strong></p>
+								<p class="tournamentDescriptionHeaderDetail">Creado: <strong><span class="orangeColor"><fmt:formatDate value="${tournament.creationDate}" pattern="yyyy/MM/dd"/></span></strong></p>
+								<p class="tournamentDescriptionHeaderDetail">Estatus: <strong><span class="orangeColor"><c:out value="${tournament.status}"/></span></strong></p>
+								<c:if test="${tournament.status eq 'Finalizado'}"><p class="tournamentDescriptionHeaderDetail">Campeón: <strong><span class="orangeColor"><c:out value="${tournament.winner}"/></span></strong></p></c:if>'>
 								Detalles</a>
 							<br />
 							<a href='<spring:url value="/tournament-detail.html?rpTournamentId=${tournament.id}" />' class="btn btn-xs btn-warning tournamentInnerButton">Modificar</a>
@@ -114,6 +108,8 @@
 				</div>
 			</c:forEach>
 		</div>
+		
+		<br />
 	</c:otherwise>
 </c:choose>
 

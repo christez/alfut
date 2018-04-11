@@ -2,16 +2,13 @@
 <%@ include file="../layout/taglib.jsp"%>
 
 <div align="center">
-	<img alt="worldLeagues" src='<c:url value="/resources/images/worldLeagues.png"/>'>
+	<h1 class="mainHeader">LIGAS DEL MUNDO</h1>
 </div>
 
 <c:choose>
 	<c:when test="${empty(leagues)}">
-		<div class="alert alert-info">
-			<strong>Sitio en construcción.</strong> En breve estará listo
-		</div>			
-		<div align="center">
-			<img alt="bulding" src='<c:url value="/resources/images/building.gif"/>'>
+		<div class="emptyDiv" align="center">
+			<strong>Sitio en construcción.</strong><br />En breve estará listo
 		</div>
 	</c:when>
 	<c:otherwise>
@@ -19,7 +16,7 @@
 			<div class="col-md-2 openWorldLeagueMenu">
 				<c:forEach items="${leagues}" var="league">
 					<img alt="flag" src='<c:url value="${league.flagUrl}"/>' class="openWorldLeagueFlag">
-					<a href='<spring:url value="/open-world-league.html?rpLeagueId=${league.id}" />' class="btn btn-link"><c:out value="${league.name}" /></a>
+					<a href='<spring:url value="/open-world-league.html?rpLeagueId=${league.id}" />' class="openWorldLeagueLink"><c:out value="${league.name}" /></a>
 					<br />
 				</c:forEach>
 			</div>			
@@ -47,16 +44,13 @@
 					<c:otherwise>
 						<c:choose>
 							<c:when test="${empty(selectedLeague.tournaments)}">
-								<div class="alert alert-info">
-									<strong>Lo sentimos.</strong> No hay torneos recientes
-								</div>
-								<div align="center">
-									<img alt="sadFace" src='<c:url value="/resources/images/sadFace.png"/>'>
+								<div class="emptyDiv" align="center">
+									<strong>Lo sentimos.</strong><br />No hay torneos recientes
 								</div>
 							</c:when>
 							<c:otherwise>
 								<div align="center">
-									<h1 class="openWorldLeagueHEader"><c:out value="${selectedLeague.name}" /></h1>
+									<h1 class="openWorldLeagueHeader"><c:out value="${selectedLeague.name}" /></h1>
 								</div>
 								<c:forEach items="${selectedLeague.tournaments}" var="tournament">
 									<ul class="nav nav-tabs" role="tablist">
@@ -88,24 +82,20 @@
 																					<thead class="teamTableHeader">
 																						<tr>
 																							<th>#</th>
-																							<th>Club</th>
-																							<th>PJ</th>
-																							<th>G</th>
-																							<th>E</th>
-																							<th>P</th>
-																							<th>GF</th>
-																							<th>GC</th>
-																							<th>DG</th>
-																							<th>Pts</th>
+																							<th>Equipo</th>
+																							<th>JJ</th>
+																							<th>JG</th>
+																							<th>JE</th>
+																							<th>JP</th>
+																							<th>GF:GC</th>
+																							<th>Puntos</th>
 																						</tr>
 																					</thead>
 																					<tbody>
-																						<c:set var="positionCounter" scope="session" value="${1}"/>
-																						
 																						<c:forEach items="${ranking.teams}" var="team">
 																							<tr class="teamTableHover">
-																								<td class="teamTableBolder">
-																									<c:out value="${positionCounter}" />
+																								<td>
+																									<c:out value="${team.position}" />
 																								</td>
 																								<td>
 																									<c:out value="${team.name}" />
@@ -123,20 +113,12 @@
 																									<c:out value="${team.gamesLost}" />
 																								</td>
 																								<td>
-																									<c:out value="${team.goalsFavor}" />
-																								</td>
-																								<td>
-																									<c:out value="${team.goalsAgainst}" />
-																								</td>
-																								<td>
-																									<c:out value="${team.goalsDifference}" />
+																									<c:out value="${team.goals}" />
 																								</td>
 																								<td>
 																									<c:out value="${team.points}" />
 																								</td>
 																							</tr>
-																							
-																							<c:set var="positionCounter" scope="session" value="${positionCounter + 1}"/>
 																						</c:forEach>
 																					</tbody>
 																				</table>
@@ -151,34 +133,30 @@
 																				<table class="table table-bordered table-xs table-condensed teamTable miniTable">
 																					<thead class="teamTableHeader">
 																						<tr>
-																							<th>Local</th>
-																							<th>Goles</th>
-																							<th>Goles</th>
-																							<th>Visitante</th>
 																							<th>Fecha</th>
 																							<th>Hora</th>
+																							<th>Local</th>
+																							<th>Visitante</th>
+																							<th>Resultado</th>
 																						</tr>
 																					</thead>
 																					<tbody>
 																						<c:forEach items="${schedule.matches}" var="match">
 																							<tr class="teamTableHover">
 																								<td>
+																									<c:out value="${match.date}" />
+																								</td>
+																								<td>
+																									<c:out value="${match.time}" />
+																								</td>
+																								<td>
 																									<c:out value="${match.localName}" />
-																								</td>
-																								<td class="tableScore">
-																									<c:out value="${match.localGoals}" />
-																								</td>
-																								<td class="tableScore">
-																									<c:out value="${match.visitorGoals}" />
 																								</td>
 																								<td>
 																									<c:out value="${match.visitorName}" />
 																								</td>
 																								<td>
-																									<c:out value="${match.date}" />
-																								</td>
-																								<td>
-																									<c:out value="${match.time}" />
+																									<c:out value="${match.result}" />
 																								</td>
 																							</tr>
 																						</c:forEach>
@@ -198,34 +176,30 @@
 																					<table class="table table-bordered table-xs table-condensed teamTable">
 																						<thead class="teamTableHeader">
 																						<tr>
-																							<th>Local</th>
-																							<th>Goles</th>
-																							<th>Goles</th>
-																							<th>Visitante</th>
 																							<th>Fecha</th>
 																							<th>Hora</th>
+																							<th>Local</th>
+																							<th>Visitante</th>
+																							<th>Resultado</th>
 																						</tr>
 																					</thead>
 																					<tbody>
 																						<c:forEach items="${schedule.matches}" var="match">
 																							<tr class="teamTableHover">
 																								<td>
+																									<c:out value="${match.date}" />
+																								</td>
+																								<td>
+																									<c:out value="${match.time}" />
+																								</td>
+																								<td>
 																									<c:out value="${match.localName}" />
-																								</td>
-																								<td class="tableScore">
-																									<c:out value="${match.localGoals}" />
-																								</td>
-																								<td class="tableScore">
-																									<c:out value="${match.visitorGoals}" />
 																								</td>
 																								<td>
 																									<c:out value="${match.visitorName}" />
 																								</td>
 																								<td>
-																									<c:out value="${match.date}" />
-																								</td>
-																								<td>
-																									<c:out value="${match.time}" />
+																									<c:out value="${match.result}" />
 																								</td>
 																							</tr>
 																						</c:forEach>
@@ -242,24 +216,20 @@
 																						<thead class="teamTableHeader">
 																							<tr>
 																								<th>#</th>
-																								<th>Club</th>
-																								<th>PJ</th>
-																								<th>G</th>
-																								<th>E</th>
-																								<th>P</th>
-																								<th>GF</th>
-																								<th>GC</th>
-																								<th>DG</th>
-																								<th>Pts</th>
+																								<th>Equipo</th>
+																								<th>JJ</th>
+																								<th>JG</th>
+																								<th>JE</th>
+																								<th>JP</th>
+																								<th>GF:GC</th>
+																								<th>Puntos</th>
 																							</tr>
 																						</thead>
 																						<tbody>
-																							<c:set var="positionCounter" scope="session" value="${1}"/>
-																							
 																							<c:forEach items="${ranking.teams}" var="team">
 																								<tr class="teamTableHover">
-																									<td class="teamTableBolder">
-																										<c:out value="${positionCounter}" />
+																									<td>
+																										<c:out value="${team.position}" />
 																									</td>
 																									<td>
 																										<c:out value="${team.name}" />
@@ -277,20 +247,12 @@
 																										<c:out value="${team.gamesLost}" />
 																									</td>
 																									<td>
-																										<c:out value="${team.goalsFavor}" />
-																									</td>
-																									<td>
-																										<c:out value="${team.goalsAgainst}" />
-																									</td>
-																									<td>
-																										<c:out value="${team.goalsDifference}" />
+																										<c:out value="${team.goals}" />
 																									</td>
 																									<td>
 																										<c:out value="${team.points}" />
 																									</td>
 																								</tr>
-																								
-																								<c:set var="positionCounter" scope="session" value="${positionCounter + 1}"/>
 																							</c:forEach>
 																						</tbody>
 																					</table>
