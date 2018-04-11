@@ -2,16 +2,13 @@
 <%@ include file="../layout/taglib.jsp"%>
 
 <div align="center">
-	<img alt="worldLeagues" src='<c:url value="/resources/images/worldLeagues.png"/>'>
+	<h1 class="mainHeader">LIGAS DEL MUNDO</h1>
 </div>
 
 <c:choose>
 	<c:when test="${empty(leagues)}">
-		<div class="alert alert-info">
-			<strong>Sitio en construcción.</strong> En breve estará listo
-		</div>			
-		<div align="center">
-			<img alt="bulding" src='<c:url value="/resources/images/building.gif"/>'>
+		<div class="emptyDiv" align="center">
+			<strong>Sitio en construcción.</strong><br />En breve estará listo
 		</div>
 	</c:when>
 	<c:otherwise>
@@ -19,7 +16,7 @@
 			<div class="col-md-2 openWorldLeagueMenu">
 				<c:forEach items="${leagues}" var="league">
 					<img alt="flag" src='<c:url value="${league.flagUrl}"/>' class="openWorldLeagueFlag">
-					<a href='<spring:url value="/open-world-league.html?rpLeagueId=${league.id}" />' class="btn btn-link"><c:out value="${league.name}" /></a>
+					<a href='<spring:url value="/open-world-league.html?rpLeagueId=${league.id}" />' class="openWorldLeagueLink"><c:out value="${league.name}" /></a>
 					<br />
 				</c:forEach>
 			</div>			
@@ -47,16 +44,13 @@
 					<c:otherwise>
 						<c:choose>
 							<c:when test="${empty(selectedLeague.tournaments)}">
-								<div class="alert alert-info">
-									<strong>Lo sentimos.</strong> No hay torneos recientes
-								</div>
-								<div align="center">
-									<img alt="sadFace" src='<c:url value="/resources/images/sadFace.png"/>'>
+								<div class="emptyDiv" align="center">
+									<strong>Lo sentimos.</strong><br />No hay torneos recientes
 								</div>
 							</c:when>
 							<c:otherwise>
 								<div align="center">
-									<h1 class="openWorldLeagueHEader"><c:out value="${selectedLeague.name}" /></h1>
+									<h1 class="openWorldLeagueHeader"><c:out value="${selectedLeague.name}" /></h1>
 								</div>
 								<c:forEach items="${selectedLeague.tournaments}" var="tournament">
 									<ul class="nav nav-tabs" role="tablist">

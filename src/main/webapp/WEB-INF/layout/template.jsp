@@ -81,6 +81,9 @@
 				    	<security:authorize access="hasRole('ROLE_ADMIN')">
 							<li class="${current == 'gallery-admin' ? 'active' : ''}"><a class="nav-link" href='<spring:url value="/gallery-admin.html"></spring:url>'>Galería</a></li>
 				    	</security:authorize>
+				    	<security:authorize access="hasRole('ROLE_ADMIN')">
+							<li class="${current == 'commercial-admin' ? 'active' : ''}"><a class="nav-link" href='<spring:url value="/commercial-admin.html"></spring:url>'>Anuncios</a></li>
+				    	</security:authorize>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<security:authorize access="!isAuthenticated()">
@@ -96,8 +99,6 @@
 		</nav>
 
 		<tiles:insertAttribute name="body" />
-
-		<hr />
 
 		<div align="center">
 			<tiles:insertAttribute name="footer" />

@@ -76,7 +76,7 @@ public class LeagueServiceImpl implements LeagueService {
 
 	@Override
 	public List<League> findAll() {
-		Page<League> leagues = leagueRepository.findAll(new PageRequest(0, 4, Direction.DESC, "creationDate"));
+		Page<League> leagues = leagueRepository.findAll(new PageRequest(0, 6, Direction.DESC, "creationDate"));
 		List<League> leagueList = leagues.getContent();
 		
 		return leagueList;

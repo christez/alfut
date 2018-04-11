@@ -66,7 +66,7 @@ public class WorldNewServiceImpl implements WorldNewService {
 	
 	@Override
 	public List<WorldNew> findAll() {
-		Page<WorldNew> pages = worldNewRepository.findAll(new PageRequest(0, 4, Direction.DESC, "creationDate"));
+		Page<WorldNew> pages = worldNewRepository.findAll(new PageRequest(0, 6, Direction.DESC, "creationDate"));
 		List<WorldNew> newList = pages.getContent();
 		
 		return newList;

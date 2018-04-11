@@ -1,13 +1,14 @@
 body {
 	font-family: 'Comfortaa';
+	background-image: url(../images/back.png);
 }
 
 .mainHeader {
-	color: #417d95;
+	color: #000000;
 }
 
 .modalRemove {
-	color: #417d95;
+	color: #000000;
 }
 
 .popover-title {
@@ -27,12 +28,37 @@ body {
 	margin-bottom: 0px;
 }
 
+.btnAdministrationPrimary, .btnAdministrationPrimary:link, .btnAdministrationPrimary:visited, .btnAdministrationPrimary:active{
+	background-color: #F15A24;
+	color: #ffffff;
+}
+
+.btnAdministrationPrimary:hover{
+	color: #000000;
+}
+
+.orangeColor{
+	color: #F15A24;
+}
+
+.arrowDown{
+	width: 16px;
+	height: 16px;
+}
+
 /****************************************************************************************************************************************************
 Index classes ***************************************************************************************************************************************
 *****************************************************************************************************************************************************/
 
+.mainLogo{
+	width: 85%;
+	height: 120px;
+	margin-top: 1px;
+}
+
 .indexCarousel{
-	margin-top: 20px;
+	margin-top: 1px;
+	width: 85%;
 }
 
 .indexCarousel .item {
@@ -51,45 +77,229 @@ Index classes ******************************************************************
 }
 
 .indexCarouselText{
-	color: #dde7dc;
+	color: #ffffff;
 }
 
-.banner{
-	background-color: #dde7dc;
-	color: #417d95;
-	margin-top: 50px;
+.carousel-fade .carousel-inner .item {
+	opacity: 0;
+	transition-property: opacity;
+}
+
+.carousel-fade .carousel-inner .active {
+	opacity: 1;
+}
+
+.carousel-fade .carousel-inner .active.left, .carousel-fade .carousel-inner .active.right {
+	left: 0;
+	opacity: 0;
+	z-index: 1;
+}
+
+.carousel-fade .carousel-inner .next.left, .carousel-fade .carousel-inner .prev.right {
+	opacity: 1;
+}
+
+.carousel-fade .carousel-control {
+	z-index: 2;
+}
+
+@media all and (transform-3d), (-webkit-transform-3d) {
+	.carousel-fade .carousel-inner > .item.next, .carousel-fade .carousel-inner > .item.active.right {
+    	opacity: 0;
+      	-webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    
+    .carousel-fade .carousel-inner > .item.prev, .carousel-fade .carousel-inner > .item.active.left {
+		opacity: 0;
+      	-webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    
+    .carousel-fade .carousel-inner > .item.next.left, .carousel-fade .carousel-inner > .item.prev.right, .carousel-fade .carousel-inner > .item.active {
+		opacity: 1;
+      	-webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.indexCarouselFooter{
+	width: 85%;
+	height: 120px;
+	margin-top: 1px;
+	background-color: #1E241E;
+	color: #ffffff;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.indexCarouselFooter p{
+	font-size: 30px;
+}
+
+.indexInformationContainer{
+	background-color: #ffffff;
+	width: 85%;
+	margin-top: 1px;
 }
 
 .indexHeader{
-	color: #417d95;
+	font-size: 25px;
 	font-weight: bolder;
+	padding-left: 40px;
+	padding-top: 40px;
 }
 
-.indexHeader small{
-	color: #417d95;
-	font-weight: bolder;
+.emptyDiv{
+	margin-top: 40px;
+	padding-bottom: 40px;
+}
+
+.emptyDiv strong{
+	font-size: 18px;
+	color: #F15A24;
 }
 
 .indexContainer{
-	padding: 10px;
+	text-align: center;
+	padding: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
-.indexContainer p{
-	color: #5bc0de;
+.indexSubHeader{
+	font-size: 20px;
+	color: #F15A24;
+	font-weight: bolder;
+	margin-bottom: 0px;
+}
+
+.indexAdditionalInfo{
+	color: #000000;
+	font-size: 13px;
 	font-weight: bold;
+	margin-bottom: 30px;
+}
+
+.btnRedirect{
+	width: 200px;
+	background-color: #004600;
+	border-color: #004600;
+	font-size: 13px;
+}
+
+.btnRedirect:hover{
+	background-color: #F15A24;
+	border-color: #F15A24;
+}
+
+.indexDescription{
+	color: #000000;
+	font-size: 15px;
+}
+
+.indexDescription strong{
+	color: #F15A24;
+}
+
+.bannerContainer{
+	margin-top: 1px;
+	position: relative;
+    text-align: center;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.bannerTextCentered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.indexHeaderGallery{
+	font-size: 40px;
+	font-weight: bolder;
+	padding-top: 60px;
+}
+
+.indexNewsContainer{
+	background-color: #000000;
+}
+
+.indexNewsHeader{
+	font-size: 40px;
+	color: #ffffff;
+	font-weight: bolder;
+	padding-top: 40px;
+}
+
+.indexNewsInformation{
+	color: #ffffff;
+	font-size: 12px;
+	padding: 20px;
 }
 
 .myJumbotron {
-    background-color: #dde7dc;
-    color: #417d95;
+	margin-top: 1px;
+    background-color: #F0F0F0;
+    color: #000000;
     margin-bottom: 0px;
     padding-bottom: 50px;
     padding-right: 50px;
     padding-top: 50px;
 }
 
-.indexSubHeader{
+.myJumbotronSpan{
+	color: #F15A24;
+}
+
+.myJumbotronHeader{
+	color: #F15A24;
+}
+
+.footerLink, .footerLink:link, .footerLink:visited, .footerLink:active{
+	color: #000000;
+	font-size: 11px;
+	text-decoration: none;
+}
+
+.footerLink:hover{
+	color: #F15A24;
+}
+
+.copyright{
+	margin-top: 1px;
+	color: #ffffff;
+	background-color: #000000;
+}
+
+.copyright p{
+	padding-left: 60px;
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+
+.legalInformation{
+	color: #000000;
+	text-align: left;
+}
+
+.legalInformationHeader{
 	margin-top: 0px;
+	color: #F15A24;
+}
+
+.commercialDetail{
+	width: 20%;
+	font-size: 10px;
+	color: #F15A24;
+}
+
+.commercialForm {
+	max-width: 600px;
+	padding: 15px;
+	margin: 0 auto;
 }
 
 /****************************************************************************************************************************************************
@@ -105,66 +315,120 @@ Open league classes ************************************************************
 }
 
 .modalLeague {
-	color: #417d95;
+	color: #000000;
 }
 
 .resultLeagueHeader{
-	font-size: 35px;
+	font-size: 25px;
 	font-weight: bolder;
-	color: #417d95;
-	margin-bottom: 4px;
+	color: #F15A24;
+	
 }
 
 .resultLeagueInformation{
 	font-size: 15px;
-	font-weight: bolder;
-	color: #5bc0de;
+	color: #000000;
 }
 
 .resultLeagueDate{
-	color: #5bc0de;
-	font-size: 15px;
-	font-weight: bolder;
+	color: #000000;
+	font-size: 12px;
 }
 
 .resultLeagueSmallHeader{
-	font-size: 32px;
-	font-weight: bolder;
-	color: #417d95;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	color: #000000;
 }
 
-.openLeagueContainer{
-	margin-bottom: 50px;
+.resultLeagueTournamentContainer{
+	margin: 0 auto;
+}
+
+.tablink {
+	background-color: #ffffff;
+    color: #000000;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+}
+
+.tablink:hover{
+    background-color: #F15A24;
+    color: #ffffff;
+}
+
+.tabcontent {
+	background-color: #ffffff;
+    color: #000000;
+    display: none;
+    padding: 50px;
+    text-align: center;
+    border-radius: 10px;
+	box-shadow: 5px 5px 5px 5px #E4E2E3;
 }
 
 .openLeagueHeader{
-	font-size: 25px;
+	font-size: 35px;
 	font-weight: bolder;
-	color: #417d95;
+	color: #F15A24;
+	margin-top: 15px;
 }
 
 .openLeagueInfo{
 	font-size: 14px;
-	color: 	#5bc0de;
-	font-weight: bolder;
+	color: 	#000000;
 }
 
 .openLeagueDetail{
-	border-left: 2px solid #dde7dc;
 	padding-left: 40px;
-	color: #5bc0de;
+	color: #000000;
 	font-size: 12px;
 }
 
-.openLeagueMenu{
-	margin-bottom: 0px;
+.openLeagueDetailHeader{
+	font-size: 12px;
+}
+
+.openLeagueDetailOrange{
+	color: #F15A24;
 }
 
 .openLeagueIndicator{
-	color: #417d95;
+	color: #F15A24;
 	font-size: 80px;
 	font-weight: bolder;
 	margin-bottom: 0px;
+}
+
+.pagination li a{
+	background-color: #ffffff;
+	color: #F15A24;
+}
+
+.pagination li.active a{
+	background: #F15A24;
+	color: #ffffff;
+	border: solid 2px #000000;
+}
+
+.pagination li a:hover{
+	background-color: #F15A24;
+	color: #ffffff;
+}
+
+.generalLink, .generalLink:link, .generalLink:visited, .generalLink:active{
+	color: #000000;
+	font-size: 20px;
+	text-decoration: none;
+}
+
+.generalLink:hover{
+	color: #F15A24;
 }
 
 /****************************************************************************************************************************************************
@@ -191,20 +455,20 @@ Result tournament classes ******************************************************
 }
 
 .scheduleCarouselText{
-	color: #dde7dc;
+	color: #000000;
 }
 
 .openLeagueScheduleHeader{
-	font-size: 30px;
+	font-size: 20px;
 	font-weight: bolder;
-	color: #417d95;
-	margin-top: 10px;
+	color: #000000;
+	margin-top: 20px;
 	padding-left: 10px;
 }
 
 .resultTournamentHeader{
 	margin-top: 0px;
-	color: #417d95;
+	color: #F15A24;
 	font-size: 60px;
 	font-weight: bolder;
 	margin-bottom: 40px;
@@ -242,11 +506,11 @@ Result tournament classes ******************************************************
 
 .resultTournamantChampionContainer{
 	margin-top: 30px;
-	color: #417d95;
+	color: #000000;
 }
 
 .resultTournamantChampion{
-	color: #5bc0de;
+	color: #F15A24;
 }
 
 .resultTournamantChampionInfo{
@@ -264,32 +528,31 @@ Result tournament classes ******************************************************
 Navbar classes **************************************************************************************************************************************
 *****************************************************************************************************************************************************/
 .navbar-default {
-	background-color: #dde7dc;
-	border-color: #c1dee2;
+	background-color: #000000;
+	border-color: #F15A24;
+	border-width: 2px;
+	margin-bottom: 0px;
 }
 
 .navbar-default .navbar-brand {
-	color: #417d95;
+	color: #ffffff;
 }
 
-.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus
-	{
-	color: #89b9c5;
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+	color: #F15A24;
 }
 
 .navbar-default .navbar-nav>li>a {
-	color: #417d95;
+	color: #ffffff;
 }
 
-.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus
-	{
-	color: #89b9c5;
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+	color: #F15A24;
 }
 
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover,
-	.navbar-default .navbar-nav>.active>a:focus {
-	color: #417d95;
-	background-color: #c1dee2;
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+	color: #ffffff;
+	background-color: #F15A24;
 }
 
 /****************************************************************************************************************************************************
@@ -343,6 +606,7 @@ Login form classes *************************************************************
 /****************************************************************************************************************************************************
 Register form classes *******************************************************************************************************************************
 *****************************************************************************************************************************************************/
+
 .registrationForm {
 	max-width: 600px;
 	padding: 15px;
@@ -352,11 +616,7 @@ Register form classes **********************************************************
 .form-register-heading {
 	text-align: center;
 	margin-bottom: 20px;
-	color: #417d95;
-}
-
-.registerLabel {
-	color: #417d95;
+	color: #000000;
 }
 
 .termsAndConditions{
@@ -381,6 +641,7 @@ Recover form classes ***********************************************************
 /****************************************************************************************************************************************************
 League administration classes ***********************************************************************************************************************
 *****************************************************************************************************************************************************/
+
 .page-container {
 	margin: 20px;
 }
@@ -399,36 +660,36 @@ League administration classes **************************************************
 League classes **************************************************************************************************************************************
 *****************************************************************************************************************************************************/
 .leagueForm {
-	color: #417d95;
+	color: #000000;
 }
 
 .nav-tabs > li > a{
-	color: rgba(65, 125, 149, .75);
+	color: rgba(0, 0, 0, .75);
 }
 
 .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a{
 	font-size: 16px;
-	color: #417d95;
+	color: #F15A24;
 }
 
 .nav-tabs > li > a:hover{
-	color: #417d95;
-  	background-color: #dde7dc;
+	color: #F15A24;
+  	background-color: #ffffff;
 }
 
 .leagueTabHeader{
-	color: #417d95;
+	color: #000000;;
 }
 
 .leagueAdditionalInfo{
 	font-size: 12px;
-	color: rgba(65, 125, 149, .75);
+	color: #000000;
 	font-weight: bolder;
 }
 
 .leagueCreationDate {
-	font-size: 10px;
-	color: rgba(65, 125, 149, .75);
+	font-size: 12px;
+	color: #000000;
 	font-weight: bolder;
 }
 
@@ -444,22 +705,22 @@ League classes *****************************************************************
 Tournament classes **********************************************************************************************************************************
 *****************************************************************************************************************************************************/
 .tournamentForm {
-	color: #417d95;
+	color: #000000;
 }
 
 .tournamentContainer {
 	border-radius: 5px;
-	border: 4px solid rgba(91, 192, 222, 0.25);
+	border: 4px solid #F15A24;
 	margin: 10px;
 	text-align: center;
 	padding: 0px;
-	box-shadow: 3px 3px 3px 3px #E4E2E3;
+	box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, .5);
 }
 
 .tournamentContainerHeader {
-	background-color: #E4E2E3;
+	background-color: #F15A24;
 	height: 30%;
-	color: rgba(91, 192, 222, 1.0);
+	color: #000000;
 	font-weight: bold;
 	padding: 5px;
 }
@@ -501,13 +762,25 @@ Tournament classes *************************************************************
 	margin-bottom: 10px;
 }
 
+.popover-title {
+    color: #000000;
+    background-color: #F15A24;
+}
+
 .tournamentDescriptionHeader{
 	font-size: 12px;
 	font-weight: bolder;
+	color: #000000;
+}
+
+.tournamentDescriptionHeaderDetail{
+	margin: 0px;
+	padding: 0px;
+	color: #000000;
 }
 
 .tournamentDetailForm {
-	color: #417d95;
+	color: #000000;;
 	max-width: 600px;
 	padding: 15px;
 	margin: 0 auto;
@@ -518,16 +791,17 @@ Team classes *******************************************************************
 *****************************************************************************************************************************************************/
 
 .teamForm, .teamFormUpdate {
-	color: #417d95;
+	color: #000000;
 }
 
 .teamTable{
-	color: #417d95;
+	color: #000000;
 	text-align: center;
 }
 
 .teamTableHeader{
-	background-color: #dde7dc;
+	background-color: #000000;
+	color: #ffffff;
 }
 
 .teamTableHeader tr th{
@@ -535,7 +809,8 @@ Team classes *******************************************************************
 }
 
 .teamTableHover:hover{
-	background-color: #dde7dc;
+	background-color: #F15A24;
+	color: #ffffff;
 }
 
 .tournamentLeader{
@@ -553,7 +828,7 @@ Team detail classes ************************************************************
 .form-team-update-heading {
 	text-align: center;
 	margin-bottom: 20px;
-	color: #417d95;
+	color: #000000;
 }
 
 /****************************************************************************************************************************************************
@@ -570,12 +845,13 @@ Schedule classes ***************************************************************
 }
 
 .scheduleTable{
-	color: #417d95;
+	color: #000000;
 	text-align: center;
 }
 
 .scheduleTableHeader{
-	background-color: #dde7dc;
+	background-color: #000000;
+	color: #ffffff;
 }
 
 .scheduleTableHeader tr th{
@@ -583,7 +859,8 @@ Schedule classes ***************************************************************
 }
 
 .scheduleTableHover:hover{
-	background-color: #dde7dc;
+	background-color: #F15A24;
+	color: #ffffff;
 }
 
 .scheduleTableBolder{
@@ -596,14 +873,12 @@ Schedule classes ***************************************************************
 
 .scheduleHighlightProgrammed{
 	font-size: 12px;
-	color: rgba(65, 125, 149, .75);
-	font-weight: bolder;
+	color: #000000;
 }
 
 .scheduleHighlightPlayed{
 	font-size: 12px;
-	color: rgba(65, 125, 149, .75);
-	font-weight: bolder;
+	color: #000000;
 }
 
 /****************************************************************************************************************************************************
@@ -611,12 +886,12 @@ Match classes ******************************************************************
 *****************************************************************************************************************************************************/
 
 .matchForm {
-	color: #417d95;
+	color: #000000;
 }
 
 .playofssTree, .playofssTree ul {
 	display: flex;
-	color: #417d95;
+	color: #000000;;
 	font-size: 12px;
 }
 
@@ -641,7 +916,7 @@ li:first-child,li:last-child {
 
 .winner {
   	font-weight: bolder;
-  	color: #5cb85c;
+  	color: #F15A24;
   	font-size: 18px;
 }
 
@@ -668,7 +943,7 @@ Cluster classes ****************************************************************
 *****************************************************************************************************************************************************/
 
 .clusterForm {
-	color: #417d95;
+	color: #000000;
 }
 
 .clusterFooter{
@@ -690,11 +965,11 @@ Cluster classes ****************************************************************
 
 .clusterScheduleHeader{
 	margin-top: 0px; 
-	color: #417d95;
+	color: #F15A24;
 }
 
 .clusterScheduleDivider{
-	border-top: 4px double #417d95;
+	border-top: 4px double #000000;
 	text-align: center;
 }
 
@@ -705,7 +980,7 @@ Cluster classes ****************************************************************
 	top: -15px;
 	padding: 0 10px;
 	background: #f0f0f0;
-	color: #417d95;
+	color: #000000;
 	font-size: 18px;
 }
 
@@ -714,15 +989,17 @@ New classes ********************************************************************
 *****************************************************************************************************************************************************/
 
 .newForm {
-	color: #417d95;
+	color: #000000;
 }
 
 .newTable{
-	color: #417d95;
+	color: #000000;
+	text-align: center;
 }
 
 .newTableHeader{
-	background-color: #dde7dc;
+	background-color: #000000;
+	color: #ffffff;
 }
 
 .newTableHeader tr th{
@@ -730,7 +1007,8 @@ New classes ********************************************************************
 }
 
 .newTableHover:hover{
-	background-color: #dde7dc;
+	background-color: #F15A24;
+	color: #ffffff;
 }
 
 .newTableCenterColumn{
@@ -748,27 +1026,79 @@ New classes ********************************************************************
 }
 
 .newsHeader{
-	font-size: 16px;
+	font-size: 35px;
 	font-weight: bolder;
-	color: #417d95;
+	color: #F15A24;
+	margin-top: 15px;
 }
 
 .newsInfo{
 	font-size: 12px;
-	color: 	#5bc0de;
+	color: 	#000000;
 }
 
 .newsDate{
-	border-left: 2px solid #dde7dc;
-	padding-left: 40px;
-	color: #417d95;
-	font-weight: bolder;
 	font-size: 12px;
+	color: rgba(0, 0, 0, .60);
 }
 
 .newsImage{
-	padding-left: 18px;
-	margin-bottom: 2px;
+	height: 128px;
+	width: 128px;
+	margin-top: 20px;
+}
+
+.newsImageSmall{
+	height: 32px;
+	width: 32px;
+	margin-right: 10px;
+}
+
+.tabNews {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 30%;
+    height: 100%;
+}
+
+.tabNews button {
+    display: block;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.tabNews button:hover {
+    background-color: #F15A24;
+    color: #ffffff;
+}
+
+.tabContentNews {
+    float: left;
+    width: 70%;
+    height: 300px;
+    background-color: #ffffff;
+    color: #000000;
+    display: none;
+    border-radius: 10px;
+	box-shadow: 5px 5px 5px 5px #E4E2E3;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.newsTabContainer{
+	margin-top: 40px;
+	margin-bottom: 60px;
+	padding-left: 40px;
+	padding-right: 40px;
 }
 
 /****************************************************************************************************************************************************
@@ -776,7 +1106,6 @@ Account form classes ***********************************************************
 *****************************************************************************************************************************************************/
 .accountForm {
 	max-width: 600px;
-	padding: 15px;
 	margin: 0 auto;
 }
 
@@ -793,20 +1122,20 @@ Wiki classes *******************************************************************
 *****************************************************************************************************************************************************/
 
 .contentHeader{
-	color: #5bc0de;
+	color: #F15A24;
 }
 
 .contentMenu{
-	color: #5bc0de;
+	color: #000000;
 }
 
 .wikiLink{
-	color: #5bc0de;
+	color: #000000;
 	padding: 0px;
 }
 
 .wikiLink:hover{
-	color: #417d95;
+	color: #F15A24;
 	padding: 0px;
 	text-decoration: none;
 	font-weight: bolder;
@@ -817,12 +1146,12 @@ Wiki classes *******************************************************************
 }
 
 .wikiHeader{
-	color: #417d95;
+	color: #000000;
 	font-weight: bolder;
 }
 
 .wikiDescription{
-	color: #417d95;
+	color: #000000;
 	text-align: justify;
 	margin-top: 20px;
 }
@@ -831,8 +1160,8 @@ Wiki classes *******************************************************************
 	width: 35%;
 	margin-top: 10px;
 	margin-bottom: 20px;
-	border: 4px solid #5bc0de;
-	box-shadow: 3px 3px 3px 3px #E4E2E3;
+	border: 4px solid #F15A24;
+	box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, .25);
 }
 
 /****************************************************************************************************************************************************
@@ -840,7 +1169,7 @@ Support classes ****************************************************************
 *****************************************************************************************************************************************************/
 
 .supportForm {
-	color: #417d95;
+	color: #000000;
 }
 
 .supportButton{
@@ -869,7 +1198,7 @@ Support classes ****************************************************************
 }
 
 .supportTableHeader{
-	color: #417d95;
+	color: #000000;
 	margin: 0px;
 }
 
@@ -891,9 +1220,9 @@ Support classes ****************************************************************
 	text-align: left;
 	width: 95%;
     border-radius: 5px;
-	border: 4px solid rgba(91, 192, 222, 0.25);
+	border: 4px solid #F15A24;
 	padding: 5px;
-	box-shadow: 3px 3px 3px 3px #E4E2E3;
+	box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, .25);
 }
 
 .supportMessage p{
@@ -930,11 +1259,11 @@ World classes ******************************************************************
 }
 
 .scheduleForm {
-	color: #417d95;
+	color: #000000;
 }
 
 .worldScheduleHeader{
-	color: #5bc0de;
+	color: #F15A24;
 }
 
 .worldMatchButtonRemove{
@@ -942,7 +1271,10 @@ World classes ******************************************************************
 }
 
 .openWorldLeagueMenu{
-	padding: 20px;
+	padding-left: 40px;
+	padding-top: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
 }
 
 .openWorldLeagueDisplay{
@@ -954,8 +1286,18 @@ World classes ******************************************************************
 	height: 16px;
 }
 
-.openWorldLeagueHEader {
-	color: #417d95;
+.openWorldLeagueLink, .openWorldLeagueLink:link, .openWorldLeagueLink:visited, .openWorldLeagueLink:active{
+	color: #000000;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+.openWorldLeagueLink:hover{
+	color: #F15A24;
+}
+
+.openWorldLeagueHeader {
+	color: #000000;
 }
 
 .openWorldLeagueImages{
@@ -963,7 +1305,7 @@ World classes ******************************************************************
 }
 
 .rankingForm {
-	color: #417d95;
+	color: #000000;
 }
 
 .miniTable{
@@ -985,19 +1327,21 @@ World classes ******************************************************************
 }
 
 .openWorldNewIcon{
-	width: 100px;
-	height: 100px;
+	width: 250px;
+	height: 150px;
 }
 
 /****************************************************************************************************************************************************
 Gallery classes *************************************************************************************************************************************
 *****************************************************************************************************************************************************/
+
 .galleryForm {
-	color: #417d95;
+	color: #000000;
 }
 
 .galleryCarousel{
 	margin-top: 20px;
+	width: 75%;
 }
 
 .galleryCarousel .item {
@@ -1020,4 +1364,13 @@ Gallery classes ****************************************************************
 .carouselControlImage{
 	width: 64px;
 	height: 64px;
+	padding-left: 0px;
+	margin-top: 150px;
+}
+
+.carouselControlImageSchedule{
+	width: 64px;
+	height: 64px;
+	padding-left: 0px;
+	margin-top: 10px;
 }

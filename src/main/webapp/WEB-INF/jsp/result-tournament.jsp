@@ -2,7 +2,7 @@
 <%@ include file="../layout/taglib.jsp"%>
 
 <div align="center">
-	<img src='<c:url value="/resources/images/resultTournament.png"/>' alt="Tournament">
+	<h1 class="mainHeader">TORNEO</h1>
 </div>
 
 <div align="center">
@@ -11,11 +11,8 @@
 
 <c:choose>
 	<c:when test="${tournamentSchedules.status eq 'Configuración'}">
-		<div class="alert alert-info">
-			<strong>Torneo en construcción.</strong> En breve estará listo
-		</div>			
-		<div align="center">
-			<img alt="bulding" src='<c:url value="/resources/images/building.gif"/>'>
+		<div class="emptyDiv" align="center">
+			<strong>Torneo en construcción.</strong><br />En breve estará listo
 		</div>
 	</c:when>
 	<c:otherwise>
@@ -105,10 +102,10 @@
 							</div>
 						
 							<a class="left carousel-control" href="#scheduleCarousel_<c:out value="${schedule.id}"/>" data-slide="prev">
-								<img class="carouselControlImage" alt="Left" src='<c:url value="/resources/images/leftArrow.png"/>' >
+								<img class="carouselControlImageSchedule" alt="Left" src='<c:url value="/resources/images/leftArrow.png"/>' >
 							</a>
 							<a class="right carousel-control" href="#scheduleCarousel_<c:out value="${schedule.id}"/>" data-slide="next">
-								<img class="carouselControlImage" alt="Right" src='<c:url value="/resources/images/rightArrow.png"/>' >
+								<img class="carouselControlImageSchedule" alt="Right" src='<c:url value="/resources/images/rightArrow.png"/>' >
 							</a>
 						</div>
 						
@@ -125,7 +122,7 @@
 				<c:if test="${tournamentSchedules.type eq 'Por grupos más liguilla'}">
 					<div class="resultTournamnetClusterContainer">
 						<c:forEach items="${tournamentSchedules.clusters}" var="cluster">
-							<a href="#" class="btn btn-link resultTournamnetClusterToggler" data-toggle="collapse" data-target="#cluster_<c:out value="${cluster.id}" />"><c:out value="${cluster.name}" /></a>
+							<a href="#" class="btn btn-link resultTournamnetClusterToggler generalLink" data-toggle="collapse" data-target="#cluster_<c:out value="${cluster.id}" />"><c:out value="${cluster.name}" /> <img class="arrowDown" src='<c:url value="/resources/images/arrowDown.png"/>' alt="ArrowDown"></a>
 							<br />
 							<div id="cluster_<c:out value="${cluster.id}" />" class="collapse">
 								<div class="resultTournamnetClusterInnerContainer">
@@ -199,10 +196,10 @@
 											</div>
 										
 											<a class="left carousel-control" href="#scheduleCarousel_<c:out value="${schedule.id}"/>" data-slide="prev">
-												<img class="carouselControlImage" alt="Left" src='<c:url value="/resources/images/leftArrow.png"/>' >
+												<img class="carouselControlImageSchedule" alt="Left" src='<c:url value="/resources/images/leftArrow.png"/>' >
 											</a>
 											<a class="right carousel-control" href="#scheduleCarousel_<c:out value="${schedule.id}"/>" data-slide="next">
-												<img class="carouselControlImage" alt="Right" src='<c:url value="/resources/images/rightArrow.png"/>' >
+												<img class="carouselControlImageSchedule" alt="Right" src='<c:url value="/resources/images/rightArrow.png"/>' >
 											</a>
 										</div>
 										
@@ -442,13 +439,16 @@
 			<c:if test="${tournamentSchedules.status eq 'Finalizado'}">
 				<div role="tabpanel" class="tab-pane resultTournamantChampionContainer" id="champion">
 					<div align="center">
-						<h1>Felicidades <strong class="resultTournamantChampion"><c:out value="${tournamentSchedules.winner}"></c:out>!!!</strong></h1>
+						<h2>Felicidades <strong class="resultTournamantChampion"><c:out value="${tournamentSchedules.winner}"></c:out>!!!</strong></h2>
 						<img alt="trophy" src='<c:url value="/resources/images/trophy.png"/>'>
-						<h3 class="resultTournamantChampionInfo">Por el título obtenido</h3>
+						<h4 class="resultTournamantChampionInfo">Por el título obtenido</h4>
 					</div>
 				</div>
 			</c:if>
 		</div>
+		
+		<br />
+		<br />
 	</c:otherwise>
 </c:choose>
 
@@ -458,8 +458,16 @@
 		
 		<c:forEach items="${tournamentSchedules.schedules}" var="schedule">
 			$("#scheduleCarousel_<c:out value="${schedule.id}"/>").carousel({
-				interval: false
+				interval : false
 			});
+		</c:forEach>
+		
+		<c:forEach items="${tournamentSchedules.clusters}" var="cluster">
+			<c:forEach items="${cluster.schedules}" var="schedule">
+				$("#scheduleCarousel_<c:out value="${schedule.id}"/>").carousel({
+					interval : false
+				});
+			</c:forEach>
 		</c:forEach>
 	});
 </script>

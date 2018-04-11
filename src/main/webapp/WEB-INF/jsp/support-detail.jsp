@@ -5,7 +5,7 @@
 
 <hr />
 
-<h3 class="text-primary"><c:out value="${supportCase.title}"/></h3>
+<h3 class="orangeColor"><c:out value="${supportCase.title}"/></h3>
 		
 <c:if test="${supportCase.type eq 'Baja'}">
 	<h4 class="text-muted">Urgencia: <strong><c:out value="${supportCase.type}"/></strong></h4>
@@ -63,7 +63,7 @@
 							</div>
 						</td>
 						<td>
-							<div class="col-md-5 supportMessage text-info">
+							<div class="col-md-5 supportMessage">
 								<c:choose>
 									<c:when test="${empty(conversation.messageAdministrator)}">
 										<p>Esperando por respuesta</p>
@@ -90,7 +90,7 @@
 							</div>
 						</div>
 						<div class="form-group" align="center">
-							<input type="submit" value="Enviar" class="btn btn-lg btn-primary" name="conversation">
+							<input type="submit" value="Enviar" class="btn btnAdministrationPrimary" name="conversation">
 						</div>
 					</form:form>
 				</c:when>
@@ -104,7 +104,7 @@
 							</div>
 						</div>
 						<div class="form-group" align="center">
-							<input type="submit" value="Enviar" class="btn btn-lg btn-primary disabled">
+							<input type="submit" value="Enviar" class="btn btnAdministrationPrimary disabled">
 						</div>
 					</form:form>
 				</c:otherwise>
@@ -112,6 +112,9 @@
 		</td>
 	</tr>
 </table>
+
+<br />
+<br />
 
 <div id="modalRemove" class="modal fade modalRemove">
 	<div class="modal-dialog">

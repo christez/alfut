@@ -181,7 +181,7 @@ public class MatchServiceImpl implements MatchService {
 											nextMatches.get(counterMatches).setTeamVisitorName(sortedWinningTeams.get(sortedWinningTeams.size() - counterMatches - 1).split("\\|")[1]);
 										}
 									}else{
-										tournament.setWinner(playoffs.get(playoffs.size() - 1).getMatches().get(0).getWinner().split("\\|")[1]);
+										tournament.setWinner(playoffs.get(playoffs.size() - 1).getMatches().get(0).getWinner());
 										tournament.setStatus("Finalizado");
 									}
 								}
@@ -258,7 +258,7 @@ public class MatchServiceImpl implements MatchService {
 											nextMatches.get(counterMatches).setTeamVisitorName(sortedWinningTeams.get(sortedWinningTeams.size() - counterMatches - 1).split("\\|")[1]);
 										}
 									}else{
-										tournament.setWinner(playoffs.get(playoffs.size() - 1).getMatches().get(0).getWinner().split("\\|")[1]);
+										tournament.setWinner(playoffs.get(playoffs.size() - 1).getMatches().get(0).getWinner());
 										tournament.setStatus("Finalizado");
 									}
 								}

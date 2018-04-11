@@ -5,7 +5,7 @@
 
 <hr />
 
-<a href='<spring:url value="/world-league-tournament.html" />' class="btn btn-lg btn-info" data-toggle="modal">Volver a "Jornadas"</a>
+<a href='<spring:url value="/world-league-tournament.html" />' class="btn btn-lg btnAdministrationPrimary" data-toggle="modal">Volver a "Jornadas"</a>
 
 <hr />
 
@@ -61,7 +61,10 @@
 		</div>
 	</div>
 	<div class="form-group" align="center">
-		<input type="submit" value="Actualizar" class="btn btn-lg btn-primary">
+		<br />
+		<input type="submit" value="Actualizar" class="btn btn-success btnRedirect">
+		<br />
+		<br />
 	</div>
 </form:form>
 

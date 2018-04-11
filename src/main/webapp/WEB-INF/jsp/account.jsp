@@ -20,7 +20,7 @@
 </c:if>
 
 <form:form commandName="user" cssClass="form-horizontal accountForm">
-	<h2 class="form-register-heading">Tus datos</h2>
+	<h2 class="form-register-heading">Datos</h2>
 	<div class="form-group">
 		<label for="username" class="col-sm-2 control-label registerLabel">Usuario:</label>
 		<div class="col-sm-10">
@@ -80,7 +80,10 @@
 		</div>
 	</div>		
 	<div class="form-group" align="center">
-		<input type="submit" value="Modificar" class="btn btn-lg btn-primary generalFormButton">
+		<br />
+		<input type="submit" value="Modificar" class="btn btn-success btnRedirect">
+		<br />
+		<br />
 	</div>
 </form:form>
 

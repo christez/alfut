@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../layout/taglib.jsp"%>
 
+<div align="center">
+	<h1 class="mainHeader">INGRESA TUS DATOS</h1>
+</div>
+
 <c:if test="${success eq true}">
 	<div class="alert alert-success alert-dismissable">
 		<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
@@ -15,54 +19,50 @@
 	</div>
 </c:if>
 
-<div align="center">
-	<img alt="register" src='<c:url value="/resources/images/register.png"/>'>
-</div>
-
 <form:form commandName="user" cssClass="form-horizontal registrationForm">
 	<div class="form-group">
-		<label for="username" class="col-sm-2 control-label registerLabel">Usuario:</label>
+		<label for="username" class="col-sm-2 control-label">Usuario:</label>
 		<div class="col-sm-10">
 			<form:input path="username" cssClass="form-control" maxlength="20" />
 			<form:errors path="username"/>
 		</div>
 	</div>
 	<div class="form-group">
-		<label for="password" class="col-sm-2 control-label registerLabel">Contraseña:</label>
+		<label for="password" class="col-sm-2 control-label">Contraseña:</label>
 		<div class="col-sm-10">
 			<form:password path="password" cssClass="form-control" maxlength="50" />
 			<form:errors path="password"/>
 		</div>
 	</div>
 	<div class="form-group">
-		<label for="password_again" class="col-sm-2 control-label registerLabel">Repetir contraseña:</label>
+		<label for="password_again" class="col-sm-2 control-label">Repetir contraseña:</label>
 		<div class="col-sm-10">
 			<input type="password" name="password_again" id="password:again" class="form-control" maxlength="50" />
 		</div>
 	</div>
 	<div class="form-group">
-		<label for="name" class="col-sm-2 control-label registerLabel">Nombre:</label>
+		<label for="name" class="col-sm-2 control-label">Nombre:</label>
 		<div class="col-sm-10">
 			<form:input path="name" cssClass="form-control" maxlength="20" />
 			<form:errors path="name"/>
 		</div>
 	</div>
 	<div class="form-group">
-		<label for="lastname" class="col-sm-2 control-label registerLabel">Apellido:</label>
+		<label for="lastname" class="col-sm-2 control-label">Apellido:</label>
 		<div class="col-sm-10">
 			<form:input path="lastname" cssClass="form-control" maxlength="20" />
 			<form:errors path="lastname"/>
 		</div>
 	</div>
 	<div class="form-group">
-		<label for="email" class="col-sm-2 control-label registerLabel">Email:</label>
+		<label for="email" class="col-sm-2 control-label">Email:</label>
 		<div class="col-sm-10">
 			<form:input path="email" cssClass="form-control" maxlength="50"/>
 			<form:errors path="email"/>
 		</div>
 	</div>	
 	<div class="form-group">
-		<label for="secretQuestion" class="col-sm-2 control-label registerLabel">Pregunta secreta:</label>
+		<label for="secretQuestion" class="col-sm-2 control-label">Pregunta secreta:</label>
 		<div class="col-sm-10">
 			<form:select path="secretQuestion" cssClass="form-control">
 				<form:option value="0" label="Opciones" />
@@ -72,7 +72,7 @@
 		</div>
 	</div>
 	<div class="form-group">
-		<label for="secretAnswer" class="col-sm-2 control-label registerLabel">Respuesta:</label>
+		<label for="secretAnswer" class="col-sm-2 control-label">Respuesta:</label>
 		<div class="col-sm-10">
 			<form:password path="secretAnswer" cssClass="form-control" maxlength="50"/>
 			<form:errors path="secretAnswer"/>
@@ -80,10 +80,10 @@
 	</div>
 	<div class="form-group" align="center">
 		<br />
-		<input type="checkbox" name="terms"><a href="#myModal" class="btn btn-link" data-toggle="modal">Acepto términos y condiciones</a>
+		<input type="checkbox" name="terms"><a href="#myModal" class="footerLink" data-toggle="modal">Acepto términos y condiciones</a>
 	</div>
 	<div class="form-group" align="center">
-		<input type="submit" value="Registrar" class="btn btn-lg btn-primary generalFormButton">
+		<input type="submit" value="Registrar" class="btn btn-lg btn-primary btnRedirect">
 	</div>
 </form:form>
 

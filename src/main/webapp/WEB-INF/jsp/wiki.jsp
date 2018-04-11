@@ -161,6 +161,8 @@
 			los equipos que hayan clasificado se enfrentaran en rondas eliminatorias para definir al campeón. Por ejemplo, puedes crear dos grupos con ocho 
 			equipos cada uno y seleccionar si avanzan los mejores de cada grupo, los dos mejores de cada grupos o los cuatro mejores de cada grupo. Dependiendo 
 			de cuantos equipos avancen, será el número de enfrentamientos de eliminación directa generados</li>
+			<li><strong>Por liguilla.</strong> Tipo de torneo sencillo. En este torneo debes generar cierta cantidad de equipos los cuales se enfrentarán
+			en rondas eliminatorias para definir al campeón</li>
 		</ol>
 	</div>
 	<div align="center">
@@ -320,6 +322,8 @@
 		<img alt="wikiInfo" src='<c:url value="/resources/images/scheduleGeneratePlayoffs.png"/>' class="wikiImage">
 		<br />
 		<img alt="wikiInfo" src='<c:url value="/resources/images/scheduleGenerateClusters.png"/>' class="wikiImage">
+		<br />
+		<img alt="wikiInfo" src='<c:url value="/resources/images/scheduleGeneratePlayoffsOnly.png"/>' class="wikiImage">
 	</div>
 	<div class="wikiDescription">
 		<ol>
@@ -349,6 +353,12 @@
 					es decir, si habrá ronda dieciseisavos de final, octavos de final, cuartos de final, semifinales o solo final para definir 
 					al campeón. En este tipo de torneo se deben generar previamente los grupos necesarios para cumplir con las reglas, es decir, 
 					no puede haber dieciséis clasificados si solo hay dos grupos con solo cuatro equipos por grupos</li>
+				</ul>
+			</li>
+			<li>
+				<p><strong>Por liguilla</strong></p>
+				<ul>
+					<li>En esta modalidad se deben haber creado 2, 4, 8, 16 ó 32 equipos para poder generar las rondas eliminatorias.</li>
 				</ul>
 			</li>
 		</ol>

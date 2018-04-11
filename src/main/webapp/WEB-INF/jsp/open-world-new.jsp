@@ -2,16 +2,13 @@
 <%@ include file="../layout/taglib.jsp"%>
 
 <div align="center">
-	<img alt="worldLeagues" src='<c:url value="/resources/images/worldNews.png"/>'>
+	<h1 class="mainHeader">NOTICIAS DEL MUNDO</h1>
 </div>
 
 <c:choose>
 	<c:when test="${empty(news)}">
-		<div class="alert alert-info">
-			<strong>Sitio en construcción.</strong> En breve estará listo
-		</div>			
-		<div align="center">
-			<img alt="bulding" src='<c:url value="/resources/images/building.gif"/>'>
+		<div class="emptyDiv" align="center">
+			<strong>Lo sentimos.</strong><br />No hay noticias recientes
 		</div>
 	</c:when>
 	<c:otherwise>
@@ -25,19 +22,25 @@
 						<c:when test="${moduleFlag % 2 eq 1}">
 							<div class="col-sm-4">
 								<p class="newsHeader"><c:out value="${currentNew.header}"/></p>
-								<p class="newsInfo"><c:out value="${currentNew.information}"/></p>
+								<p class="newsDate"><fmt:formatDate value="${currentNew.creationDate}" pattern="yyyy/MM/dd"/></p>
+								<div align="justify">
+									<p class="newsInfo"><c:out value="${currentNew.information}"/></p>
+								</div>
 							</div>
 							<div class="col-sm-4 openWorldNewIconContainer">
-								<img alt="icon" src='<c:url value="${currentNew.url}"/>' class="openWorldNewIcon">
+								<img alt="icon" src='<c:url value="${currentNew.url}"/>' class="openWorldNewIcon" data-toggle="tooltip" data-placement="right" title='<c:out value="${currentNew.header}"/>'>
 							</div>
 						</c:when>
 						<c:otherwise>
 							<div class="col-sm-4 openWorldNewIconContainer">
-								<img alt="icon" src='<c:url value="${currentNew.url}"/>' class="openWorldNewIcon">
+								<img alt="icon" src='<c:url value="${currentNew.url}"/>' class="openWorldNewIcon" data-toggle="tooltip" data-placement="left" title='<c:out value="${currentNew.header}"/>'>
 							</div>
 							<div class="col-sm-4">
 								<p class="newsHeader"><c:out value="${currentNew.header}"/></p>
-								<p class="newsInfo"><c:out value="${currentNew.information}"/></p>
+								<p class="newsDate"><fmt:formatDate value="${currentNew.creationDate}" pattern="yyyy/MM/dd"/></p>
+								<div align="justify">
+									<p class="newsInfo"><c:out value="${currentNew.information}"/></p>
+								</div>
 							</div>
 						</c:otherwise>
 					</c:choose>

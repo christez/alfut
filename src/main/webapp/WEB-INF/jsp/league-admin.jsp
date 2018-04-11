@@ -5,7 +5,7 @@
 
 <hr />
 
-<a href="#myModal" class="btn btn-lg btn-primary" data-toggle="modal">Crear liga</a>
+<a href="#myModal" class="btn btn-lg btnAdministrationPrimary" data-toggle="modal">Crear liga</a>
 
 <hr />
 
@@ -35,7 +35,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-					<input type="submit" class="btn btn-primary" value="Crear">
+					<input type="submit" class="btn btnAdministrationPrimary" value="Crear">
 				</div>
 			</div>
 		</div>
@@ -58,11 +58,8 @@
 
 <c:choose>
 	<c:when test="${empty(user.leagues)}">
-		<div class="alert alert-warning">
-			<strong>No cuentas con ninguna liga creada. Da click en el botón "Crear liga" para iniciar</strong>
-		</div>
-		<div align="center">
-			<img alt="warningIcon" src='<c:url value="/resources/images/warningIcon.png"/>'>
+		<div class="emptyDiv" align="center">
+			<strong>No cuentas con ninguna liga creada.</strong><br />Da click en el botón "Crear liga" para iniciar
 		</div>
 	</c:when>
 	<c:otherwise>
@@ -76,9 +73,9 @@
 				<div role="tabpanel" class="tab-pane" id="league_<c:out value="${league.id}"/>">
 					<div class="row">
 		  				<div class="col-md-4">
-		  					<h3 class="leagueTabHeader">Liga "<c:out value="${league.name}"/>"</h3>
-							<p class="leagueAdditionalInfo">Información adicional: <c:out value="${league.additionalInfo}"/></p>
-							<p class="leagueCreationDate">Creada en: <fmt:formatDate value="${league.creationDate}" pattern="yyyy/MM/dd"/></p>
+		  					<h3 class="leagueTabHeader">Liga: <span class="orangeColor"><c:out value="${league.name}"/></span></h3>
+							<p class="leagueAdditionalInfo">Información adicional: <span class="orangeColor"><c:out value="${league.additionalInfo}"/></span></p>
+							<p class="leagueCreationDate">Creada en: <span class="orangeColor"><fmt:formatDate value="${league.creationDate}" pattern="yyyy/MM/dd"/></span></p>
 							
 							<a href='<spring:url value="/tournament-admin.html?rpLeagueId=${league.id}" />' class="btn btn-sm btn-info" data-toggle="modal">Torneos</a>
 		  					<a href='<spring:url value="/league-detail.html?rpLeagueId=${league.id}" />' class="btn btn-sm btn-success" data-toggle="modal">Modificar</a>
@@ -92,6 +89,9 @@
 				</div>
 			</c:forEach>
 		</div>
+		
+		<br />
+		<br />
 	</c:otherwise>
 </c:choose>
 

@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../layout/taglib.jsp"%>
 
+<div align="center">
+	<h1 class="mainHeader">INGRESA TUS CREDENCIALES</h1>
+</div>
+
 <c:if test="${not empty SPRING_SECURITY_LAST_EXCEPTION}">
 	<div class="alert alert-danger alert-dismissable">
 		<a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
@@ -22,18 +26,19 @@
 	</div>
 </c:if>
 
-<div align="center">
-	<img alt="login" src='<c:url value="/resources/images/login.png"/>'>
-</div>
-
 <form class="form-signin" action='<spring:url value="/j_spring_security_check"></spring:url>' method="POST">
 	<input type="text" name="j_username" class="form-control" placeholder="Usuario" required autofocus maxlength="20">
 	<input type="password" name="j_password" class="form-control" placeholder="Contraseña" required autofocus maxlength="50">
-	<button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+	
+	<div align="center">
+		<button class="btn btn-lg btn-primary btnRedirect btn-block" type="submit">Ingresar</button>
+	</div>
 </form>
 
 <div align="center">
-	<a href='<spring:url value="/recover.html" />' class="btn btn-link" data-toggle="modal">¿Olvidaste tu contraseña?</a>
+	<a href='<spring:url value="/recover.html" />' class="footerLink" data-toggle="modal">¿Olvidaste tu contraseña?</a>
+	<br />
+	<br />
 </div>
 
 <!--div align="center">

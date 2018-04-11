@@ -138,7 +138,7 @@ public class TournamentServiceImpl implements TournamentService {
 
 	@Override
 	public List<Tournament> findAll() {
-		Page<Tournament> tournaments = tournamentRepository.findAll(new PageRequest(0, 4, Direction.DESC, "creationDate"));
+		Page<Tournament> tournaments = tournamentRepository.findAll(new PageRequest(0, 6, Direction.DESC, "creationDate"));
 		List<Tournament> tournamentList = tournaments.getContent();
 		
 		return tournamentList;

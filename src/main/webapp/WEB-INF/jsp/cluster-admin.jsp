@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../layout/taglib.jsp"%>
 
-<h1 class="mainHeader">Grupos</h1>
+<h1 class="mainHeader">Grupos del torneo <span class="orangeColor"><c:out value="${tournament.name}"></c:out> </span></h1>
 
 <hr />
 
@@ -9,7 +9,7 @@
 
 <c:if test="${tournament.type eq 'Por grupos más liguilla'}">
 	<c:if test="${tournament.status eq 'Configuración'}">
-		<a href="#groupsModal" class="btn btn-lg btn-primary" data-toggle="modal">Crear grupo</a>
+		<a href="#groupsModal" class="btn btn-lg btnAdministrationPrimary" data-toggle="modal">Crear grupo</a>
 	</c:if>
 	
 	<form:form commandName="cluster" cssClass="form-horizontal clusterForm">
@@ -31,7 +31,7 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-						<input type="submit" class="btn btn-primary" value="Crear">
+						<input type="submit" class="btn btnAdministrationPrimary" value="Crear">
 					</div>
 				</div>
 			</div>
@@ -50,11 +50,8 @@
 
 <c:choose>
 		<c:when test="${empty(tournament.clusters)}">
-			<div class="alert alert-warning">
-				<strong>No cuentas con ningún grupo creado. Da click en el botón "Crear grupo" para iniciar</strong>
-			</div>
-			<div align="center">
-				<img alt="warningIcon" src='<c:url value="/resources/images/warningIcon.png"/>'>
+			<div class="emptyDiv" align="center">
+				<strong>No cuentas con ningún grupo creado.</strong><br />Da click en el botón "Crear grupo" para iniciar
 			</div>
 		</c:when>
 		<c:otherwise>
@@ -84,11 +81,8 @@
 							<div class="panel-body">
 						    	<c:choose>
 									<c:when test="${empty(cluster.teams)}">
-										<div class="alert alert-warning clusterWarningText">
-											<strong>No cuentas con ningún equipo creado. Da click en el botón "Detalle del equipo" para iniciar</strong>
-										</div>
-										<div align="center">
-											<img alt="warningIcon" src='<c:url value="/resources/images/warningIcon.png"/>' class="clusterWarningIcon">
+										<div class="emptyDiv" align="center">
+											<strong>No cuentas con ningún equipo creado.</strong><br />Da click en el botón "Detalle de equipos" para iniciar
 										</div>
 									</c:when>
 									<c:otherwise>

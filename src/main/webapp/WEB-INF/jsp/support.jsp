@@ -3,11 +3,12 @@
 
 <h1 class="mainHeader">Soporte</h1>
 
-<hr />
-
 <c:if test="${empty(user.supportCase)}">
-	<a href="#myModal" class="btn btn-lg btn-primary supportButton" data-toggle="modal">Levantar caso</a>
+	<hr />
+	<a href="#myModal" class="btn btn-lg btnAdministrationPrimary" data-toggle="modal">Levantar caso</a>
 </c:if>
+
+<hr />
 
 <form:form commandName="supportCase" cssClass="form-horizontal supportForm">
 	<div id="myModal" class="modal fade">
@@ -45,7 +46,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-					<input type="submit" class="btn btn-primary" value="Levantar">
+					<input type="submit" class="btn btnAdministrationPrimary" value="Levantar">
 				</div>
 			</div>
 		</div>
@@ -68,15 +69,12 @@
 
 <c:choose>
 	<c:when test="${empty(user.supportCase)}">
-		<div class="alert alert-success">
-			<strong>No cuentas con ninguna caso creado.</strong> De ser necesario, puedes solicitar ayuda dando click en el botón "Levantar caso"
-		</div>
-		<div align="center">
-			<img alt="goodIcon" src='<c:url value="/resources/images/checkmark.png"/>'>
+		<div class="emptyDiv" align="center">
+			<strong>No cuentas con ninguna caso creado.</strong><br />De ser necesario, puedes solicitar ayuda dando click en el botón "Levantar caso"
 		</div>
 	</c:when>
 	<c:otherwise>
-		<h3 class="text-primary"><c:out value="${user.supportCase.title}"/></h3>
+		<h3 class="orangeColor"><c:out value="${user.supportCase.title}"/></h3>
 		
 		<c:if test="${user.supportCase.type eq 'Baja'}">
 			<h4 class="text-muted">Urgencia: <strong><c:out value="${user.supportCase.type}"/></strong></h4>
@@ -116,11 +114,11 @@
 									<c:if test="${user.supportCase.type eq 'Alta'}">
 										<div class="col-md-5 supportMessage text-danger">
 									</c:if>
-										<p class=""><c:out value="${conversation.messageUser}"/></p>
+										<p><c:out value="${conversation.messageUser}"/></p>
 									</div>
 								</td>
 								<td>
-									<div class="col-md-5 supportMessage text-info">
+									<div class="col-md-5 supportMessage">
 										<c:choose>
 											<c:when test="${empty(conversation.messageAdministrator)}">
 												<p>Esperando por respuesta</p>
@@ -147,7 +145,7 @@
 									</div>
 								</div>
 								<div class="form-group" align="center">
-									<input type="submit" value="Enviar" class="btn btn-lg btn-primary" name="conversation">
+									<input type="submit" value="Enviar" class="btn btnAdministrationPrimary" name="conversation">
 								</div>
 							</form:form>
 						</c:when>
@@ -161,7 +159,7 @@
 									</div>
 								</div>
 								<div class="form-group" align="center">
-									<input type="submit" value="Enviar" class="btn btn-lg btn-primary disabled">
+									<input type="submit" value="Enviar" class="btn btnAdministrationPrimary disabled">
 								</div>
 							</form:form>
 						</c:otherwise>
@@ -169,6 +167,9 @@
 				</td>
 			</tr>
 		</table>
+		
+		<br />
+		<br />
 	</c:otherwise>
 </c:choose>
 

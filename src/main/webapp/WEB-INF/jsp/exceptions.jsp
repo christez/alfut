@@ -21,11 +21,8 @@
 
 <c:choose>
 	<c:when test="${empty(exceptions)}">
-		<div class="alert alert-success">
-			<strong>No existe ninguna excepción.</strong>
-		</div>
-		<div align="center">
-			<img alt="goodIcon" src='<c:url value="/resources/images/checkmark.png"/>'>
+		<div class="emptyDiv" align="center">
+			<strong>Buenas noticias</strong><br />No existe ninguna excepción
 		</div>
 	</c:when>
 	<c:otherwise>

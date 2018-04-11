@@ -5,7 +5,7 @@
 
 <hr />
 
-<a href="#myModal" class="btn btn-lg btn-primary" data-toggle="modal">Crear liga</a>
+<a href="#myModal" class="btn btn-lg btnAdministrationPrimary" data-toggle="modal">Crear liga</a>
 
 <hr />
 
@@ -35,7 +35,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-					<input type="submit" class="btn btn-primary" value="Crear">
+					<input type="submit" class="btn btnAdministrationPrimary" value="Crear">
 				</div>
 			</div>
 		</div>
@@ -58,11 +58,8 @@
 
 <c:choose>
 	<c:when test="${empty(leagues)}">
-		<div class="alert alert-warning">
-			<strong>No existe ninguna liga creada. Da click en el botón "Crear liga" para iniciar</strong>
-		</div>
-		<div align="center">
-			<img alt="warningIcon" src='<c:url value="/resources/images/warningIcon.png"/>'>
+		<div class="emptyDiv" align="center">
+			<strong>No existe ninguna liga creada.</strong><br />Da click en el botón "Crear liga" para iniciar
 		</div>
 	</c:when>
 	<c:otherwise>
@@ -91,6 +88,9 @@
 						<a href='<spring:url value="/world-league-detail.html?rpLeagueId=${league.id}" />' class="btn btn-lg btn-default worldLeagueButton" data-toggle="modal"><c:out value="${league.name}" /></a>
 					</c:if>
 					
+					<img alt="flag" src='<c:url value="${league.flagUrl}"/>' class="openWorldLeagueFlag">
+					<br />
+					<br />
 					<a href='<spring:url value="/world-league/remove/${league.id}.html" />' class="btn btn-danger btn-xs triggerRemove worldLeagueButtonRemove">Eliminar</a>
 				</div>
 				

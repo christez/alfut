@@ -208,14 +208,18 @@ public final class template_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_meth_security_authorize_15(_jspx_page_context))
         return;
       out.write("\r\n");
-      out.write("\t\t\t\t\t</ul>\r\n");
-      out.write("\t\t\t\t\t<ul class=\"nav navbar-nav navbar-right\">\r\n");
-      out.write("\t\t\t\t\t\t");
+      out.write("\t\t\t\t    \t");
       if (_jspx_meth_security_authorize_16(_jspx_page_context))
         return;
       out.write("\r\n");
-      out.write("\t\t\t\t    \t");
+      out.write("\t\t\t\t\t</ul>\r\n");
+      out.write("\t\t\t\t\t<ul class=\"nav navbar-nav navbar-right\">\r\n");
+      out.write("\t\t\t\t\t\t");
       if (_jspx_meth_security_authorize_17(_jspx_page_context))
+        return;
+      out.write("\r\n");
+      out.write("\t\t\t\t    \t");
+      if (_jspx_meth_security_authorize_18(_jspx_page_context))
         return;
       out.write("\r\n");
       out.write("\t\t\t\t\t</ul>\r\n");
@@ -227,8 +231,6 @@ public final class template_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_meth_tiles_insertAttribute_0(_jspx_page_context))
         return;
       out.write("\r\n");
-      out.write("\r\n");
-      out.write("\t\t<hr />\r\n");
       out.write("\r\n");
       out.write("\t\t<div align=\"center\">\r\n");
       out.write("\t\t\t");
@@ -1307,22 +1309,16 @@ public final class template_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.security.taglibs.authz.JspAuthorizeTag _jspx_th_security_authorize_16 = (org.springframework.security.taglibs.authz.JspAuthorizeTag) _jspx_tagPool_security_authorize_access.get(org.springframework.security.taglibs.authz.JspAuthorizeTag.class);
     _jspx_th_security_authorize_16.setPageContext(_jspx_page_context);
     _jspx_th_security_authorize_16.setParent(null);
-    _jspx_th_security_authorize_16.setAccess("!isAuthenticated()");
+    _jspx_th_security_authorize_16.setAccess("hasRole('ROLE_ADMIN')");
     int _jspx_eval_security_authorize_16 = _jspx_th_security_authorize_16.doStartTag();
     if (_jspx_eval_security_authorize_16 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       out.write("\r\n");
-      out.write("\t\t\t\t\t    \t<li class=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${current == 'register' ? 'active' : ''}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\t\t\t\t\t\t\t<li class=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${current == 'commercial-admin' ? 'active' : ''}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\"><a class=\"nav-link\" href='");
       if (_jspx_meth_spring_url_17((javax.servlet.jsp.tagext.JspTag) _jspx_th_security_authorize_16, _jspx_page_context))
         return true;
-      out.write("'>Registrarse</a></li>\r\n");
-      out.write("\t\t\t\t\t    \t<li class=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${current == 'login' ? 'active' : ''}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("\"><a class=\"nav-link\" href='");
-      if (_jspx_meth_spring_url_18((javax.servlet.jsp.tagext.JspTag) _jspx_th_security_authorize_16, _jspx_page_context))
-        return true;
-      out.write("'>Ingresar</a></li>\r\n");
+      out.write("'>Anuncios</a></li>\r\n");
       out.write("\t\t\t\t    \t");
     }
     if (_jspx_th_security_authorize_16.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -1341,7 +1337,7 @@ public final class template_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.UrlTag _jspx_th_spring_url_17 = (org.springframework.web.servlet.tags.UrlTag) _jspx_tagPool_spring_url_value_nobody.get(org.springframework.web.servlet.tags.UrlTag.class);
     _jspx_th_spring_url_17.setPageContext(_jspx_page_context);
     _jspx_th_spring_url_17.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_security_authorize_16);
-    _jspx_th_spring_url_17.setValue("/register.html");
+    _jspx_th_spring_url_17.setValue("/commercial-admin.html");
     int[] _jspx_push_body_count_spring_url_17 = new int[] { 0 };
     try {
       int _jspx_eval_spring_url_17 = _jspx_th_spring_url_17.doStartTag();
@@ -1359,15 +1355,49 @@ public final class template_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
-  private boolean _jspx_meth_spring_url_18(javax.servlet.jsp.tagext.JspTag _jspx_th_security_authorize_16, PageContext _jspx_page_context)
+  private boolean _jspx_meth_security_authorize_17(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  security:authorize
+    org.springframework.security.taglibs.authz.JspAuthorizeTag _jspx_th_security_authorize_17 = (org.springframework.security.taglibs.authz.JspAuthorizeTag) _jspx_tagPool_security_authorize_access.get(org.springframework.security.taglibs.authz.JspAuthorizeTag.class);
+    _jspx_th_security_authorize_17.setPageContext(_jspx_page_context);
+    _jspx_th_security_authorize_17.setParent(null);
+    _jspx_th_security_authorize_17.setAccess("!isAuthenticated()");
+    int _jspx_eval_security_authorize_17 = _jspx_th_security_authorize_17.doStartTag();
+    if (_jspx_eval_security_authorize_17 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      out.write("\r\n");
+      out.write("\t\t\t\t\t    \t<li class=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${current == 'register' ? 'active' : ''}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\"><a class=\"nav-link\" href='");
+      if (_jspx_meth_spring_url_18((javax.servlet.jsp.tagext.JspTag) _jspx_th_security_authorize_17, _jspx_page_context))
+        return true;
+      out.write("'>Registrarse</a></li>\r\n");
+      out.write("\t\t\t\t\t    \t<li class=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${current == 'login' ? 'active' : ''}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\"><a class=\"nav-link\" href='");
+      if (_jspx_meth_spring_url_19((javax.servlet.jsp.tagext.JspTag) _jspx_th_security_authorize_17, _jspx_page_context))
+        return true;
+      out.write("'>Ingresar</a></li>\r\n");
+      out.write("\t\t\t\t    \t");
+    }
+    if (_jspx_th_security_authorize_17.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_security_authorize_access.reuse(_jspx_th_security_authorize_17);
+      return true;
+    }
+    _jspx_tagPool_security_authorize_access.reuse(_jspx_th_security_authorize_17);
+    return false;
+  }
+
+  private boolean _jspx_meth_spring_url_18(javax.servlet.jsp.tagext.JspTag _jspx_th_security_authorize_17, PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  spring:url
     org.springframework.web.servlet.tags.UrlTag _jspx_th_spring_url_18 = (org.springframework.web.servlet.tags.UrlTag) _jspx_tagPool_spring_url_value_nobody.get(org.springframework.web.servlet.tags.UrlTag.class);
     _jspx_th_spring_url_18.setPageContext(_jspx_page_context);
-    _jspx_th_spring_url_18.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_security_authorize_16);
-    _jspx_th_spring_url_18.setValue("/login.html");
+    _jspx_th_spring_url_18.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_security_authorize_17);
+    _jspx_th_spring_url_18.setValue("/register.html");
     int[] _jspx_push_body_count_spring_url_18 = new int[] { 0 };
     try {
       int _jspx_eval_spring_url_18 = _jspx_th_spring_url_18.doStartTag();
@@ -1385,32 +1415,6 @@ public final class template_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
-  private boolean _jspx_meth_security_authorize_17(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  security:authorize
-    org.springframework.security.taglibs.authz.JspAuthorizeTag _jspx_th_security_authorize_17 = (org.springframework.security.taglibs.authz.JspAuthorizeTag) _jspx_tagPool_security_authorize_access.get(org.springframework.security.taglibs.authz.JspAuthorizeTag.class);
-    _jspx_th_security_authorize_17.setPageContext(_jspx_page_context);
-    _jspx_th_security_authorize_17.setParent(null);
-    _jspx_th_security_authorize_17.setAccess("isAuthenticated()");
-    int _jspx_eval_security_authorize_17 = _jspx_th_security_authorize_17.doStartTag();
-    if (_jspx_eval_security_authorize_17 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
-      out.write("\r\n");
-      out.write("\t\t\t\t\t    \t<li><a class=\"nav-link\" href='");
-      if (_jspx_meth_spring_url_19((javax.servlet.jsp.tagext.JspTag) _jspx_th_security_authorize_17, _jspx_page_context))
-        return true;
-      out.write("'>Logout</a></li>\r\n");
-      out.write("\t\t\t\t    \t");
-    }
-    if (_jspx_th_security_authorize_17.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_security_authorize_access.reuse(_jspx_th_security_authorize_17);
-      return true;
-    }
-    _jspx_tagPool_security_authorize_access.reuse(_jspx_th_security_authorize_17);
-    return false;
-  }
-
   private boolean _jspx_meth_spring_url_19(javax.servlet.jsp.tagext.JspTag _jspx_th_security_authorize_17, PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -1419,7 +1423,7 @@ public final class template_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.springframework.web.servlet.tags.UrlTag _jspx_th_spring_url_19 = (org.springframework.web.servlet.tags.UrlTag) _jspx_tagPool_spring_url_value_nobody.get(org.springframework.web.servlet.tags.UrlTag.class);
     _jspx_th_spring_url_19.setPageContext(_jspx_page_context);
     _jspx_th_spring_url_19.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_security_authorize_17);
-    _jspx_th_spring_url_19.setValue("/logout");
+    _jspx_th_spring_url_19.setValue("/login.html");
     int[] _jspx_push_body_count_spring_url_19 = new int[] { 0 };
     try {
       int _jspx_eval_spring_url_19 = _jspx_th_spring_url_19.doStartTag();
@@ -1433,6 +1437,58 @@ public final class template_jsp extends org.apache.jasper.runtime.HttpJspBase
     } finally {
       _jspx_th_spring_url_19.doFinally();
       _jspx_tagPool_spring_url_value_nobody.reuse(_jspx_th_spring_url_19);
+    }
+    return false;
+  }
+
+  private boolean _jspx_meth_security_authorize_18(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  security:authorize
+    org.springframework.security.taglibs.authz.JspAuthorizeTag _jspx_th_security_authorize_18 = (org.springframework.security.taglibs.authz.JspAuthorizeTag) _jspx_tagPool_security_authorize_access.get(org.springframework.security.taglibs.authz.JspAuthorizeTag.class);
+    _jspx_th_security_authorize_18.setPageContext(_jspx_page_context);
+    _jspx_th_security_authorize_18.setParent(null);
+    _jspx_th_security_authorize_18.setAccess("isAuthenticated()");
+    int _jspx_eval_security_authorize_18 = _jspx_th_security_authorize_18.doStartTag();
+    if (_jspx_eval_security_authorize_18 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      out.write("\r\n");
+      out.write("\t\t\t\t\t    \t<li><a class=\"nav-link\" href='");
+      if (_jspx_meth_spring_url_20((javax.servlet.jsp.tagext.JspTag) _jspx_th_security_authorize_18, _jspx_page_context))
+        return true;
+      out.write("'>Logout</a></li>\r\n");
+      out.write("\t\t\t\t    \t");
+    }
+    if (_jspx_th_security_authorize_18.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_security_authorize_access.reuse(_jspx_th_security_authorize_18);
+      return true;
+    }
+    _jspx_tagPool_security_authorize_access.reuse(_jspx_th_security_authorize_18);
+    return false;
+  }
+
+  private boolean _jspx_meth_spring_url_20(javax.servlet.jsp.tagext.JspTag _jspx_th_security_authorize_18, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  spring:url
+    org.springframework.web.servlet.tags.UrlTag _jspx_th_spring_url_20 = (org.springframework.web.servlet.tags.UrlTag) _jspx_tagPool_spring_url_value_nobody.get(org.springframework.web.servlet.tags.UrlTag.class);
+    _jspx_th_spring_url_20.setPageContext(_jspx_page_context);
+    _jspx_th_spring_url_20.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_security_authorize_18);
+    _jspx_th_spring_url_20.setValue("/logout");
+    int[] _jspx_push_body_count_spring_url_20 = new int[] { 0 };
+    try {
+      int _jspx_eval_spring_url_20 = _jspx_th_spring_url_20.doStartTag();
+      if (_jspx_th_spring_url_20.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_spring_url_20[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_spring_url_20.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_spring_url_20.doFinally();
+      _jspx_tagPool_spring_url_value_nobody.reuse(_jspx_th_spring_url_20);
     }
     return false;
   }

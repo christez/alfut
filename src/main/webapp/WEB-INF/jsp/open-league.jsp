@@ -2,13 +2,13 @@
 <%@ include file="../layout/taglib.jsp"%>
 
 <div align="center">
-	<img src='<c:url value="/resources/images/league.png"/>' alt="league">
+	<h1 class="mainHeader">LISTADO DE LIGAS</h1>
 </div>
 
 <div class="row">
 	<div class="col-sm-12" align="center">
 		<nav aria-label="Page navigation example">
-			<ul class="pagination openLeagueMenu">
+			<ul class="pagination pagination-sm">
 				<c:choose>
 					<c:when test="${leagueName eq 'A'}">
 						<li class="page-item active"><a class="page-link" href='<spring:url value="/open-league.html?rpLeagueName=A" />'>A</a></li>
@@ -328,24 +328,20 @@
 
 <c:choose>
 	<c:when test="${empty(leagues)}">
-		<div class="alert alert-info openLeagueSorryBanner">
-			<strong>Lo sentimos.</strong> No hay ligas en este listado
-		</div>
-		<div align="center">
-			<img alt="sadFace" src='<c:url value="/resources/images/sadFace.png"/>'>
+		<div class="emptyDiv" align="center">
+			<strong>Lo sentimos.</strong><br />No hay ligas en este listado
 		</div>
 	</c:when>
 	<c:otherwise>
 		<div class="row">
 			<c:forEach items="${leagues}" var="league">
-				<div class="col-md-3" align="center">
-					<a href='<spring:url value="/result-league.html?rpLeagueId=${league.id}" />' class="btn btn-link btn-lg"><c:out value="${league.name}"/></a>			 		
+				<div class="col-md-3" align="center" style="padding: 20px;">
+					<a href='<spring:url value="/result-league.html?rpLeagueId=${league.id}" />' class="generalLink"><c:out value="${league.name}"/> <img src='<c:url value="/resources/images/ball.png"/>' alt="ball"></a>			 		
 			 	</div>
 			</c:forEach>
 		</div>
 		
-		<div align="center" class="openLeagueLogo">
-			<img src='<c:url value="/resources/images/openLeague.png"/>' alt="openLeague">
-		</div>
+		<br />
+		<br />
 	</c:otherwise>
 </c:choose>

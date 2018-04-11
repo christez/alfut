@@ -20,7 +20,6 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_form_errors_path_nobody;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_form_input_path_maxlength_cssClass_nobody;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_if_test;
-  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_url_value_nobody;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_spring_url_value_nobody;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_form_form_cssClass_commandName;
 
@@ -35,7 +34,6 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_tagPool_form_errors_path_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_form_input_path_maxlength_cssClass_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_c_if_test = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
-    _jspx_tagPool_c_url_value_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_spring_url_value_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_form_form_cssClass_commandName = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
   }
@@ -45,7 +43,6 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_tagPool_form_errors_path_nobody.release();
     _jspx_tagPool_form_input_path_maxlength_cssClass_nobody.release();
     _jspx_tagPool_c_if_test.release();
-    _jspx_tagPool_c_url_value_nobody.release();
     _jspx_tagPool_spring_url_value_nobody.release();
     _jspx_tagPool_form_form_cssClass_commandName.release();
   }
@@ -87,6 +84,10 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
+      out.write("<div align=\"center\">\r\n");
+      out.write("\t<h1 class=\"mainHeader\">INGRESA TUS CREDENCIALES</h1>\r\n");
+      out.write("</div>\r\n");
+      out.write("\r\n");
       if (_jspx_meth_c_if_0(_jspx_page_context))
         return;
       out.write("\r\n");
@@ -99,27 +100,25 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
         return;
       out.write("\r\n");
       out.write("\r\n");
-      out.write("<div align=\"center\">\r\n");
-      out.write("\t<img alt=\"login\" src='");
-      if (_jspx_meth_c_url_0(_jspx_page_context))
-        return;
-      out.write("'>\r\n");
-      out.write("</div>\r\n");
-      out.write("\r\n");
       out.write("<form class=\"form-signin\" action='");
       if (_jspx_meth_spring_url_0(_jspx_page_context))
         return;
       out.write("' method=\"POST\">\r\n");
       out.write("\t<input type=\"text\" name=\"j_username\" class=\"form-control\" placeholder=\"Usuario\" required autofocus maxlength=\"20\">\r\n");
       out.write("\t<input type=\"password\" name=\"j_password\" class=\"form-control\" placeholder=\"Contraseña\" required autofocus maxlength=\"50\">\r\n");
-      out.write("\t<button class=\"btn btn-lg btn-primary btn-block\" type=\"submit\">Ingresar</button>\r\n");
+      out.write("\t\r\n");
+      out.write("\t<div align=\"center\">\r\n");
+      out.write("\t\t<button class=\"btn btn-lg btn-primary btnRedirect btn-block\" type=\"submit\">Ingresar</button>\r\n");
+      out.write("\t</div>\r\n");
       out.write("</form>\r\n");
       out.write("\r\n");
       out.write("<div align=\"center\">\r\n");
       out.write("\t<a href='");
       if (_jspx_meth_spring_url_1(_jspx_page_context))
         return;
-      out.write("' class=\"btn btn-link\" data-toggle=\"modal\">¿Olvidaste tu contraseña?</a>\r\n");
+      out.write("' class=\"footerLink\" data-toggle=\"modal\">¿Olvidaste tu contraseña?</a>\r\n");
+      out.write("\t<br />\r\n");
+      out.write("\t<br />\r\n");
       out.write("</div>\r\n");
       out.write("\r\n");
       out.write("<!--div align=\"center\">\r\n");
@@ -392,24 +391,6 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       return true;
     }
     _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_2);
-    return false;
-  }
-
-  private boolean _jspx_meth_c_url_0(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  c:url
-    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_0 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
-    _jspx_th_c_url_0.setPageContext(_jspx_page_context);
-    _jspx_th_c_url_0.setParent(null);
-    _jspx_th_c_url_0.setValue("/resources/images/login.png");
-    int _jspx_eval_c_url_0 = _jspx_th_c_url_0.doStartTag();
-    if (_jspx_th_c_url_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_0);
-      return true;
-    }
-    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_0);
     return false;
   }
 

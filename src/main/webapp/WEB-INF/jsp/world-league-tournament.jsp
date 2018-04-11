@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../layout/taglib.jsp"%>
 
-<h1 class="mainHeader">Torneo "<c:out value="${tournament.name}" />"</h1>
+<h1 class="mainHeader">Torneo <span class="orangeColor"><c:out value="${tournament.name}" /></span></h1>
 
 <hr />
 
 <a href='<spring:url value="/world-league-detail.html" />' class="btn btn-lg btn-info" data-toggle="modal">Volver a "Torneo"</a>
-<a href="#myModal" class="btn btn-lg btn-primary" data-toggle="modal">Crear jornada</a>
+<a href="#myModal" class="btn btn-lg btnAdministrationPrimary" data-toggle="modal">Crear jornada</a>
 
 <hr />
 
@@ -36,7 +36,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-					<input type="submit" class="btn btn-primary" value="Crear">
+					<input type="submit" class="btn btnAdministrationPrimary" value="Crear">
 				</div>
 			</div>
 		</div>
@@ -59,11 +59,8 @@
 
 <c:choose>
 	<c:when test="${empty(tournament.schedules)}">
-		<div class="alert alert-warning">
-			<strong>No existe ninguna jornada creada. Da click en el botón "Crear jornada" para iniciar</strong>
-		</div>
-		<div align="center">
-			<img alt="warningIcon" src='<c:url value="/resources/images/warningIcon.png"/>'>
+		<div class="emptyDiv" align="center">
+			<strong>No existe ninguna jornada creada.</strong><br />Da click en el botón "Crear jornada" para iniciar
 		</div>
 	</c:when>
 	<c:otherwise>

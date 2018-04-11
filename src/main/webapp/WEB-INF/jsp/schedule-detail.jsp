@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../layout/taglib.jsp"%>
 
-<h1 class="mainHeader">Jornada ${scheduleNumber}</h1>
+<h1 class="mainHeader">Jornada <span class="orangeColor">${scheduleNumber}</span></h1>
 
 <hr />
 
-<a href='<spring:url value="/schedule-admin.html" />' class="btn btn-lg btn-info" data-toggle="modal">Volver a "Jornadas"</a>
+<a href='<spring:url value="/schedule-admin.html" />' class="btn btn-lg btnAdministrationPrimary" data-toggle="modal">Volver a "Jornadas"</a>
 
 <hr />
 
@@ -81,7 +81,10 @@
 		</div>
 	</div>
 	<div class="form-group" align="center">
-		<input type="submit" value="Actualizar" class="btn btn-lg btn-primary">
+		<br />
+		<input type="submit" value="Actualizar" class="btn btn-success btnRedirect">
+		<br />
+		<br />
 	</div>
 </form:form>
 
