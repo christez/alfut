@@ -25,19 +25,12 @@
 					<c:when test="${welcomePage eq true}">
 						<div align="center">
 							<img alt="pickLeague" src='<c:url value="/resources/images/leagueBundesliga.png"/>' class="openWorldLeagueImages">
-							<br />
 							<img alt="pickLeague" src='<c:url value="/resources/images/leagueEredivisie.png"/>' class="openWorldLeagueImages">
-							<br />
 							<img alt="pickLeague" src='<c:url value="/resources/images/leagueLaLiga.png"/>' class="openWorldLeagueImages">
-							<br />
 							<img alt="pickLeague" src='<c:url value="/resources/images/leagueLaLigaPortugal.png"/>' class="openWorldLeagueImages">
-							<br />
 							<img alt="pickLeague" src='<c:url value="/resources/images/leagueLeague1.png"/>' class="openWorldLeagueImages">
-							<br />
 							<img alt="pickLeague" src='<c:url value="/resources/images/leagueMls.png"/>' class="openWorldLeagueImages">
-							<br />
 							<img alt="pickLeague" src='<c:url value="/resources/images/leaguePremierLeague.png"/>' class="openWorldLeagueImages">
-							<br />
 							<img alt="pickLeague" src='<c:url value="/resources/images/leagueSerieA.png"/>'>
 						</div>
 					</c:when>

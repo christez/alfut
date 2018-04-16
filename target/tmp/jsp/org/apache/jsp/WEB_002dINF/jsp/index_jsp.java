@@ -144,9 +144,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("<div align=\"center\">\r\n");
       out.write("\t<div class=\"indexCarouselFooter\">\r\n");
-      out.write("\t\t<br />\r\n");
-      out.write("\t\t<br />\r\n");
-      out.write("\t\t<p>ADMINISTRADOR DE LIGAS DE FUTBOL</p>\r\n");
+      out.write("\t\tADMINISTRADOR DE LIGAS DE FUTBOL\r\n");
       out.write("\t</div>\r\n");
       out.write("</div>\r\n");
       out.write("\r\n");
@@ -173,11 +171,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</div>\r\n");
       out.write("\r\n");
       out.write("<div align=\"center\" class=\"bannerContainer\">\r\n");
-      out.write("\t<img alt=\"banner\" src='");
-      if (_jspx_meth_c_url_6(_jspx_page_context))
-        return;
-      out.write("' style=\"width: 100%;\">\r\n");
-      out.write("\t<div class=\"bannerTextCentered\">El sitio que te permite administrar tus ligas de fútbol<br />Agradecemos tu preferencia</div>\r\n");
+      out.write("\t<div>El sitio que te permite administrar tus ligas de fútbol<br />Agradecemos tu preferencia</div>\r\n");
       out.write("</div>\r\n");
       out.write("\r\n");
       out.write("<div align=\"center\">\r\n");
@@ -781,24 +775,6 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
-  private boolean _jspx_meth_c_url_6(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  c:url
-    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_6 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
-    _jspx_th_c_url_6.setPageContext(_jspx_page_context);
-    _jspx_th_c_url_6.setParent(null);
-    _jspx_th_c_url_6.setValue("/resources/images/banner.png");
-    int _jspx_eval_c_url_6 = _jspx_th_c_url_6.doStartTag();
-    if (_jspx_th_c_url_6.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_6);
-      return true;
-    }
-    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_6);
-    return false;
-  }
-
   private boolean _jspx_meth_c_choose_2(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -902,13 +878,13 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("\t\t\t\t\t\r\n");
         out.write("\t\t\t\t\t<a class=\"left carousel-control\" href=\"#galleryCarousel\" data-slide=\"prev\">\r\n");
         out.write("\t\t\t\t\t\t<img class=\"carouselControlImage\" alt=\"Left\" src='");
-        if (_jspx_meth_c_url_9((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_otherwise_2, _jspx_page_context))
+        if (_jspx_meth_c_url_8((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_otherwise_2, _jspx_page_context))
           return true;
         out.write("' >\r\n");
         out.write("\t\t\t\t\t</a>\r\n");
         out.write("\t\t\t\t\t<a class=\"right carousel-control\" href=\"#galleryCarousel\" data-slide=\"next\">\r\n");
         out.write("\t\t\t\t\t\t<img class=\"carouselControlImage\" alt=\"Right\" src='");
-        if (_jspx_meth_c_url_10((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_otherwise_2, _jspx_page_context))
+        if (_jspx_meth_c_url_9((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_otherwise_2, _jspx_page_context))
           return true;
         out.write("' >\r\n");
         out.write("\t\t\t\t\t</a>\r\n");
@@ -1262,7 +1238,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("\r\n");
         out.write("\t\t\t\t\t\t\t\t\t<div class=\"item active\">\r\n");
         out.write("\t\t\t\t\t\t\t\t\t\t<img src='");
-        if (_jspx_meth_c_url_7((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_4, _jspx_page_context, _jspx_push_body_count_c_forEach_3))
+        if (_jspx_meth_c_url_6((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_4, _jspx_page_context, _jspx_push_body_count_c_forEach_3))
           return true;
         out.write("' alt=\"galleryImage");
         if (_jspx_meth_c_out_7((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_when_4, _jspx_page_context, _jspx_push_body_count_c_forEach_3))
@@ -1283,21 +1259,21 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
-  private boolean _jspx_meth_c_url_7(javax.servlet.jsp.tagext.JspTag _jspx_th_c_when_4, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_3)
+  private boolean _jspx_meth_c_url_6(javax.servlet.jsp.tagext.JspTag _jspx_th_c_when_4, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_3)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  c:url
-    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_7 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
-    _jspx_th_c_url_7.setPageContext(_jspx_page_context);
-    _jspx_th_c_url_7.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_when_4);
-    _jspx_th_c_url_7.setValue((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${gallery.url}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-    int _jspx_eval_c_url_7 = _jspx_th_c_url_7.doStartTag();
-    if (_jspx_th_c_url_7.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_7);
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_6 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_url_6.setPageContext(_jspx_page_context);
+    _jspx_th_c_url_6.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_when_4);
+    _jspx_th_c_url_6.setValue((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${gallery.url}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+    int _jspx_eval_c_url_6 = _jspx_th_c_url_6.doStartTag();
+    if (_jspx_th_c_url_6.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_6);
       return true;
     }
-    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_7);
+    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_6);
     return false;
   }
 
@@ -1333,7 +1309,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("\r\n");
         out.write("\t\t\t\t\t\t\t\t\t<div class=\"item\">\r\n");
         out.write("\t\t\t\t\t\t\t\t\t\t<img src='");
-        if (_jspx_meth_c_url_8((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_otherwise_4, _jspx_page_context, _jspx_push_body_count_c_forEach_3))
+        if (_jspx_meth_c_url_7((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_otherwise_4, _jspx_page_context, _jspx_push_body_count_c_forEach_3))
           return true;
         out.write("' alt=\"galleryImage");
         if (_jspx_meth_c_out_8((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_otherwise_4, _jspx_page_context, _jspx_push_body_count_c_forEach_3))
@@ -1354,21 +1330,21 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
-  private boolean _jspx_meth_c_url_8(javax.servlet.jsp.tagext.JspTag _jspx_th_c_otherwise_4, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_3)
+  private boolean _jspx_meth_c_url_7(javax.servlet.jsp.tagext.JspTag _jspx_th_c_otherwise_4, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_3)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  c:url
-    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_8 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
-    _jspx_th_c_url_8.setPageContext(_jspx_page_context);
-    _jspx_th_c_url_8.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_otherwise_4);
-    _jspx_th_c_url_8.setValue((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${gallery.url}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-    int _jspx_eval_c_url_8 = _jspx_th_c_url_8.doStartTag();
-    if (_jspx_th_c_url_8.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_8);
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_7 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_url_7.setPageContext(_jspx_page_context);
+    _jspx_th_c_url_7.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_otherwise_4);
+    _jspx_th_c_url_7.setValue((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${gallery.url}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+    int _jspx_eval_c_url_7 = _jspx_th_c_url_7.doStartTag();
+    if (_jspx_th_c_url_7.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_7);
       return true;
     }
-    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_8);
+    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_7);
     return false;
   }
 
@@ -1410,6 +1386,24 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
+  private boolean _jspx_meth_c_url_8(javax.servlet.jsp.tagext.JspTag _jspx_th_c_otherwise_2, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_8 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_url_8.setPageContext(_jspx_page_context);
+    _jspx_th_c_url_8.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_otherwise_2);
+    _jspx_th_c_url_8.setValue("/resources/images/leftArrow.png");
+    int _jspx_eval_c_url_8 = _jspx_th_c_url_8.doStartTag();
+    if (_jspx_th_c_url_8.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_8);
+      return true;
+    }
+    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_8);
+    return false;
+  }
+
   private boolean _jspx_meth_c_url_9(javax.servlet.jsp.tagext.JspTag _jspx_th_c_otherwise_2, PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -1418,31 +1412,13 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_9 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
     _jspx_th_c_url_9.setPageContext(_jspx_page_context);
     _jspx_th_c_url_9.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_otherwise_2);
-    _jspx_th_c_url_9.setValue("/resources/images/leftArrow.png");
+    _jspx_th_c_url_9.setValue("/resources/images/rightArrow.png");
     int _jspx_eval_c_url_9 = _jspx_th_c_url_9.doStartTag();
     if (_jspx_th_c_url_9.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_9);
       return true;
     }
     _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_9);
-    return false;
-  }
-
-  private boolean _jspx_meth_c_url_10(javax.servlet.jsp.tagext.JspTag _jspx_th_c_otherwise_2, PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  c:url
-    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_10 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
-    _jspx_th_c_url_10.setPageContext(_jspx_page_context);
-    _jspx_th_c_url_10.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_otherwise_2);
-    _jspx_th_c_url_10.setValue("/resources/images/rightArrow.png");
-    int _jspx_eval_c_url_10 = _jspx_th_c_url_10.doStartTag();
-    if (_jspx_th_c_url_10.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_10);
-      return true;
-    }
-    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_10);
     return false;
   }
 
@@ -1561,7 +1537,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("\r\n");
           out.write("\t\t\t\t\t\t<div class=\"col-md-4 indexContainer\">\r\n");
           out.write("\t\t\t\t\t\t\t<img alt=\"icon\" src='");
-          if (_jspx_meth_c_url_11((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_4, _jspx_page_context, _jspx_push_body_count_c_forEach_4))
+          if (_jspx_meth_c_url_10((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_4, _jspx_page_context, _jspx_push_body_count_c_forEach_4))
             return true;
           out.write("' class=\"openWorldNewIcon\">\r\n");
           out.write("\t\t\t\t\t\t\t<h3 class=\"text-info indexSubHeader\">");
@@ -1595,21 +1571,21 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
-  private boolean _jspx_meth_c_url_11(javax.servlet.jsp.tagext.JspTag _jspx_th_c_forEach_4, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_4)
+  private boolean _jspx_meth_c_url_10(javax.servlet.jsp.tagext.JspTag _jspx_th_c_forEach_4, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_4)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  c:url
-    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_11 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
-    _jspx_th_c_url_11.setPageContext(_jspx_page_context);
-    _jspx_th_c_url_11.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_4);
-    _jspx_th_c_url_11.setValue((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${currentNew.url}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-    int _jspx_eval_c_url_11 = _jspx_th_c_url_11.doStartTag();
-    if (_jspx_th_c_url_11.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_11);
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_10 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_url_10.setPageContext(_jspx_page_context);
+    _jspx_th_c_url_10.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_4);
+    _jspx_th_c_url_10.setValue((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${currentNew.url}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+    int _jspx_eval_c_url_10 = _jspx_th_c_url_10.doStartTag();
+    if (_jspx_th_c_url_10.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_10);
       return true;
     }
-    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_11);
+    _jspx_tagPool_c_url_value_nobody.reuse(_jspx_th_c_url_10);
     return false;
   }
 

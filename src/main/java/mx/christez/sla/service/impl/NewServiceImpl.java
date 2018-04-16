@@ -70,7 +70,7 @@ public class NewServiceImpl implements NewService {
 
 	@Override
 	public List<New> findAll() {
-		Page<New> pages = newRepository.findAll(new PageRequest(0, 20, Direction.DESC, "creationDate"));
+		Page<New> pages = newRepository.findAll(new PageRequest(0, 5, Direction.DESC, "creationDate"));
 		List<New> newList = pages.getContent();
 		
 		return newList;

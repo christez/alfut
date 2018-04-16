@@ -125,16 +125,12 @@ Index classes ******************************************************************
 
 .indexCarouselFooter{
 	width: 85%;
-	height: 120px;
 	margin-top: 1px;
 	background-color: #1E241E;
 	color: #ffffff;
-	text-align: center;
-	vertical-align: middle;
-}
-
-.indexCarouselFooter p{
-	font-size: 30px;
+	text-align: center;	
+	padding: 20px;
+	font-size: 25px;
 }
 
 .indexInformationContainer{
@@ -208,13 +204,10 @@ Index classes ******************************************************************
     text-align: center;
     color: #ffffff;
     font-size: 20px;
-}
-
-.bannerTextCentered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    background-image: url('../images/banner.png');
+    height: 100%;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 .indexHeaderGallery{
@@ -1026,7 +1019,7 @@ New classes ********************************************************************
 }
 
 .newsHeader{
-	font-size: 35px;
+	font-size: 20px;
 	font-weight: bolder;
 	color: #F15A24;
 	margin-top: 15px;
@@ -1073,25 +1066,25 @@ New classes ********************************************************************
     text-align: left;
     cursor: pointer;
     transition: 0.3s;
-    font-size: 17px;
+    font-size: 12px;
 }
 
 .tabNews button:hover {
-    background-color: #F15A24;
-    color: #ffffff;
+    font-weight: bolder;
 }
 
 .tabContentNews {
     float: left;
     width: 70%;
-    height: 300px;
+    height: 100%;
     background-color: #ffffff;
     color: #000000;
     display: none;
     border-radius: 10px;
 	box-shadow: 5px 5px 5px 5px #E4E2E3;
-	padding-left: 15px;
-	padding-right: 15px;
+	padding-left: 25px;
+	padding-right: 25px;
+	padding-bottom: 25px;
 }
 
 .newsTabContainer{
@@ -1301,7 +1294,7 @@ World classes ******************************************************************
 }
 
 .openWorldLeagueImages{
-	margin-bottom: 25px;
+	margin: 50px;
 }
 
 .rankingForm {
@@ -1362,10 +1355,10 @@ Gallery classes ****************************************************************
 }
 
 .carouselControlImage{
-	width: 64px;
-	height: 64px;
+	width: 32px;
+	height: 32px;
 	padding-left: 0px;
-	margin-top: 150px;
+	margin-top: 180px;
 }
 
 .carouselControlImageSchedule{

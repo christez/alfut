@@ -19,7 +19,7 @@
 				<c:forEach items="${news}" var="myNew">
 					<c:choose>
 						<c:when test="${tabNewsCounter eq 1}">
-							<button class="tablinks" onmouseover="openNewsTab('<c:out value="${tabNewsCounter}" />_<c:out value="${myNew.header}" />', this, '#F15A24')" id="defaultOpen">
+							<button class="tablinks" onclick="openNewsTab('<c:out value="${tabNewsCounter}" />_<c:out value="${myNew.header}" />', this, '#F15A24')" id="defaultOpen">
 								<c:if test="${myNew.type eq 'Importante'}">
 						 			<img src='<c:url value="/resources/images/newsImportant.png"/>' class="img-rounded newsImageSmall" alt="Important">
 						 		</c:if>
@@ -32,11 +32,11 @@
 						 			<img src='<c:url value="/resources/images/newsWarning.png"/>' class="img-rounded newsImageSmall" alt="Warning">
 						 		</c:if>
 						 		
-								<c:out value="${myNew.header}" />
+						 		<c:out value="${myNew.header}" />
 							</button>
 						</c:when>
 						<c:otherwise>
-							<button class="tablinks" onmouseover="openNewsTab('<c:out value="${tabNewsCounter}" />_<c:out value="${myNew.header}" />', this, '#F15A24')">
+							<button class="tablinks" onclick="openNewsTab('<c:out value="${tabNewsCounter}" />_<c:out value="${myNew.header}" />', this, '#F15A24')">
 								<c:if test="${myNew.type eq 'Importante'}">
 						 			<img src='<c:url value="/resources/images/newsImportant.png"/>' class="img-rounded newsImageSmall" alt="Important">
 						 		</c:if>
@@ -112,5 +112,5 @@
 	    element.style.backgroundColor = color;
 	}
 	
-	document.getElementById("defaultOpen").onmouseover();
+	document.getElementById("defaultOpen").onclick();
 </script>

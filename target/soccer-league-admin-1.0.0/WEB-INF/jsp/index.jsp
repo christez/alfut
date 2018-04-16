@@ -43,9 +43,7 @@
 
 <div align="center">
 	<div class="indexCarouselFooter">
-		<br />
-		<br />
-		<p>ADMINISTRADOR DE LIGAS DE FUTBOL</p>
+		ADMINISTRADOR DE LIGAS DE FUTBOL
 	</div>
 </div>
 
@@ -103,8 +101,7 @@
 </div>
 
 <div align="center" class="bannerContainer">
-	<img alt="banner" src='<c:url value="/resources/images/banner.png"/>' style="width: 100%;">
-	<div class="bannerTextCentered">El sitio que te permite administrar tus ligas de fútbol<br />Agradecemos tu preferencia</div>
+	<div>El sitio que te permite administrar tus ligas de fútbol<br />Agradecemos tu preferencia</div>
 </div>
 
 <div align="center">
