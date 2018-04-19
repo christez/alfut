@@ -189,6 +189,18 @@ Index classes ******************************************************************
 	border-color: #F15A24;
 }
 
+.btnRedirectFit{
+	width: 100%;
+	background-color: #004600;
+	border-color: #004600;
+	font-size: 13px;
+}
+
+.btnRedirectFit:hover{
+	background-color: #F15A24;
+	border-color: #F15A24;
+}
+
 .indexDescription{
 	color: #000000;
 	font-size: 15px;
@@ -366,7 +378,7 @@ Open league classes ************************************************************
 }
 
 .openLeagueHeader{
-	font-size: 35px;
+	font-size: 20px;
 	font-weight: bolder;
 	color: #F15A24;
 	margin-top: 15px;

@@ -52,7 +52,7 @@
 				<c:forEach items="${league.tournaments}" var="tournament">
 					<c:choose>
 						<c:when test="${tabCounter eq 1}">
-							<button class="tablink" onmouseover="openTournamentTab('<c:out value="${tabCounter}" />_<c:out value="${tournament.name}" />', this, '#F15A24')" id="defaultOpen">
+							<button class="tablink" onclick="openTournamentTab('<c:out value="${tabCounter}" />_<c:out value="${tournament.name}" />', this, '#F15A24')" id="defaultOpen">
 								<c:if test="${tournament.type eq 'Por grupos más liguilla'}">
 						 			<img src='<c:url value="/resources/images/tournamentGroups.png"/>' class="img-rounded newsImageSmall" alt="Groups">
 						 		</c:if>
@@ -73,7 +73,7 @@
 							</button>
 						</c:when>
 						<c:otherwise>
-							<button class="tablink" onmouseover="openTournamentTab('<c:out value="${tabCounter}" />_<c:out value="${tournament.name}" />', this, '#F15A24')">
+							<button class="tablink" onclick="openTournamentTab('<c:out value="${tabCounter}" />_<c:out value="${tournament.name}" />', this, '#F15A24')">
 								<c:if test="${tournament.type eq 'Por grupos más liguilla'}">
 						 			<img src='<c:url value="/resources/images/tournamentGroups.png"/>' class="img-rounded newsImageSmall" alt="Groups">
 						 		</c:if>
@@ -128,7 +128,7 @@
 							<p class="openLeagueDetailHeader">Tipo: <strong class="openLeagueDetailOrange"><c:out value="${tournament.type}" /></strong></p>
 							<p class="openLeagueDetailHeader">Fecha de creación: <strong class="openLeagueDetailOrange"><fmt:formatDate value="${tournament.creationDate}" pattern="yyyy/MM/dd" /></strong></p>
 							<br />
-							<a href='<spring:url value="/result-tournament.html?rpTournamentId=${tournament.id}" />' class="btn btn-success btnRedirect">Ir la torneo</a>
+							<a href='<spring:url value="/result-tournament.html?rpTournamentId=${tournament.id}" />' class="btn btn-success btnRedirectFit">Ir la torneo</a>
 						</div>
 					</div>
 				</div>
@@ -180,7 +180,7 @@
 	    element.style.backgroundColor = color;
 	}
 	
-	document.getElementById("defaultOpen").onmouseover();
+	document.getElementById("defaultOpen").onclick();
 </script>
 
 <script async defer
